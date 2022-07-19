@@ -5860,6 +5860,29 @@ cправа налево сверху вниз и вывести элемент�
 
 # 7.13 Вложенные функции в Python
 
-func = lambda a,b: a+b
-print(func(2,5))
+# g = 'grey'
+#
+#
+# def colors(param='r'):
+#     y = 'yello'
+#     g = 'green'
+#
+#     def print_red():
+#         nonlocal y
+#         r = 'red'
+#         print(r)
+#
+#     def print_blue():
+#         b = 'blue'
+#         print(b)
+#
+#     if param == 'r':
+#         print_red()
+#     elif param == 'b':
+#         print_blue()
+#     else:
+#         print('I don know this colors')
+#
+#
+# colors('1')
 
