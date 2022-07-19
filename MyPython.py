@@ -5110,7 +5110,7 @@ cправа налево сверху вниз и вывести элемент�
 # def trailing_zeros(n: int) -> int:
 #     x=str(factorial(n))
 #     return len(x)-len(x.strip('0'))
-
+# ----------------------------------------
 # def trailing_zeros(n: int) -> int:
 #     t = str(factorial(n))
 #     return len(t)-len(str(int(t[::-1])))
@@ -5885,4 +5885,105 @@ cправа налево сверху вниз и вывести элемент�
 #
 #
 # colors('1')
+
+# 7.14 Замыкания в Python. Closure Python
+
+# def main_func(name):
+#     def inner_func():
+#         print('Hello my frend', name)
+#
+#     return inner_func
+
+# -------------------
+
+# def adder(value):
+#
+#     def inner(a):
+#         return value + a
+#
+#     return inner
+
+# --------------------
+# def counter():
+#     count = 0
+#
+#     def inner():
+#         nonlocal count
+#         count+=1
+#         return count
+#     return inner
+
+# -----------------------------
+
+# def multiply(value):
+#
+#     def inner(a):
+#         return value * a
+#
+#     return inner
+#
+# f_2 = multiply(2)
+# print("Умножение 2 на 5 =", f_2(5)) #10
+# print("Умножение 2 на 15 =", f_2(15)) #30
+# f_3 = multiply(3)
+# print("Умножение 3 на 5 =", f_3(5)) #15
+# print("Умножение 3 на 15 =", f_3(15)) #45
+#
+# def multiply(m):
+#     _ = lambda x: x * m
+#     return _
+
+# 7.15 Замыкания в Python Часть 2
+
+# Задача про таймер:
+# def timer(a = perf_counter()):
+#
+#     def inner():
+#         nonlocal a
+#         b = perf_counter()
+#         c = b - a
+#         a = b
+#         return c
+#     return inner
+# -----------------------------
+# def averedge_numbers():
+#     numbers = []
+#
+#     def inner(number):
+#         numbers.append(number)
+#         print(numbers)
+#         return sum(numbers) / len(numbers)
+#
+#     return inner
+
+# ----------------------
+# from datetime import datetime
+# from time import perf_counter
+#
+# def timer():
+#     # start = datetime.now()
+#     start = perf_counter()
+#
+#     def inner():
+#         # return datetime.now() - start
+#         return perf_counter() - start
+#
+#     return inner
+# --------------------
+# def add (a,b):
+#     return a+b
+#
+# def counter (func):
+#     count = 0
+#     def inner (*args, **kwargs):
+#         nonlocal count
+#         count+=1
+#         print(f'функция {func.__name__} вызывалаось {count} раз')
+#         return func(*args, **kwargs)
+#     return inner
+# ----------------------------
+
+# 7.16 Декораторы в Python Часть 1
+
+
 
