@@ -5101,7 +5101,6 @@ cправа налево сверху вниз и вывести элемент�
 Переворачиваем его и переводим в int. Нули теперь находятся спереди и отбрасываются сами.
 Переводим обратно в str и сравниваем длины'''
 
-
 # def factorial(n: int):
 #     pr=1
 #     for i in range(1,n+1):
@@ -5986,3 +5985,117 @@ cправа налево сверху вниз и вывести элемент�
 
 # 7.16 Декораторы в Python Часть 1
 
+# def decorator(func):
+#
+#     def inner():
+#         print('start decorator...')
+#         func()
+#         print('end decorator...')
+#
+#     return inner
+#
+# def say():
+#     print('Hello world')
+# def buy():
+#     print('Buy world')
+#
+# say=decorator(say)
+# say()
+# buy=decorator(buy)
+# buy()
+# ----------------------------
+# def decorator(func):
+#     def inner(*args, **kwargs):
+#         print('start decorator...')
+#         func(*args, **kwargs)
+#         print('end decorator...')
+#
+#     return inner
+#
+#
+# def say(name, surname, age):
+#     print('Hello', name, surname, age)
+#
+#
+# say = decorator(say)
+# say('Vasya', 'Petrov', 30)
+
+# ------------------------
+
+# def header(func):
+#     def inner(*args, **kwargs):
+#         print('<h1>')
+#         func(*args, **kwargs)
+#         print('</h1>')
+#
+#     return inner
+#
+# def table(func):
+#     def inner(*args, **kwargs):
+#         print('<table>')
+#         func(*args, **kwargs)
+#         print('</table>')
+#
+#     return inner
+#
+#
+# @header  #   --> say = header(say)
+# @table   #   --> say = header(table(say))
+# def say(name, surname, age):
+#     print('Hello', name, surname, age)
+#
+#
+# # say = table(header(say))
+# say('Vasya', 'Petrov', 30)
+
+# ----------------------------------
+'''Декоратор text_decor, который оборачивает вызов декорированной функции
+фразами «Hello» и «Goodbye!»: фраза «Hello» печатается до вызова,
+фраза «Goodbye!» - после'''
+
+# def text_decor(func):
+#     def inner(*args, **kwargs):
+#         print('Hello')
+#         func(*args, **kwargs)
+#         print('Goodbye!')
+#
+#     return inner
+# ---------------------------------
+'''Напишите декоратор repeater, который дважды вызывает декорированную функцию'''
+
+# def repeater(func):
+#     def inner(*args, **kwargs):
+#         func(*args, **kwargs)
+#         func(*args, **kwargs)
+#     return inner
+# -------------------------------------
+
+"""Напишите декоратор double_it, который возвращает удвоенный результат вызова декорированной функции"""
+
+
+# def double_it(func):
+#     def inner(*args, **kwargs):
+#         return (func(*args, **kwargs)+func(*args, **kwargs))
+#
+#     return inner
+#
+# # def double_it(func):
+# #     inner = lambda *args: func(*args) *2
+# #     return inner
+#
+###def double_it(func):
+###    def _wrapper(*args, **kwargs):
+###        return func(*args, **kwargs) * 2
+###   return _wrapper
+#
+#
+# @double_it
+# def multiply(num1, num2):
+#     return num1 * num2
+#
+#
+# res = multiply(9, 4)  # произведение 9*4=36, но декоратор double_it удваивает это значение
+# print(res)
+# --------------------------------
+
+7.17 Декораторы в Python Часть 2
