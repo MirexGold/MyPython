@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 /venv/
+=======
+# created by virtualenv automatically
+/venv/
+/.idea/
+>>>>>>> c1eb777 (1)
