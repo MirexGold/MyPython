@@ -6389,3 +6389,18 @@ print(data)
 
 
 
+
+# import json
+# with open('manager_sales.json','r') as file:
+#     data = json.load(file)
+# total_price=0
+# for item in data:
+#     summa=sum([i['price'] for i in item['cars']])
+#     if summa > total_price:
+#         total_price=summa
+#         name_manager= item['manager']['first_name']
+#         last_name_manager = item['manager']['last_name']
+# print(name_manager,last_name_manager,total_price)
+
+
+
