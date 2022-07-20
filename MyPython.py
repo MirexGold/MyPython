@@ -6190,9 +6190,61 @@ cправа налево сверху вниз и вывести элемент�
 # функция longest_word_in_file, принимает имя файла и внутри его содержимого находит самое
 # длинное слово и возвращает его в качестве ответа
 
+# def longest_word_in_file(file_name):
+#     file = open(file_name, 'r', encoding='utf-8')
+#     max_word=''
+#     for line in file:
+#         words = line.split()
+#         for word in words:
+#             word_wihtout_punk = remote_punktuation(word)
+#             if len(word_wihtout_punk) >= len(max_word):
+#                 max_word = word_wihtout_punk
+#
+#     return max_word
+#
+# def remote_punktuation(word):
+#     from string import punctuation
+#     for punk in punctuation:
+#         if punk in word:
+#             word = word.replace(punk, '')
+#     return word
+#
+# print(longest_word_in_file('test.txt'))
 
-def longest_word_in_file(file_name):
-    file = open(file_name, 'r', encoding='utf-8')
-    print(file.read())
-longest_word_in_file()
+
+# from string import punctuation
+#
+# def longest_word_in_file(file_name):
+#     a = open(file_name, encoding='utf-8')
+#     x = ''
+#     for i in a.read().split():
+#         i = i.strip(punctuation)
+#         if len(i) >= len(x):
+#             x = i
+#     return x
+
+# -------------------------------------
+# скачать файл, в котором записаны натуральные числа. Ваша задача найти
+# количество трехзначных чисел;
+# сумму двухзначных чисел;
+# def number(file_name):
+#     file = open(file_name)
+#     count = 0
+#     summa = 0
+#     for i in file:
+#         if 99 < int(i) < 1000:
+#             count += 1
+#         if 9 < int(i) < 100:
+#             summa += int(i)
+#     return count, summa
+#
+#
+# print(number(r'C:\Users\Олег\PycharmProjects\MyPython_work\numbers.txt'))
+
+# ----------------------------------------
+# 9.2 Контекстный менеджер
+
+
+
+
 
