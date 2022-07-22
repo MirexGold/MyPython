@@ -7446,12 +7446,42 @@ from datetime import date  # -> импорт datetime
 # print(my_date.month, my_date.year)
 # -------------------
 
+# from datetime import date
+#
+# d = int(input())
+# m = int(input())
+# y = int(input())
+# user_date = date(y, m, d)
+# print(user_date)
+# print(f'{user_date.day:02d}.{user_date.month:02d}.{user_date.year:04d}')
+#
+# ----------------------------------------
 
+# получить текущую дата.
+# from datetime import date
+#
+# now = date.today()
+# print('Сегодня:', now)
+
+# Метод weekday дает порядковый номер дня недели. При этом данный метод считает следующим образом:
+# понедельник = 0
+# вторник = 1
+# среда = 2
+# четверг = 3
+# пятница = 4
+# суббота = 5
+# воскресенье = 6
+#
 from datetime import date
 
-d = int(input())
-m = int(input())
-y = int(input())
-user_date.da = date(y, m, d)
-print(user_date.da)
-print(user_date.da.strftime("%d.%m.%Y"))
+now = date.today()
+print('Сегодня:', now)   # -> Сегодня: 2022-07-22
+print('День недели:', now.weekday())        # -> День недели: 4
+print('День недели:', now.isoweekday())      # -> День недели: 5
+#
+
+
+
+
+
+
