@@ -7472,13 +7472,13 @@ from datetime import date  # -> импорт datetime
 # суббота = 5
 # воскресенье = 6
 #
-from datetime import date
-
-now = date.today()
-print('Сегодня:', now)   # -> Сегодня: 2022-07-22
-print('День недели:', now.weekday())        # -> День недели: 4
-print('День недели:', now.isoweekday())      # -> День недели: 5
+# from datetime import date
 #
+# now = date.today()
+# print('Сегодня:', now)   # -> Сегодня: 2022-07-22
+# print('День недели:', now.weekday())        # -> День недели: 4
+# print('День недели:', now.isoweekday())      # -> День недели: 5
+# #
 
 
 
