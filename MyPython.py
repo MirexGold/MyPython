@@ -7650,3 +7650,68 @@ from datetime import date  # -> импорт datetime
 
 # -------------------------------------------
 # 3.1 Функции
+
+# def min(*a):
+#     m = a[0]
+#     for i in a:
+#         if m > i:
+#             m = i
+#     return m
+#
+#
+# print(min(1, 2, 5, 9))
+# ---------------------------
+# def my_renge(start, stop, step=1):
+#     res=[]
+#     if step > 0:
+#         x = start
+#         while x < stop:
+#             res+=[x]
+#             x+=step
+#     elif step < 0:
+#         x = start
+#         while x > stop:
+#             res += [x]
+#             x += step
+#     return res
+#
+# print(my_renge(2, 10, 1))
+
+# -----------------------------------
+
+# def f(x):
+#     if x <= -2:
+#         f = 1 - (x + 2) ** 2
+#     elif -2 < x <= 2:
+#         f = -(x / 2)
+#     elif x > 2:
+#         f = (x - 2) ** 2 + 1
+#     return f
+#
+#
+# def f(x): return (lambda x: 1 - (x + 2) ** 2 if x <= -2 else -x / 2 if x < -2 or x <= 2 else (x - 2) ** 2 + 1)(x)
+
+# -----------------------------------
+
+# функция modify_list(l), принимает на вход список целых чисел, удаляет из него все нечётные значения,
+# а чётные нацело делит на два
+lst = [1, 2, 3, 4, 5, 6]
+def modify_list():
+    new_lst = []
+    for i in lst:
+        if i%2 != 0:
+            new_lst.append(lst[i])
+    print(new_lst)
+
+modify_list()
+
+# def modify_list(l):
+#     le = len(l)-1
+#     i = le
+#     while i!=-1:
+#         if l[i]%2:
+#             del l[i]
+#         else:
+#             l[i]=l[i]//2
+#         i -=1
+#     return
