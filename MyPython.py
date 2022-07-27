@@ -7745,6 +7745,6 @@ from datetime import date  # -> импорт datetime
 #     print(i, s.count(i))
 
 # ----------------------------------------------
-
+Python book
 
 
