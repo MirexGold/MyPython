@@ -7401,6 +7401,7 @@ from collections import Counter
 
 from datetime import date  # -> импорт datetime
 
+
 # >>> help(date)
 # Help on class date in module datetime:
 # class date(builtins.object)
@@ -7695,15 +7696,21 @@ from datetime import date  # -> импорт datetime
 
 # функция modify_list(l), принимает на вход список целых чисел, удаляет из него все нечётные значения,
 # а чётные нацело делит на два
-lst = [1, 2, 3, 4, 5, 6]
-def modify_list():
-    new_lst = []
-    for i in lst:
-        if i%2 != 0:
-            new_lst.append(lst[i])
-    print(new_lst)
 
-modify_list()
+# def modify_list(l):
+#     b = []
+#     for x in l:
+#         if x % 2 == 0:
+#             b.append(x // 2)
+#     l[:] = b
+#
+# lst = [1, 2, 3, 4, 5, 6]
+# print(modify_list(lst))
+# print(lst)
+# modify_list(lst)
+# print(lst)
+#
+
 
 # def modify_list(l):
 #     le = len(l)-1
@@ -7715,3 +7722,19 @@ modify_list()
 #             l[i]=l[i]//2
 #         i -=1
 #     return
+#
+# lst = [10, 5, 8, 3]
+# modify_list(lst)
+# print(lst)
+
+# ---------------------------------------
+# def update_dictionary(d, key, value):
+#     if key in d:
+#         d[key] += [value]
+#     elif 2 * key in d:
+#         d[2 * key] += [value]
+#     else:
+#         d[2 * key] = [value]
+
+# ------------------------------------------
+
