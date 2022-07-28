@@ -2862,6 +2862,7 @@
 #     for row in range(n-1, -1, -1): # обход строк(рядов) матрицы
 #         print(a[row][column], end=' ')
 #     print()
+import os.path
 import pprint
 
 '''Обход элементов матрицы - 3
@@ -7401,7 +7402,6 @@ from collections import Counter
 
 from datetime import date  # -> импорт datetime
 
-
 # >>> help(date)
 # Help on class date in module datetime:
 # class date(builtins.object)
@@ -7499,6 +7499,22 @@ from datetime import date  # -> импорт datetime
 #     if m>=i:
 #         m=i
 # print(m)
+
+
+# программу, которая считывает строку, кодирует её предложенным алгоритмом
+# и выводит закодированную последовательность
+# s = input()
+# counter = 0
+# lb = s[0]
+# for i in s:
+#     if i == lb:
+#         counter+=1
+#     else:
+#         print(f'{lb}{counter}',end='')
+#         counter = 1
+#         lb = i
+# print(f'{lb}{counter}', end='')
+
 
 # -------------------------------------
 
@@ -7745,6 +7761,97 @@ from datetime import date  # -> импорт datetime
 #     print(i, s.count(i))
 
 # ----------------------------------------------
-Python book
+# 3.4 Файловый ввод/вывод
+
+# with open('file.txt') as inf:
+#     s = inf.readline().strip()   #'\t abc   \n'.strip()  -> 'abc'  - избавится от табуляций переносов пробелов
+
+# путь к файлу
+# os.path.join('.', 'dirname', 'filename.txt')   # -> '.\dirname\filename.txt'
+
+# чтение всех строк из файла
+# with open('input.txt') as inf:
+#     for line in inf:
+#         line = line.strip()
+#         print(line)
+
+# # запись в файл
+# # 1 вариант
+# ouf = open('file.txt', 'w')
+# ouf.write('Some text\n')            #добавление строки
+# ouf.write(str(25))                  #добавление числа, обязательно указать тип - str строка
+# ouf.close()
+#
+# # 2 вариант
+# with open('file.txt') as ouf
+#     ouf.write('Some text\n')            #добавление строки
+#     ouf.write(str(25))                  #добавление числа, обязательно указать тип - str строка
+#     #сдесь файл уже закрыт
+
+# ---------------------------------------
+
+
+# программа, считывает из файла строку, соответствующую тексту, сжатому с помощью кодирования повторов,
+# и производит обратную операцию
+
+# with open('dataset_3363_2.txt') as t:
+#     s = t.readline().strip()
+# def rep(symbol, iter): return symbol*int(iter)
+# i = 0
+# while i < len(s):
+#     iter = ''
+#     if s[i].isalpha():
+#         symbol = s[i]
+#         i += 1
+#         while s[i].isdigit():
+#             iter += s[i]
+#             if i == len(s)-1: break
+#             i += 1
+#         print(rep(symbol, iter),end='')
+
+
+# with open('dataset_3363_2.txt', 'r') as f:
+#     s = f.readline().strip()
+# i = 0
+# while i < len(s):
+#     j = i + 1
+#     while j < len(s) and s[j].isdigit():
+#         j += 1
+#     print(s[i] * int(s[i+1:j]), end='')
+#     i = j
+
+
+# import re                         #подгрузил библиотеку с регулярными выражениями, рекомендую прочитать статью
+#                                   #https://tproger.ru/translations/regular-expression-python/
+# vyvod=''  #объявил пустую строку в которую в конце буду все записывать
+# with open("dataset_3363_2.txt") as file:       #открываю файл
+#     line = file.readline().strip()             #читаю строку
+#     bukvi = re.findall(r'\D', line)     #re.findall находит все сочетания до цифры и помещает их в список в #виде ('a', 'A', 'c'...)
+#                                         #\d - Любая цифра [0-9] (\D — все, кроме цифры)
+#     cifri = re.findall(r'\d+', line)    #\d находит все сочетания цифр, а остальные пропускает, но чтобы он не
+#                                          #оставлял пробелы вместо пропущенных букв написано '\d+' - где +
+#                                          #обозначает 1 и более вхождений цифр (по умолчанию, как я понял 0 и
+#                                          #более вхождений)
+# for i in range(len(bukvi)):                #поскольку букв и сочетаний цифр одинаковое количество, то цикл
+#                                            #имеет одинаковую длину (len(bukvi)) как для цифр, так и для букв
+#     vyvod += str(bukvi[i])*int(cifri[i])    #каждую букву записываю в строку определенное количество раз
+# with open("textfile_out.txt", "w") as outfile: outfile.write(vyvod) #записываю в файл
+
+# -----------------------------------------------------------
+# # Считывает текст из файла и выводит самое частое слово в этом тексте
+# # и через пробел то, сколько раз оно встретилось
+#
+# with open('dataset_3363_3.txt') as inf, open('MostPopularWord.txt','w') as ouf:
+#     maxc = 0
+#     s = inf.read().lower().strip().split()
+#     s.sort()
+#     for word in s:
+#         counter = s.count(word)
+#         if counter > maxc:
+#             maxc = counter
+#             result_word = word
+#     ouf.write(result_word +' ' + str(maxc))
+
+# ------------------------------------------------------
 
 
