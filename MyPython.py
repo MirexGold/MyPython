@@ -7853,5 +7853,235 @@ from datetime import date  # -> импорт datetime
 #     ouf.write(result_word +' ' + str(maxc))
 
 # ------------------------------------------------------
+# # Для тех, кто хочет сократить свой код :) написал небольшое руководство по [list comprehension]
+# # на основе примера на stackoverflow.com
+# # # http://stackoverflow.com/questions/16632124/python-emulate-sum-using-list-comprehension
+# # я немного изменил этот пример, чтобы лучше объяснить работу [list comprehension]
+# # и вам было проще понять, как применить этот подход к решению задания
+#
+# # допустим, у нас есть список фруктов, где зафиксированы самые низкие и высокие цены на эти фрукты
+# # т.е. по сути это список списков :)
+# lst = [["apple", 55, 62], ["orange", 60, 74], ["pineapple", 140, 180], ["lemon", 80, 84]]
+#
+# # выведем этот список для нагляности на экран, используя [list comprehension]
+# [print(el) for el in lst]
+# # ['apple', 55, 62]
+# # ['orange', 60, 74]
+# # ['pineapple', 140, 180]
+# # ['lemon', 80, 84]
+#
+# # если мы хотим подсчитать среднюю цену на каждый из фруктов, то напишем что-то вроде
+# sumMiddle = 0
+# for el in lst:
+#     sumMiddle = (el[1] + el[2]) / 2
+#     print(sumMiddle)
+#
+# # или можно сделать это одной строкой
+# [print((priceLow + priceHigh) / 2) for fruit, priceLow, priceHigh in lst]
+# # представьте, что наш список списков - это таблица из трёх столбцов
+# # и мы можем обращаться к столбцам, просто озаглавив их fruit, priceLow, priceHigh
+# # в цикле for, почти как перебор элементов словаря for key, value in d.items() :)
+#
+# # поэтому, когда вы захотите прикинуть, сколько же, от и до, в среднем может стоить
+# # ваша фруктовая корзина, нужно будет посчитать среднее по каждой колонке
+# # вы можете сделать это примерно так
+# sumLow, sumHigh = 0, 0
+# for el in lst:
+#     sumLow += el[1]
+#     sumHigh += el[2]
+# sumLow /= len(lst)
+# sumHigh /= len(lst)
+# print(sumLow, sumHigh)
+#
+# # или применить кунг-фу списковых выражений и обойтись парой строк :)
+# print(sum([priceLow for fruit, priceLow, priceHigh in lst]) / len(lst))
+# print(sum([priceHigh for fruit, priceLow, priceHigh in lst]) / len(lst))
+#
+# # а где два принта, там и один :)
+# print(sum([priceLow for fruit, priceLow, priceHigh in lst]) / len(lst), sum([priceHigh for fruit, priceLow, priceHigh in lst]) / len(lst))
+#
+# count, a1, b1, c1 = 0, 0, 0, 0
+# with open('dataset_3363_4.txt', 'r') as inf:
+#     for line in inf:
+#         line = line.strip().split(';')
+#         a, b, c = int(line[1]), int(line[2]), int(line[3])
+#         print((a+b+c)/3)
+#         count += 1
+#         a1 += a
+#         b1 += b
+#         c1 += c
+# print((a1/count), (b1/count), (c1/count))
+#
+# # -------
+#
+# s = [0, 0, 0]
+# n = 0
+# with open('111.txt') as f:
+#     for line in f:
+#         m = list(map(int, line.strip().split(';')[1:]))
+#         print(sum(m)/3)
+#         for i in 0, 1, 2: s[i] += m[i]
+#         n += 1
+#     print(s[0]/n, s[1]/n, s[2]/n)
+#
+#
+# # ------
+#
+# avg = [0]*3
+# counter = 0
+# with open("files/data3.txt") as data_set:
+#     for line in data_set:
+#         counter += 1
+#         data = line.strip().split(";")
+#         print((int(data[1]) + int(data[2]) + int(data[3])) / 3)
+#         avg[0] += int(data[1])
+#         avg[1] += int(data[2])
+#         avg[2] += int(data[3])
+# print(avg[0] / counter, avg[1] / counter, avg[2] / counter)
 
 
+# -------------------------
+# Площадь круга
+# from math import pi
+# print(2*pi*float(input()))
+
+# Количество аргументов функции
+# import sys
+# print(*sys.argv[1:])
+
+
+# 3.6 Установка дополнительных модулей
+# Как запихнуть Анаконду в PyCharm
+# Открываем нужный проект
+# Далее: PyCharm => Settings/Preferences => Project "название проекта" => Project Interpreter
+# Справа от названия используемого интерпретатора нажимаем на шестеренку, а потом "Add"
+# import requests
+# r = requests.get('https://www.google.ru/')  #простой GET запрос
+# print(r.text)   #вывод ответа от сервера
+
+# ----------------------------------------------
+# нужно скачать файл с использованием модуля requests и посчитать число строк в нём.
+
+# import requests
+# step = requests.get('https://stepic.org/media/attachments/course67/3.6.2/273.txt')
+# data = step.text
+# print(data.count('\n'))
+# ------------------------------------
+# import requests
+#
+# count = 0
+# r = requests.get('https://stepic.org/media/attachments/course67/3.6.3/699991.txt'.strip())
+# while True:
+#     if not r.text.startswith('We'):
+#         r = requests.get('https://stepic.org/media/attachments/course67/3.6.3/' + r.text)
+#         count += 1
+#         print(count, r.text)
+#         continue
+#     else:
+#         print(r)
+#         break
+# ----------------------------------------
+
+# number_of_teams = int(input())
+# teams = []
+# wins = {}
+# losses = {}
+# draws = {}
+# for i in range(number_of_teams):
+#     a_list = input().split(';')
+#     if a_list[0] not in teams:
+#         teams.append(a_list[0])
+#     if a_list[-2] not in teams:
+#         teams.append(a_list[-2])
+#     if a_list[1] > a_list[-1]:
+#         wins[a_list[0]] = wins.get(a_list[0], 0) + 1
+#         losses[a_list[-2]] = losses.get(a_list[-2], 0) + 1
+#     elif a_list[1] < a_list[-1]:
+#         wins[a_list[-2]] = wins.get(a_list[-2], 0) + 1
+#         losses[a_list[0]] = losses.get(a_list[0], 0) + 1
+#     else:
+#         draws[a_list[0]] = draws.get(a_list[0], 0) + 1
+#         draws[a_list[-2]] = draws.get(a_list[2], 0) + 1
+#
+# for team in teams:
+#     win = wins.get(team, 0)
+#     loss = losses.get(team, 0)
+#     draw = draws.get(team, 0)
+#     games = win + loss + draw
+#     points = win * 3 + draw * 1
+#     print(team, ':', games, win, draw, loss, points)
+# ---------------------------------------
+# n = int(input())
+# m = {} #итоговый словарик
+# for i in range(n):
+#     str = input().split(';')
+#     d = {str[0] : str[1], str[2] : str[3]}
+#     winner = ''
+#     if int(str[1]) > int(str[3]):
+#         winner = str[0]
+#     elif int(str[1]) < int(str[3]):
+#         winner = str[2]
+#     for key in d.keys():
+#         if key not in m.keys():
+#             m.update({key:[0, 0, 0, 0, 0]})
+#         m.get(key)[0] += 1
+#         if key == winner:
+#             m.get(key)[1] += 1
+#         elif winner == '':
+#             m.get(key)[2] += 1
+#         else:
+#             m.get(key)[3] += 1
+# for key in m.keys():
+#     m.get(key)[4] = m.get(key)[1]*3 + m.get(key)[2]
+#     print(key, end=':')
+#     for i in range(5):
+#         print(m.get(key)[i], end=' ')
+#     print()
+#
+# ------------------------------------------------
+
+
+# s1, s2, code, decode, coded, decoded = input(), input(), input(), input(), ' ', ' '
+# for c in code: coded += s2[s1.find(c)]
+# print(coded)
+# for c in decode: decoded += s1[s2.find(c)]
+# print(decoded)
+# ----------------------------------
+
+
+# n = int(input())
+# x, y = 0, 0
+# for i in range(n):
+#     s = [i for i in input().split()]
+#     if s[0] == 'север': y += int(s[1])
+#     elif s[0] == 'юг': y -= int(s[1])
+#     elif s[0] == 'запад': x -= int(s[1])
+#     else: x += int(s[1]) #s[0] == 'восток'
+# print(x, y)
+
+
+# -----------------------------
+
+# def avg(list):
+#     s = 0
+#     num = 0
+#     for i in list:
+#         s += int(i)
+#         num += 1
+#     return s/num
+#
+# mapa = {}
+#
+# with open('dataset_3380_5 (1).txt') as datafile:
+#     for line in datafile:
+#         str = line.strip().split('\t')
+#         key = int(str[0])
+#         if key not in mapa:
+#             mapa.update({key : [str[2]]})
+#         else:
+#             mapa[key].append(str[2])
+# for i in range(1,12):
+#     if i not in mapa:
+#         print(i,' -')
+#     else:
+#         print(i, avg(mapa.get(i)))
