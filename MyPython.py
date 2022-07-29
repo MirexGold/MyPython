@@ -8085,3 +8085,300 @@ from datetime import date  # -> импорт datetime
 #         print(i,' -')
 #     else:
 #         print(i, avg(mapa.get(i)))
+
+# # ---------------------------------------------
+# currencies = {
+#     'Argentine Peso': 118362.205708,
+#     'Australian Dollar': 1586.232315,
+#     'Bahraini Dinar': 423.780164,
+#     'Botswana Pula': 13168.450636,
+#     'Brazilian Real': 5954.781483,
+#     'British Pound': 834.954104,
+#     'Bruneian Dollar': 1520.451015,
+#     'Bulgarian Lev': 1955.83,
+#     'Canadian Dollar': 1430.54405,
+#     'Chilean Peso': 898463.818465,
+#     'Chinese Yuan Renminbi': 7171.445692,
+#     'Colombian Peso': 4447741.922165,
+#     'Croatian Kuna': 7527.744707,
+#     'Czech Koruna': 24313.797041,
+#     'Danish Krone': 7440.613895,
+#     'Emirati Dirham': 4139.182587,
+#     'Hong Kong Dollar': 8786.255952,
+#     'Hungarian Forint': 355958.035747,
+#     'Icelandic Krona': 143603.932438,
+#     'Indian Rupee': 84241.767127,
+#     'Indonesian Rupiah': 16187150.010697,
+#     'Iranian Rial': 47534006.535121,
+#     'Israeli Shekel': 3569.191411,
+#     'Japanese Yen': 129149.364679,
+#     'Kazakhstani Tenge': 489292.515538,
+#     'Kuwaiti Dinar': 340.959682,
+#     'Libyan Dinar': 5196.539901,
+#     'Malaysian Ringgit': 4717.485104,
+#     'Mauritian Rupee': 49212.933037,
+#     'Mexican Peso': 23130.471272,
+#     'Nepalese Rupee': 134850.008728,
+#     'New Zealand Dollar': 1703.649473,
+#     'Norwegian Krone': 9953.078431,
+#     'Omani Rial': 433.360301,
+#     'Pakistani Rupee': 198900.635421,
+#     'Philippine Peso': 57574.278782,
+#     'Polish Zloty': 4579.273862,
+#     'Qatari Riyal': 4102.552652,
+#     'Romanian New Leu': 4946.638369,
+#     'Russian Ruble': 86197.012666,
+#     'Saudi Arabian Riyal': 4226.530892,
+#     'Singapore Dollar': 1520.451015,
+#     'South African Rand': 17159.831129,
+#     'South Korean Won': 1355490.097163,
+#     'Sri Lankan Rupee': 228245.645722,
+#     'Swedish Krona': 10439.125427,
+#     'Swiss Franc': 1037.792217,
+#     'Taiwan New Dollar': 31334.286611,
+#     'Thai Baht': 37436.518169,
+#     'Trinidadian Dollar': 7636.35428,
+#     'Turkish Lira': 15078.75981,
+#     'US Dollar': 1127.074905,
+#     'Venezuelan Bolivar': 511082584.868731
+# }
+# a = input()
+# if a in currencies:
+#     print(currencies[a])
+# else:
+#     print(f'Нет данных по {a}')
+
+# ----------------------------
+# sweet = {
+#     "id": "0001",
+#     "type": "donut",
+#     "name": "Cake",
+#     "ppu": 0.55,
+#     "calories": 125,
+# }
+# print(sweet["name"])
+# print(sweet["calories"])
+# print(sweet["id"])
+# ------------------------------
+# days = {
+#     1: 31,
+#     2: 28,
+#     3: 31,
+#     4: 30,
+#     5: 31,
+#     6: 30,
+#     7: 31,
+#     8: 31,
+#     9: 30,
+#     10: 31,
+#     11: 30,
+#     12: 31
+# }
+# print(days[int(input())])
+# ------------------------------------
+# sweet = {
+#     "id": "0001",
+#     "type": "donut",
+#     "name": "Cake",
+#     "ppu": 0.55,
+#     "calories": 125,
+# }
+# sweet['weight'] = 230
+# sweet['have_topping'] = True
+# sweet['name'] = 'SuperCake'
+# sweet['calories'] = 350
+# print(sweet)
+
+# ---------------------
+# sweet = {
+#     "id": "0001",
+#     "type": "donut",
+#     "name": "Cake",
+#     "ppu": 0.55,
+#     "calories": 125,
+# }
+# del sweet["ppu"], sweet['type']
+# print(sweet)
+# -----------------------------
+# s= {x: x**2 for x in range(1, int(input())+1)}
+# print(s)
+# --------------------------------------
+# alphabet = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9, 'j': 10, 'k': 11, 'l': 12, 'm': 13, 'n': 14, 'o': 15, 'p': 16, 'q': 17, 'r': 18, 's': 19, 't': 20, 'u': 21, 'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26}
+# print(alphabet)
+# --------------------------
+# empty = None
+# empty_too = None
+# print(empty_too is empty)
+# print(empty_too is not empty)
+# ---------------------------------
+# i_love_none = a = [None for i in range(51)]
+# print(i_love_none)
+# -------------------------------------
+# Тернарные операторы
+
+# msg = 'Начало координат' if x==0 and y == 0 else 'Не начало координат'
+# -------
+# x = int(input())
+# text = 'Even' if x%2==0 else 'Odd'
+# print(text)
+
+# -----------------------------
+# x = str(input())
+# sentence = 'Вопросительное' if x[-1] == '?' else 'Обычное'
+# print(sentence)
+# ------------------------------
+# a = str(input())
+# b = str(input())
+# experiment = 'Притягиваются' if a!=b else 'Отталкиваются'
+# print(experiment)
+# # --------------
+# experiment = 'Отталкиваются' if input() is input() else 'Притягиваются'
+# print(experiment)
+# -------------------
+# minimum = int(input())
+# maximum = int(input())
+# if minimum > maximum:
+#     minimum, maximum = maximum, minimum
+# print(minimum, maximum)
+#
+#
+# a, b = int(input()), int(input())
+# maximum = a if a > b else b
+# minimum = b if a > b else a
+# print(minimum, maximum)
+#
+# n, m = int(input()), int(input())
+# print(f'{n} {m}' if n <= m else f'{m} {n}')
+
+# --------------------------
+# for i in range(0, 501, 5):
+#     print(i)
+
+# print(*[i for i in range(0,501,5)],sep='\n') #для любителей однострочных решений
+
+# n = int(input())
+# pr = 1
+# for i in range(1, n + 1):
+#     pr *= i
+# print(pr)
+# -------------------------
+# a = [1, 2, 3, 4, 32, 4, 5, 3, 5]
+# b = []
+# for i in a:
+#     if i not in b:
+#         b.append(i)
+# print(b)
+# ---------------------
+# a = [1, 2, 3, 4, 32, 4, 5, 3, 5]
+# chet = []
+# nechet = []
+# n = len(a)
+# for i in range(n):
+#     if a[i] % 2 == 0:
+#         chet.append(i)
+#     else:
+#         nechet.append(i)
+# print(chet)
+# print(nechet)
+
+# ------------------------
+# vowels = "aeiou"
+# s = "aeriooikjoaikl"
+# n = len(s)
+# for i in range(n-1):
+#     if s[i] in vowels and s[i+1] in vowels:
+#         print(s[i], s[i+1])
+
+# # --------------------------
+# words = ['require', 'build', 'head', 'land', 'dark', 'seat', 'have', 'five', 'particularly', 'focus', 'moment',
+#          'visit', 'past', 'turn', 'bad', 'modern', 'once', 'future', 'pay', 'assume', 'himself', 'physical', 'chance',
+#          'remember', 'better', 'former', 'believe', 'explain', 'reduce', 'whatever', 'theory', 'during', 'enough',
+#          'wall', 'commercial', 'challenge', 'tell', 'actually', 'include', 'somebody', 'decade', 'by', 'better',
+#          'would', 'five', 'cost', 'kitchen', 'our', 'affect', 'board', 'practice', 'full', 'instead', 'apply', 'good',
+#          'past', 'clearly', 'special', 'both', 'analysis', 'peace', 'truth', 'cultural', 'light', 'answer', 'build',
+#          'each', 'watch', 'buy', 'theory', 'pretty', 'expect', 'account', 'music', 'sell', 'newspaper', 'reach',
+#          'fish', 'tax', 'employee', 'start', 'most', 'during', 'citizen', 'develop', 'carry', 'only', 'certainly',
+#          'rock', 'economy', 'risk', 'later', 'one', 'body', 'star', 'they', 'choice', 'appear', 'return', 'sometimes']
+# for i in words:
+#     if len(i)>=6:
+#         print(i)
+#
+#
+# [print(i) for i in words if len(i) > 6]
+
+# -------------------------------------
+# 5.3 Цикл for. Обход списков и строк
+# numbers = [-35, 68, -91, 23, -92, -82, -74, 32, 39, -30, -100, -29, 54, 26, 54, -45, 20, 53, -17, 68, -35, 11, 26, -17,
+#            70, 89, -81, -4, 61, -45, 13, 63, -48, -66, -92, -15, -88, -87, -75, 44, -49, -81, 19, -33, -59, 85, -69,
+#            -60, 9, -98, 28, 11, 15, -35, -80, 5, -20, -52, -45, 26, 47, -16, 40, -14, -12, 15, 73, -16, 29, -98, 93,
+#            -77, 1, 85, 77, 73, 100, -71, 99, 39, 2, -38, 49, -31, 15, 43, 94, -39, -89, -46, -71, 39, -56, 41, -93, 4,
+#            -79, 48, 88, -51]
+# for i in range(len(numbers)):
+#     numbers[i]*=2
+# print(numbers)
+# ----------
+# numbers = [i * 2 for i in numbers]
+# print(numbers)
+# ---------
+# numbers = list(map(lambda x: x * 2, numbers))
+# print(numbers)
+
+# ------------------------------------
+# # Линейный поиск
+# def linear_Search(lists, n, key):
+#     # Searching list1 sequentially
+#     for i in range(0, n):
+#         if (lists[i] == key):
+#             return i
+#     return -1
+#
+# lists = list(map(int, input().split()))
+# key = int(input())
+#
+# n = len(lists)
+# res = linear_Search(lists, n, key)
+# if (res == -1):
+#     print('ErrorValue')  #"Element not found"
+# else:
+#     print(res+1)  #"Element found at index: "
+
+
+# sp = list(map(int, input().split()))
+# n = int(input())
+# p = []
+# for i in range(1,len((sp))):
+#     if n in sp:
+#         p.append(i)
+#         break
+#     # else:
+#     #     p.append('ErrorValue')
+# print(p)
+
+
+# pairs = {'()', '[]', '{}'}  # список открывающихся и закрывающихся скобок
+# str = input().replace(' ', '')  # получаем список и чистим его от пробелов
+# for _ in range(len(str) // 2):  # полученную строку делим пополам т.к при нахождении удаляется сразу 2 символа
+#     for i in pairs:  # в цикле бежим по заготовленному списку скобок
+#         str = str.replace(i, '')  # если нашли пару удаляем ее из строки
+# if len(str) == 0:
+#     print('YES')
+# else:
+#     print('NO')
+
+# ----------------
+# s = input()
+# while '()' in s:
+#     s = s.replace('()', '')
+# print('YES' if len(s) == 0 else 'NO')
+# ---------
+# counter = 0
+# for i in input():
+#     if i == '(':
+#         counter += 1
+#     if i == ')':
+#         counter -= 1
+# print('YES' if counter == 0 else 'NO')
+
+# months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+# print(months[int(input())-1])
+
