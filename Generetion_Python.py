@@ -227,5 +227,23 @@
 # print('YES' if x1 == x2 or y1 == y2 else 'NO')
 
 # Ход короля
-x1, y1, x2, y2 = int(input()), int(input()), int(input()), int(input())
-print('YES' if -1 <= (x2 - x1) <= 1 and -1 <= (y2 - y1) <= 1 else 'NO')
+# x1, y1, x2, y2 = int(input()), int(input()), int(input()), int(input())
+# print('YES' if -1 <= (x2 - x1) <= 1 and -1 <= (y2 - y1) <= 1 else 'NO')
+
+# n, k = int(input()), int(input())  #zoomm/flash
+# if n>k:
+#     print('NO')
+# elif k>n:
+#     print('YES')
+# else:
+#     print("Don't know")
+
+# n, k = int(input()), int(input())
+# print("Don't know" if n == k else "YES" if n < k else "NO")
+
+# a, b, c = int(input()), int(input()), int(input())
+# print("Разносторонний" if a!=b!=c!=a else "Равносторонний" if a==b==c else "Равнобедренный")
+
+# Среднее число
+a, b, c = int(input()), int(input()), int(input())
+print(a if c<a<b else b if a<b<c else c)
