@@ -245,5 +245,61 @@
 # print("Разносторонний" if a!=b!=c!=a else "Равносторонний" if a==b==c else "Равнобедренный")
 
 # Среднее число
-a, b, c = int(input()), int(input()), int(input())
-print(a if c<a<b else b if a<b<c else c)
+# a, b, c = int(input()), int(input()), int(input())
+# if c > a > b or c < a < b:
+#     print(a)
+# elif a > b > c or a < b < c:
+#     print(b)
+# elif b > c > a or b < c < a:
+#     print(c)
+
+# a, b, c = int(input()), int(input()), int(input())
+# print(a if c > a > b or c < a < b else b if a > b > c or a < b < c else c)
+
+# Количество дней в месяце
+# a = int(input())
+# if a in (1, 3, 5, 7, 8, 10, 12):
+#     print('31')
+# elif a in (4, 6, 9, 11):
+#     print("30")
+# elif a == 2:
+#     print('28')
+
+# a = int(input())
+# if a<60:
+#     print('Легкий вес')
+# elif 60<=a<64:
+#     print('Первый полусредний вес')
+# elif 64<=a<69:
+#     print("Полусредний вес")
+#
+
+# Самописный калькулятор
+# a, b, z = int(input()),int(input()),input()
+# if z not in ('+', '-', '*', '/'):
+#     print('Неверная операция')
+# elif z == '+':
+#     print(a+b)
+# elif z == '-':
+#     print(a-b)
+# elif z == '*':
+#     print(a*b)
+# elif z == '/':
+#     if b == 0:
+#         print('На ноль делить нельзя!')
+#     else:
+#         print(a / b)
+
+# Цветовой микшер
+blue, red, yelow = input(),input(),input()
+if blue != 'синий' or red != 'красный' or yelow != 'желтый':
+    print('ошибка цвета')
+
+
+# если смешать красный и синий, то получится фиолетовый;
+# если смешать красный и желтый, то получится оранжевый;
+# если смешать синий и желтый, то получится зеленый.
+
+
+
+
