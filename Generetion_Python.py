@@ -580,8 +580,94 @@
 #     print(min(x1, x2))
 #     print(max(x1, x2))
 #
-#Правильный многоугольник
+# Правильный многоугольник
 # from math import *
 # n, a = float(input()), float(input())
 # ans = (n * pow(a, 2)) / (4 * tan(pi / n))
 # print(ans)
+
+# for i in range(10):
+#     print('Python is awesome!')
+
+# t = input()
+# for i in range(int(input())):
+#     print(t)
+
+# for a in range(6):
+#     print('AAA')
+# for a in range(5):
+#     print('BBBB')
+# print('E')
+# for a in range(9):
+#     print('TTTTT')
+# print("G")
+
+# for a in range(int(input())):
+#     print('*'*19)
+
+# a = input()
+# for i in range(10):
+#     print(i, a)
+#
+# s = str(input())
+# [print(i, s) for i in range(10)]
+
+# for i in range(int(input())+1):
+#     print(f'Квадрат числа {i} равен {i**2}')
+
+# n = int(input())
+# for i in range(n+1):
+#     print('*'*(n-i))
+#
+# for i in range(int(input()), 0, -1):
+#     print("*" * i)
+
+# Популяция
+# m, p, n = int(input()), int(input()), int(input())
+# for i in range(n):
+#     print(i+1, m * (p / 100+1) ** i)
+
+# Последовательность чисел
+# n,m = int(input()),int(input())
+# for i in range(n,m+1):
+#     print(i)
+#
+# print(*range(int(input()), int(input()) + 1), sep='\n')
+
+# Последовательность чисел 2
+# n, m = int(input()), int(input())
+#
+# if n < m:
+#     for i in range(n, m + 1):
+#         print(i)
+# else:
+#     for i in range(n, m-1, -1):
+#         print(i)
+
+# Последовательность чисел 3
+# n, m = int(input()), int(input())
+# for i in range(((n - 1) // 2) * 2 + 1, m - 1, -2):
+#     if i % 2 != 0:
+#         print(i)
+
+# Последовательность чисел 4
+# m = int(input())
+# n = int(input())
+#
+# for i in range(m, n + 1):
+#     if i % 17 == 0 or i % 10 == 9 or i % 15 == 0:
+#         print(i)
+
+# Таблица умножения на N
+# n = int(input())
+# for i in range(1,11):
+#     print(f'{n} x {i} = {n*i}')
+#
+# n = int(input())
+# [print(f'{n} x {i} = {n * i}') for i in range(1, 11)]
+#
+# (lambda n: [print(f'{n} x {i} = {n*i}') for i in range(1, 11)])(int(input()))
+
+
+
+
