@@ -528,4 +528,60 @@
 # text = input()
 # print('YES' if '@' in text and '.' in text else 'NO')
 
+# Евклидово расстояние
+# from math import sqrt
+#
+# x1, y1, x2, y2 = float(input()), float(input()), float(input()), float(input())
+# print(sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2))
 
+# Площадь и длина
+# from math import pi
+#
+# r = float(input())
+# print(pi*r**2)
+# print(2*pi*r)
+
+# Средние значения
+# from math import sqrt
+#
+# a, b = float(input()), float(input())
+# print((a + b) / 2)
+# print(sqrt(a * b))
+# print(2 * a * b / (a + b))
+# print(sqrt((a ** 2 + b ** 2 )/ 2))
+
+# Тригонометрическое выражение
+# from math import sin, cos, tan, radians
+# r = radians(float(input()))
+# print(sin(r)+cos(r)+tan(r)**2)
+
+
+# Пол и потолок
+# from math import floor, ceil
+# x = float(input())
+# print(ceil(x) + floor(x))
+
+
+# Квадратное уравнение
+# from math import *
+#
+# a = float(input())
+# b = float(input())
+# c = float(input())
+# d = b**2-4*a*c        # Ищем дискриминант
+#
+# if d < 0:
+#     print('Нет корней')
+# elif d == 0:          # если дискриминант ==0 (имеет один корень)
+#     print(-b / (2*a))
+# elif d > 0:           # Если дискриминант >0 то два корня
+#     x1 = (-b - d ** 0.5) / (2*a)
+#     x2 = (-b + d ** 0.5) / (2*a)
+#     print(min(x1, x2))
+#     print(max(x1, x2))
+#
+#Правильный многоугольник
+# from math import *
+# n, a = float(input()), float(input())
+# ans = (n * pow(a, 2)) / (4 * tan(pi / n))
+# print(ans)
