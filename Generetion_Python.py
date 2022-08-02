@@ -291,6 +291,10 @@
 #         print(a / b)
 
 # Цветовой микшер
+# если смешать красный и синий, то получится фиолетовый;
+# если смешать красный и желтый, то получится оранжевый;
+# если смешать синий и желтый, то получится зеленый.
+
 # a, b = input(), input()
 # if a not in ('синий', 'красный', 'желтый') or b not in ('синий', 'красный', 'желтый'):
 #     print('ошибка цвета')
@@ -307,8 +311,221 @@
 # elif a == "желтый" and b == "желтый":
 #     print("желтый")
 
+# Цвета колеса рулетки
+# a = int(input())
+# if a < 0 or a > 36:
+#     print('ошибка ввода')
+# elif a == 0:
+#     print('зеленый')
+# elif 1 <= a <= 10:
+#     if a % 2 != 0:
+#         print('красный')
+#     else:
+#         print('черный')
+# elif 11 <= a <= 18:
+#     if a % 2 != 0:
+#         print('черный')
+#     else:
+#         print('красный')
+# elif 19 <= a <= 28:
+#     if a % 2 != 0:
+#         print('красный')
+#     else:
+#         print('черный')
+# elif 29 <= a <= 36:
+#     if a % 2 != 0:
+#         print('черный')
+#     else:
+#         print('красный')
 
 
-# если смешать красный и синий, то получится фиолетовый;
-# если смешать красный и желтый, то получится оранжевый;
-# если смешать синий и желтый, то получится зеленый.
+# a1, b1, a2, b2 = int(input()), int(input()), int(input()), int(input())
+# if a2 > b1 or a1 > b2:  # отсекаем отсутствие пересечений и общей точки
+#     print('пустое множество')
+# elif a1 == b2:  # первое условие общей точки
+#     print(a1)
+# elif a2 == b1:  # второе условие общей точки
+#     print(a2)
+# else:  # осталось найти только пересечение
+#     if a1 > a2:  # получаем первую точку пересечения путем отсечения лишней точки
+#         a2 = a1
+#     if b1 < b2:  # получаем вторую точку пересечения
+#         b2 = b1
+#     print(a2, b2)
+
+# a = input()
+# if a[-1] == '0' and a[-2] == '0':
+#     print('YES')
+# else:
+#     print('NO')
+
+# x1, y1, x2, y2 = int(input()), int(input()), int(input()), int(input())
+# print('YES' if (x1 + x2 + y1 + y2) % 2 == 0 else 'NO')
+
+# x, s = int(input()), input()
+# print('YES' if 10 <= x <= 15 and s == 'f' else 'NO')
+
+# n = int(input())
+# if n < 1 or n > 10:
+#     print('ошибка ввода')
+# elif n == 1:
+#     print('I')
+# elif n == 2:
+#     print('II')
+# elif n == 3:
+#     print('III')
+# elif n == 4:
+#     print('IV')
+# elif n == 5:
+#     print('V')
+# elif n == 6:
+#     print('VI')
+# elif n == 7:
+#     print('VII')
+# elif n == 8:
+#     print('VIII')
+# elif n == 9:
+#     print('IX')
+# elif n == 10:
+#     print('X')
+
+# sp = 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'
+
+# a = int(input())
+# if a%2 != 0:
+#     print('YES')
+# elif a%2 == 0 and 2<=a<=5:
+#     print('NO')
+# elif a%2 == 0 and 6<=a<=20:
+#     print('YES')
+# elif a%2 == 0 and 20<a:
+#     print('NO')
+
+# Ход слона
+# Условие x1 - y1 == x2 - y2 соответствует одной диагонали, а условие x1 + y1 == x2 + y2 -- другой диагонали.
+# Так как слон ходит по обоим диагоналям, то используем логическую операцию or
+# x1, y1, x2, y2 = int(input()), int(input()), int(input()), int(input())
+# print('YES' if (x1 - y1 == x2 - y2) or (x1 + y1 == x2 + y2) else 'NO')
+
+# Ход коня
+# Разница координат по оси х == 1, разница координат по оси y == 2
+# или
+# Разница координат по оси х == 2, разница координат по оси y == 1
+# Разница координат может быть как положительная, так и отрицательная - берем модуль
+# x1, y1, x2, y2 = int(input()), int(input()), int(input()), int(input())
+# print('YES' if (x1 - x2) ** 2 + (y1 - y2) ** 2 == 5 else 'NO')
+
+
+# Ход ферзя
+# x1, y1, x2, y2 = int(input()), int(input()), int(input()), int(input())
+# print('YES' if abs(x1 - x2) == abs(y1 - y2) or x1 == x2 or y1 == y2 else 'NO')
+
+# Площадь треугольника
+# a, b = float(input()), float(input())
+# print(0.5 * a * b)
+
+# s, v1, v2 = float(input()), float(input()), float(input())
+# print(s/(v1 + v2))
+
+# Обратное число
+# x = float(input())
+# print('Обратного числа не существует' if x == 0 else (1/x))
+
+# какой температуре по шкале Цельсия соответствует указанное значение по шкале Фаренгейта
+# print(5/9*(float(input())-32))
+
+# Dog age
+# age = int(input())
+# if 0 < age <= 2:
+#     print(age * 10.5)
+# else:
+#     print(2 * 10.5 + (age - 2) * 4)
+
+
+# Первая цифра после точки
+# умножить на 10, для того что бы перевести значение после запятой в целые,
+# потом посмотреть остаток через "%" и показать только целочисленное значение.
+# a = float(input())
+# print(int(a*10%10))
+
+# Выведите его дробную часть.
+# a = float(input())
+# print(a % int(a))
+
+# print(float(input()) % 1)
+
+# a, b, c, d, e = int(input()), int(input()), int(input()), int(input()), int(input())
+# print('Наименьшее число =', min(a, b, c, d, e))
+# print('Наибольшее число =', max(a, b, c, d, e))
+
+# Сортировка трёх
+# num = int(input()), int(input()), int(input())
+# print(*sorted(num,reverse=True), sep='\n')
+
+# Интересное число
+# разность максимальной и минимальной цифры равняется средней
+# n = sorted(input())
+# print('Число интересное' if int(n[2]) - int(n[0]) == int(n[1]) else'Число неинтересное')
+
+# Абсолютная сумма
+# a, b, c, d, e = float(input()), float(input()), float(input()), float(input()), float(input())
+# print(abs(a) + abs(b) + abs(c) + abs(d) + abs(e))
+
+# Манхэттенское расстояние
+# p1, p2, q1, q2 = int(input()), int(input()), int(input()), int(input())
+# print(abs(p1-q1)+abs(p2-q2))
+
+# print(f'Hello {input()} {input()}! You just delved into Python')
+
+# n = input()
+# print(f'Футбольная команда {n} имеет длину {len(n)} символов')
+
+# Три города
+# вывести самое короткое и длинное название города, каждое на отдельной строке
+# a, b, c = input(), input(), input()
+# # if min(len(a), len(b), len(c)) == len(a):
+# #     print(a)
+# # elif min(len(a), len(b), len(c)) == len(b):
+# #     print(b)
+# # else: print(c)
+# # if max(len(a), len(b), len(c)) == len(a):
+# #     print(a)
+# # elif max(len(a), len(b), len(c)) == len(b):
+# #     print(b)
+# # else: print(c)
+# print(a if min(len(a), len(b), len(c)) == len(a) else b if min(len(a), len(b), len(c)) == len(b) else c)
+# print(a if max(len(a), len(b), len(c)) == len(a) else b if max(len(a), len(b), len(c)) == len(b) else c)
+
+# Арифметические строки
+# можно ли из длин этих строк построить возрастающую арифметическую прогрессию
+# a = len(input())
+# b = len(input())
+# c = len(input())
+#
+# if a + b + c == (min(a, b, c) + max(a, b, c))/2*3:
+#     print("YES")
+# else:
+#     print("NO")
+
+# print('YES' if 'синий' in input() else 'NO')
+
+# print(*[f"Футбольная команда {name} имеет длину {len(name)} символов" for name in input().split("\n")])
+# С версии 3.8 можно использовать выражения присваивания (PEP 572)
+# print(f"Футбольная команда {(name := input())} имеет длину {len(name)} символов")
+
+
+# s = input()
+# if 'суббота' in s or 'воскресенье' in s:
+#     print('YES')
+# else:
+#     print('NO')
+#
+# s = input()
+# print("YES" if "суббота" in s or "воскресенье" in s else "NO")
+
+# print('YES' if 'суббота' in (text := input()) or 'воскресенье' in text else 'NO')
+
+# text = input()
+# print('YES' if '@' in text and '.' in text else 'NO')
+
+
