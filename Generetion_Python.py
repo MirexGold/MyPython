@@ -797,4 +797,89 @@
 # print('Сумма чисел равна', total)
 
 
+# До КОНЦА 1
+# text = input()
+# while text !='КОНЕЦ':
+#     print(text)
+#     text = input()
+#
+# text = input()
+# t = ''
+# while text != 'КОНЕЦ':
+#     t += text + '\n'
+#     text = input()
+# print(t)
+
+# До КОНЦА 2
+# text = input()
+# t = ''
+# while text != 'КОНЕЦ' and text != 'конец':
+#     t += text + '\n'
+#     text = input()
+# print(t)
+
+# # Количество членов
+# text = input()
+# count = 0
+# while text != 'стоп' and text != 'хватит' and text != 'достаточно':
+#     count += 1
+#     text = input()
+# print(count)
+#
+# a = 0
+# while input() not in ("стоп", "хватит", "достаточно"):
+#     a+=1
+# print(a)
+
+# Пока делимся
+# digit = int(input())
+# while digit % 7 == 0:
+#     print(digit)
+#     digit = int(input())
+#
+# while True:
+#     s = int(input())
+#     if s % 7 != 0:
+#         break
+#     print(s)
+
+# while not (x := int(input())) % 7:
+#     print(x)
+
+# Сумма чисел
+# digit = int(input())
+# count = 0
+# while digit >= 0:
+#     count += digit
+#     digit = int(input())
+# print(count)
+
+# Количество пятерок
+# digit = int(input())
+# count = 0
+# while digit > 0 and digit < 6:
+#     if digit == 5:
+#         count += 1
+#     digit = int(input())
+# print(count)
+
+# Ведьмаку заплатите чеканной монетой
+# монеты с номиналами 1, 5, 10, 25
+n = int(input())
+counter = 0
+while n >= 25:
+    counter += 1
+    n -= 25
+while n >= 10:
+    counter += 1
+    n -= 10
+while n >= 5:
+    counter += 1
+    n -= 5
+while n >= 1:
+    counter += 1
+    n -= 1
+print(counter)
+
+
 
