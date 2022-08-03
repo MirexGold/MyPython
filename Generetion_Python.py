@@ -668,6 +668,133 @@
 #
 # (lambda n: [print(f'{n} x {i} = {n*i}') for i in range(1, 11)])(int(input()))
 
+# Количество чисел
+# a, b = int(input()), int(input())
+# count = 0
+# for i in range(a, b + 1):
+#     if i ** 3 % 10 == 4 or i ** 3 % 10 == 9:
+#         count += 1
+# print(count)
+
+# # Сумма чисел
+# n = int(input())
+# count = 0
+# for i in range(n):
+#     b = int(input())
+#     count += b
+# print(count)
+
+# Асимптотическое приближение
+# from math import log        # Импортируем из math функцию log
+# diff = 0                       # Задаем стартовое значение переменной для скобок
+# n = int(input())               # получаем число n
+# for i in range(1, n + 1):      # Интервал начинаем с единицы, чтобы не делить на 0
+#     diff += (1 / i)            # Набиваем скобки суммами частных
+# print(diff - log(n))           # и дописываем формулу
+
+# Сумма чисел 2
+# n = int(input())
+# count = 0
+# for i in range(1, n+1):
+#     if i ** 2 % 10 == 2 or i ** 2 % 10 == 5 or i ** 2 % 10 == 8:
+#         count += i
+# print(count)
+#
+# print(sum([i for i in range(1,int(input())+1) if i**2%10 in (2,5,8)]))
+
+# Факториал
+# n = int(input())
+# pr = 1
+# for i in range(1, n+1):
+#     pr *= i
+# print(pr)
+
+# n = int(input())
+# for i in range(1, int(input())):
+#     n *= i
+# print(n)
+
+# Без нулей
+# count = 1
+# for i in range(1, 11):
+#     n = int(input())
+#     if n != 0:
+#         count *= n
+# print(count)
+
+# Сумма делителей
+# n = int(input())
+# count = 0
+# for i in range(1, n+1):
+#     if n % i == 0:
+#         count += i
+# print(count)
+
+# Знакочередующаяся сумма
+# n = int(input())
+# res = 0
+# for i in range(1, n + 1): # цикл от 1 до числа n
+#     if i % 2 == 0:
+#         res -= i  # если i делиться без остатка то вычитает из предыдущего результата
+#     if i % 2 != 0:
+#         res += i  # если i делиться с остатком то прибавляет к предыдущему результату
+# print(res)
+
+# Наибольшие числа
+# n = int(input())
+# max1 = max2 = 1         # пусть самое большое число это минимально возможное
+# for i in range(1, n+1): # цикл от 1 до n
+#     a = int(input())    # получаем следующее число
+#     if a > max1:        # если введенное число больше нашего максимума, то это новый максимум
+#         max2 = max1     # запоминаем предыдущее наибольшее число в переменной max2
+#         max1 = a        # а само это число на входе становится наибольшим
+#     elif a > max2:      # если число не больше max1, то проверяем больше ли оно второго max2
+#         max2 = a
+# print(max1)
+# print(max2)
+
+# n, s = int(input()), []
+# while len(s) != n: s.append(int(input()))
+# print(*sorted((s[-2:]), reverse=True), sep='\n')
+# # s.sort()
+# # print(*(s[-1], s[-2]),sep='\n')
+#
+#
+# # print(*sorted([int(input()) for i in range(int(input()))], reverse=True)[:2], sep='\n')
+
+# Only even numbers
+# fl = 'YES'
+# for _ in range(10):
+#     n = int(input())
+#     if n % 2 != 0:
+#         fl = 'NO'
+# print(fl)
+
+# Последовательность Фибоначчи
+# n = int(input())
+# pr = 0
+# sl = 1
+# for i in range(1, n + 1):
+#     sl = pr + sl
+#     pr = sl - pr
+#     print(pr, end=' ')
+#
+# a, b = 1, 0
+# for _ in range(int(input())):
+#     print(a, end = ' ')
+#     a, b = a + b, a
+
+# ----------
+# WHILE
+# ----------
+
+# text = input()
+# total = 0
+# while text != 'stop':
+#     num = int(text)
+#     total += num
+#     text = input()
+# print('Сумма чисел равна', total)
 
 
 
