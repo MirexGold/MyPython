@@ -865,21 +865,151 @@
 
 # Ведьмаку заплатите чеканной монетой
 # монеты с номиналами 1, 5, 10, 25
-n = int(input())
-counter = 0
-while n >= 25:
-    counter += 1
-    n -= 25
-while n >= 10:
-    counter += 1
-    n -= 10
-while n >= 5:
-    counter += 1
-    n -= 5
-while n >= 1:
-    counter += 1
-    n -= 1
-print(counter)
+# n = int(input())
+# counter = 0
+# while n >= 25:
+#     counter += 1
+#     n -= 25
+# while n >= 10:
+#     counter += 1
+#     n -= 10
+# while n >= 5:
+#     counter += 1
+#     n -= 5
+# while n >= 1:
+#     counter += 1
+#     n -= 1
+# print(counter)
 
+# ------------------
+# n = int(input())
+# while n != 0:  # пока в числе есть цифры
+#     last_digit = n % 10  # получить последнюю цифру
+#     # код обработки последней цифры
+#     n = n // 10  # удалить последнюю цифру из числа
+#
+# Цикл while работает до тех пор пока в числе есть необработанные цифры. Тело цикла содержит:
+# процедуру получения последней цифры last_digit = n % 10;
+# код обработки последней цифры;
+# процедуру удаления последней цифры из числа n = n // 10.
+
+# ------------------
+# Напишем программу, которая определяет есть ли в числе цифра 7.
+#
+# num = int(input())
+# has_seven = False  # сигнальная метка
+#
+# while num != 0:
+#     last_digit = num % 10
+#     if last_digit == 7:
+#         has_seven = True
+#     num = num // 10
+#
+# if has_seven == True:
+#     print('YES')
+# else:
+#     print('NO')
+# ---------
+# Обратный порядок 1
+
+# for i in (reversed(input())):
+#     print(i)
+
+# n = int(input())
+# while n != 0:
+#     print(n % 10)  # печатаем последнюю цифру
+#     n = n // 10  # убираем последнюю цифру
+
+# Обратный порядок 2
+# n = int(input())
+# while n != 0:
+#     print(n % 10, end='')
+#     n //= 10
+
+# print(*reversed(input()), sep= '')
+
+# max и min
+# n = input()
+# print(f'Максимальная цифра равна {max(n)}')
+# print(f'Минимальная цифра равна {min(n)}')
+
+# n = int(input())
+# maks = 0
+# minim = 1
+# while n != 0:
+#     last_digit = n % 10
+#     if last_digit > maks:
+#         maks = last_digit
+#     if last_digit < minim:
+#         minim = last_digit
+#     n //= 10
+# print(f'Максимальная цифра равна {maks}\nМинимальная цифра равна {minim}')
+
+# Все вместе
+# n = int(input())
+# sum_all = 0
+# counter = 0
+# pr = 1
+# sr_ar = 1
+# digit1 = 0
+# digit_last = n % 10
+# sum_1_2 = 0
+# while n != 0:
+#     last_digit = n % 10
+#     sum_all += last_digit
+#     counter += 1
+#     pr *= last_digit
+#     sr_ar = sum_all / counter
+#     digit1 = last_digit
+#     sum_1_2 = digit1 + digit_last
+#     n //= 10
+# print(sum_all, counter, pr, sr_ar, digit1, sum_1_2, sep='\n')
+# -------------------------
+
+# Вторая цифра
+# n = int(input())
+# while n > 9:  #второе число
+#     dig = n % 10
+#     n //= 10
+# print(dig)
+
+# Одинаковые цифры
+# n = int(input())
+# counter = 0
+# dig = n % 10
+# while n != 0:
+#     ld = n % 10
+#     if dig != ld:
+#         counter += 1
+#
+#     n //= 10
+# if counter != 0:
+#     print('NO')
+# else:
+#     print('YES')
+
+# n = int(input())
+# m = n % 10
+# answer = 'YES'
+# while n != 0:
+#     if m != n % 10:
+#         answer = 'NO'
+#     n = n // 10
+# print(answer)
+
+
+# Упорядоченные цифры
+# n = int(input())
+# m = n % 10
+# answer = 'YES'
+# while n != 0:
+#     t = n % 10
+#     if m > t:
+#         answer = 'NO'
+#     m = t
+#     n = n // 10
+# print(answer)
+
+# 7.6 break, continue и else
 
 
