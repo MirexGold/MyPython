@@ -1010,6 +1010,8 @@
 #     n = n // 10
 # print(answer)
 
-# 7.6 break, continue и else
+7.6 Циклы, break, continue и else
+
+
 
 
