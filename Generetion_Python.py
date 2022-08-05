@@ -1063,4 +1063,152 @@
 
 # 7.7 Поиск ошибок и ревью кода
 # Ревью кода-1
+# count = 0
+# p = 1
+# for i in range(1, 11):
+#     x = int(input())
+#     if x >= 0:
+#         p = p * x
+#         count = count + 1
+# if count > 0:
+#     print(count)
+#     print(p)
+# else:
+#     print('NO')
+
+# Ревью кода-2
+# mx = pow(10, 6)
+# s = 0
+# for i in range(1, 11):
+#     x = int(input())
+#     if x < 0:
+#         s += x
+#     if x > mx:
+#         mx = x
+# if s < 0:
+#     print(s)
+#     print(mx)
+# else:
+#     print('NO')
+
+# Ревью кода-3
+# s = 0                 # неверно задана переменная (было 1)
+# for i in range(7):    # неверно заданы границы диапозона (было (1, 7))
+#     n = int(input())  # отсутствие преобразования в целое число (не было int())
+#     if n % 2 == 0:    # неправильная переменная в условии (была i)
+#         s = s + n
+# print(s)
+
+# Ревью кода-4
+# n = int(input())
+# max_digit = -1  # отталкиваться надо от -1, чтобы любая подходящая цифра могла заменить его
+# while n > 0:
+#     digit = n % 10
+#     if digit % 3 == 0:
+#         if digit > max_digit:  # нужно найти большее число
+#             max_digit = digit  # перепутал местами
+#     n //= 10                   # нужно откинуть последнюю цифру
+# if max_digit == -1:            # сравнивать нужно не с 0
+#     print('NO')
+# else:
+#     print(max_digit)
+
+# Ревью кода-5
+# n = int(input())
+# while n > 9:  # Ошибка - цикл имеет смысл только в случае если данное натурально число дву- и  более -значное.
+#     n //= 10  # Ошибка - нам необходимо постепенно отбрасывать числа до первого, а не выяснять последние из них.
+# print(n)
+
+# Ревью кода-6
+# n = int(input())   # вводим число, а не текст
+# product = 1        # число может быть любым, даже 0, а в цикле у нас произведение, получим ошибку
+# while n > 0:       # цикл должен начинаться с 0, иначе мы потеряем цикл
+#     digit = n % 10
+#     product = product * digit
+#     n //= 10
+# print(product)
+
+# 7.8 Вложенные циклы. Часть 1
+# for i in range(8):
+#     for j in range(i + 1):
+#         print('*', end='')
+#     print()
+
+# Таблица-размером n×3
+# n = int(input())
+# for i in range(n):
+#     for j in range(3):
+#         print(n, end=' ')
+#     print()
+
+
+# Таблица-2  размером n×5 где в i-ой строке указано число i
+# n = int(input())
+# for i in range(1,n+1):
+#     for j in range(5):
+#         print(i, end=' ')
+#     print()
+
+# Таблица-3 печатает таблицу сложения для всех чисел от 1 до n
+# n = int(input())
+# for i in range(1, n + 1):
+#     for j in range(1, 10):
+#         print(i, '+', j, '=', i + j)
+#     print()
+
+# Звездный треугольник
+# n = int(input())
+# centr = n // 2 + 1  # находим середину
+# count = 0  # кол-во звезд в строке
+# for i in range(1, n + 1):
+#     if i > centr:
+#         count -= 1  # если перешли за середину то убавляем кол-во звезд
+#     else:
+#         count += 1  # иначе прибавляем кол-во звезд
+#
+#     for _ in range(count):  # выполняем цикл сколько нужно звезд
+#         print('*', end='')
+#     print()
+
+# n = abs(int(input()))
+# for i in range(1, n + 1):
+#     for j in range(i):
+#         if i + j <= n:
+#             print('*', end='')
+#     print()
+
+# Численный треугольник 1
+# for i in range(1,int(input())+1):
+#     for j in range(1, i + 1):
+#         print(i, end='')
+#     print()
+#
+# for i in range(1, int(input()) + 1):
+#     print(str(i) * i)
+
+# 12 месяцев, 28n + 30k + 31m = 365.
+# for n in range(1, 13):
+#     for k in range(1, 12):
+#         for m in range(1, 11):
+#             if 28 * n + 30 * k + 31 * m == 365:
+#                 print('n =', n, 'k =', k, 'm =', m)
+
+# Старинная задача  ->    Быков: 1 Коров: 9 Телят: 90
+# for x in range(1, 101):
+#     for y in range(1, 101):
+#         for z in range(1, 101):
+#             if x * 10 + y * 5 + z * 0.5 == 100 and x + y + z == 100:
+#                 print('Быков:', x, 'Коров:', y, 'Телят:', z)
+#
+# # Гипотеза Эйлера о сумме степеней
+# for a in range(1, 151):
+#     for b in range(a + 1, 151):
+#         for c in range(b + 1, 151):
+#             for d in range(c + 1, 151):
+#                 e = int(((a ** 5) + (b ** 5) + (c ** 5) + (d ** 5)) ** 0.2)
+#                 if e ** 5 == int((a ** 5) + (b ** 5) + (c ** 5) + (d ** 5)):
+#                     print(a + b + c + d + e)
+#
+#
+# 7.9 Вложенные циклы. Часть 2
 
