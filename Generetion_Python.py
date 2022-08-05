@@ -1211,4 +1211,188 @@
 #
 #
 # 7.9 Вложенные циклы. Часть 2
+# # Численный треугольник 3
+# num = int(input())             # Определение высоты массива
+# count = 0                      # Порядковый номер цифры = число в массиве
+# for y in range(1, num + 1):    # Первый цикл высоты массива
+#     for x in range(y):         # Второй цикл длины массива
+#         count += 1             # увеличиваем счетчик
+#         print(count, end=' ')  # Вывод текущего числа и в конце пробел
+#     print()                    # Переход к новой строке
 
+# Численный треугольник 4
+# num = int(input())
+#
+# for i in range(1, num + 1):   # цикл отвечающий за количество рядов
+#     count = 0                 # счетчик для ряда, при каждом новом цикле обнуляется
+#     for j in range(i):        # 1й вложенный
+#         count += 1            # увеличиваем цифру в ряду
+#         print(count, end='')  # вывод на печать без пробелов
+#     for k in range(i, 1, -1): # 2й вложенный
+#         count -= 1            # уменьшаем цифру в ряду
+#         print(count, end='')  # вывод на печать без пробелов
+#     print()                   # переход на новую строку
+
+
+# Делители-1
+# a, b = int(input()), int(input())
+# total_maximum = 0                    # сумма делителей
+# digit = 0                            # число с максимальной суммой делителей
+#
+# for i in range(a, b + 1):             # цикл перебирающий все числа от a до b включительно
+#     maximum = 0                       # обнуление суммы делителей, для нового цикла
+#     for j in range(1, i + 1):         # проверяем все числа от 1 до числа не превышающего проверяемое
+#         if i % j == 0:                # проверка на деление без остатка
+#             maximum += j              # суммируем делители
+#         if maximum >= total_maximum:  # если сумма делителей больше max суммы делителей
+#             total_maximum = maximum   # записываем в переменную максимальную
+#             digit = j
+# print(digit, total_maximum)           # вывод
+
+
+# Делители-2
+# n = int(input())
+#
+# for i in range(1, n+1):        # циклом перебираем все числа от 1 до n включительно
+#     print(i, end='')         # вывод текущего числа
+#     for j in range(1, i+1):    # цикл поиска делителя
+#         if i % j == 0:         # если число делится без остатка
+#             print('+', end='') # то печатаем + без пробела
+#     print()                    # переход на новую строку
+
+# Цифровой корень
+# n = int(input())  # ввод числа
+#
+# while n > 9:  # до тех пор, пока в числе n не останется одна цифраа
+#     s = 0
+#     while (n > 0):
+#         last_digit = n % 10  # получить последнюю цифру
+#         s += last_digit  # к числу прибавляем последнюю цифру
+#         n = n // 10  # удалить последнюю цифру из числа
+#     n = s
+#
+# print(n)
+
+# Сумма факториалов
+# num = int(input())           # кол-во факториалов
+# total = 0                    # сумма факториалов
+# factorial = 1                # вычисляемый факториал
+#
+# for i in range(1, num+1):    # перебираем факториалы
+#     for j in range(1, i+1):  # вычисляем каждый факториал
+#         factorial *= j       # вычисляем факториал
+#     total += factorial       # Суммируем факториалы чисел.
+#     factorial = 1            # "обнуляем факториал"
+# print(total)
+
+
+# Простые числа
+# a, b, = int(input()), int(input())
+# for i in range(a, b + 1):
+#     if i == 1:                # 1 не является простым числом
+#         continue              # пропускаем цикл
+#     for j in range(2, i):     # перебираем делители от 2 до i
+#         if i % j == 0:        # если делится без остатка, то оно не простое
+#             break             # завершаем вложенный цикл
+#     else:
+#         print(i)
+
+# 8. Итоговая работа на циклы
+
+# Ревью кода - 7
+# n = int(input())
+# s = 0
+# while n > 0:
+#     if n % 2 == 0:
+#         s += n % 10
+#     n //= 10
+# print(s)
+
+
+# Ревью кода - 8
+# n = 8 # n = 7, по условию чисел 8
+# count = 0
+# maximum = -10**6 - 1 # maximum = 1000, все случаи, когда все числа меньше 1000, обрабатываются неверно
+# for i in range(1, n + 1):
+#     x = int(input())
+#     if x % 4 == 0: # x // 4 == 0, по условию нужно найти числа, дел. на 4 без остатка
+#         count += 1
+#         if x > maximum: # if x < maximum, если число больше максимума, оно его заменяет, не если меньше максимума
+#             maximum = x
+# if count > 0:
+#     print(count)
+#     print(maximum)
+# else:
+#     print('NO')
+
+# Ревью кода - 9
+# count = 0
+# maximum = -1
+# for i in range(4):
+#     x = int(input())
+#     if x % 2 != 0:
+#         count += 1
+#         if x > maximum:
+#             maximum = x
+# if count > 0:
+#     print(count)
+#     print(maximum)
+# else:
+#     print('NO')
+
+# Звездная рамка
+# n = int(input())
+# for i in range(1, n + 1):
+#     if i == 1 or i == n:
+#         print('*' * 19)
+#     else:
+#         print('*' + ' ' * 17 + '*')
+#
+#
+# # Третья цифра
+# n = int(input())
+# while n > 999:
+#     n //= 10
+# print(n % 10)
+
+#
+# # Все вместе 2
+# n = int(input())
+# count3 = 0
+# countLast = 0
+# countChet = 0
+# sumBig5 = 0
+# multyBig7 = 1
+# count05 = 0
+# last = n % 10
+# while n > 0:
+#     x = n % 10
+#     if x == 3:
+#         count3 += 1
+#     if x == last:
+#         countLast += 1
+#     if x % 2 == 0:
+#         countChet += 1
+#     if x > 5:
+#         sumBig5 += x
+#     if x > 7:
+#         multyBig7 *= x
+#     if x == 0 or x == 5:
+#         count05 += 1
+#     n //= 10
+# print(count3)
+# print(countLast)
+# print(countChet)
+# print(sumBig5)
+# print(multyBig7)
+# print(count05)
+
+
+# Числа Рамануджана
+#
+# for i in range(1, 40):
+#     for j in range(1, 40):
+#         for k in range(1, 40):
+#             for l in range(1, 40):
+#                 if i != k and i != l and j != k and j != l and i ** 3 + j ** 3 == k ** 3 + l ** 3:
+#                     print(i ** 3 + j ** 3)
