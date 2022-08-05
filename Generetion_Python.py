@@ -1030,5 +1030,37 @@
 #         continue
 #     print(i)
 
+# ------------------------
+# import time
+# start_time = time.time()
+# n = 123456789
+# sum_all = 0
+# counter = 0
+# pr = 1
+# sr_ar = 1
+# digit1 = 0
+# digit_last = n % 10
+# sum_1_2 = 0
+# while n != 0:
+#     last_digit = n % 10
+#     sum_all += last_digit
+#     counter += 1
+#     pr *= last_digit
+#     sr_ar = sum_all / counter
+#     digit1 = last_digit
+#     sum_1_2 = digit1 + digit_last
+#     n //= 10
+# print(sum_all, counter, pr, sr_ar, digit1, sum_1_2, sep='\n')
+# print("--- %s seconds ---" % (time.time() - start_time))
+
+# ------------------
+# import time
+# start_time = time.time()
+# import numpy
+# nums = [1,2,3,4,5,6,7,8,9]
+# print(sum(nums), len(nums), numpy.prod(nums), numpy.mean(nums), nums[0], nums[0] + nums[-1], sep='\n')
+# print("--- %s seconds ---" % (time.time() - start_time))
+
 # 7.7 Поиск ошибок и ревью кода
 # Ревью кода-1
+
