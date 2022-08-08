@@ -1531,12 +1531,172 @@
 # print(s[1:-1])
 
 # Делаем срезы 2
-s = 'abcdefghijklmnopqrstuvwxyz'
-print(s[2])      # третий символ этой строки
-print(s[-2])     # предпоследний символ этой строки
-print(s[:5])     # первые пять символов этой строки
-print(s[:-2])    # всю строку, кроме последних двух символов
-print(s[::2])    # все символы с четными индексами
-print(s[1::2])   # все символы с нечетными индексами
-print(s[::-1])   # все символы в обратном порядке
-print(s[::-2])   # все символы строки через один в обратном порядке, начиная с последнего
+# s = input()
+# print(s[2])      # третий символ этой строки
+# print(s[-2])     # предпоследний символ этой строки
+# print(s[:5])     # первые пять символов этой строки
+# print(s[:-2])    # всю строку, кроме последних двух символов
+# print(s[::2])    # все символы с четными индексами
+# print(s[1::2])   # все символы с нечетными индексами
+# print(s[::-1])   # все символы в обратном порядке
+# print(s[::-2])   # все символы строки через один в обратном порядке, начиная с последнего
+
+
+# Две половинки
+# s = input()
+# print(s[(len(s) + 1) // 2:] + s[:(len(s) + 1) // 2])
+
+
+# 9.3 Методы строк. Часть 1
+# capitalize — писать прописными буквами, закрепить.
+# swapcase — обменять регистр. swap — гл. обмениваться, case — случай, регистр, падеж, дело, расследование...
+# title — заголовок, титул.
+# lower — нижний.
+# upper — верхний
+
+# Заглавные буквы
+# n = input().split()
+# print('YES' if n[0] == n[0].capitalize() and n[1] == n[1].capitalize() else 'NO')
+
+# a = input()
+# print('YES' if a==a.title() else 'NO')
+
+# sWAP cASE
+# print(input().swapcase())
+
+# Хороший оттенок
+# print('YES' if 'хорош' in input().lower() else 'NO')
+
+# Нижний регистр
+# # подсчитывает количество буквенных символов в нижнем регистре
+# n = input()
+# count = 0
+# for i in range(len(n)):
+#     if "a" <= n[i] <= "z":
+#         count += 1
+# print(count)
+#
+# s, counter = input(), 0
+# for i in s:
+#     if i != i.upper():  # условие выполняется только для букв в нижнем регистре
+#         counter += 1
+# print(counter)
+
+# print(sum(s.islower() for s in input()))
+
+# Количество слов
+# s = input()
+# print(len(s.split()))
+
+# print(input().count(' ') + 1)
+
+# Минутка генетики
+# s = input().upper()
+# print('Аденин:', s.count('А'))
+# print('Гуанин:', s.count('Г'))
+# print('Цитозин:', s.count('Ц'))
+# print('Тимин:', s.count('Т'))
+
+# Очень странные дела
+# n = int(input())
+# cnt = 0
+# for i in range(n):
+#     s = input()
+#     if s.count('11') >= 3:
+#         cnt += 1
+# print(cnt)
+
+# Количество цифр
+# n = input()
+# cnt = 0
+# for i in n:
+#     if i.isdigit():
+#         cnt += 1
+# print(cnt)
+#
+# print(sum(i.isdigit() for i in input()))
+
+# .com or .ru
+# n = input()
+# print('YES' if n.endswith('.com') or n.endswith('.ru') else 'NO')
+
+# print('YES' if input().endswith(('.com','.ru')) else 'NO')
+
+
+# Самый частотный символ
+# s = input()
+# ch = 0
+# st = " "
+# for i in s:
+#     if s.count(i) >= ch:
+#         ch = s.count(i)
+#         st = i
+# print(st)
+
+
+# Первое и последнее вхождение
+# получаем строку
+# если каунт символа == 1, выводим строка.финд
+# если каунт символа >= 1, выводим строка.финд и строка.рфинд
+# иначе, выводим НО
+
+# s = input()
+# if s.count('f') == 0:
+#     print('NO')
+# if s.count('f') == 1:
+#     print(s.find('f'))
+# elif s.count('f') >=1:
+#     print(s.find('f'), s.rfind('f'))
+
+
+# Удаление фрагмента
+# s = input()                # Получаем строку
+# a = s.find('h')            # Индекс первого вхождения
+# b = s.rfind('h')           # Индекс последнего вхождения
+# c = s[a:b+1]               # Получаем текст между начальным и конечным индексом
+# print(s.replace(c, ''))    # Выводим результат делая замену на пустую строку
+
+
+# print('In {0}, someone paid {1} {2} for two pizzas.'.format('2010', '10k', 'Bitcoin'))
+
+# year = 2010
+# amount = '10K'
+# currency = 'Bitcoin'
+#
+# print(f'In {year}, someone paid {amount} {currency} for two pizzas.')
+
+
+# for i in range(26):
+#     print(chr(ord('A') + i))
+
+# Функция ord позволяет определить код некоторого символа в таблице символов Unicode
+# Функция chr позволяет определить по коду символа сам символ
+
+# Символы в диапазоне
+# for i in range(int(input()), int(input())+1):
+#     print(chr(i),end=' ')
+
+# print(*[chr(i) for i in range(int(input()), int(input()) + 1)])
+
+
+# Простой шифр
+# print(*[ord(i) for i in input()])
+#
+# print(*map(ord, input()))
+
+# Шифр Цезаря
+# n = int(input())
+# text = input()
+# for i in text:
+#     decr = ord(i) - n
+#     if decr < 97:
+#         decr +=26
+#     print(chr(decr), end='')
+
+
+# s = 'Python rocks!'
+# print(s.replace('o','@'))
+
+
+# 11.1 Введение в списки
+
