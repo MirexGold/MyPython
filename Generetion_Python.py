@@ -1768,3 +1768,84 @@
 # print(ls)
 
 # print([int(input())**3 for i in range(1,int(input())+1)])
+
+
+# Список делителей
+# n = int(input())
+# sp = []
+# for i in range(1, n+1):
+#     if n % i == 0:
+#         sp.append(i)
+# print(sp)
+
+# Суммы двух
+# n = int(input())
+# sp = []
+# new_sp = []
+# for i in range(n):
+#     b = int(input())
+#     sp.append(b)
+# for j in range(len(sp)-1):
+#     new_sp.append(sp[j]+sp[j+1])
+# print(new_sp)
+#
+# Удалите нечетные индексы
+# n = int(input())
+# sp = []
+# for i in range(n):
+#     b = int(input())
+#     sp.append(b)
+# del sp[1::2]
+# print(sp)
+#
+# a = [int(i) for i in [input() for _ in range(int(input()))]]
+# del a[1::2]
+# print(a)
+
+
+# k-ая буква слова
+# n = int(input())
+# sp = []
+# new_sp = []
+# for i in range(n):
+#     b = input()
+#     sp.append(b)
+# k = int(input())
+# for j in range(len(sp)):
+#     new_sp.append(sp[j][k-1:k])
+# print(*new_sp,sep='')
+#
+# data = [input() for i in range(int(input()))]
+# k = int(input())
+# for i in data:
+#     if len(i) >= k:
+#         print(i[k - 1], end='')
+
+# Символы всех строк
+# print([].extend([input() for i in range(int(input()))]))
+
+# a = [input() for i in range(int(input()))]
+# b = []
+# for j in range(len(a)):
+#     b.extend(a[j])
+# print(b)
+#
+# n = int(input())
+# sp = []
+# for _ in range(n):
+#     sp.extend(input())
+# print(sp)
+
+
+# Функция sum() оказывается может принимать второй аргумент - начальное значение (по умолчанию равное нулю),
+# к которому будут прибавляться все значения итерируемого списка.
+# Кладём в функцию вместо этого начального значения пустой список.
+# И все элементы итерируемого списка списков будут по очереди прибавляться к этому пустому списку.
+#
+# >>> a = [[1, 2], [3, 4], [5, 6]]
+# >>> sum(a, [])
+# [1, 2, 3, 4, 5, 6]
+# print(sum((list(input()) for _ in range(int(input()))), []))
+
+
+# 11.4 Вывод элементов списка
