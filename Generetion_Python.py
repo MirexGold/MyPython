@@ -2103,3 +2103,17 @@
 #     if '#' in s:
 #         s = s[:s.find('#')]
 #     print(s.rstrip())
+
+# Сортировка чисел
+# n = list(map(int, input().split()))
+# n.sort()
+# print(*n)
+# n.sort(reverse=True)
+# print(*n)
+
+
+# s = sorted(int(i) for i in input().split())
+# print(*s)
+# print(*s[::-1])
+
+# 11.7 Списочные выражения
