@@ -2329,3 +2329,280 @@
 # print(*[f"{s[1:]}{s[0]}ки" for s in input().split()])
 
 # 13.1 Функции без параметров
+# def название_функции():
+#     блок кода
+
+# def draw_box():
+#     for _ in range(5):
+#         print('*' * 7)
+# draw_box()
+
+# Звездный прямоугольник 1
+# def draw_box():
+#     print('*' * 10)
+#     for _ in range(12):
+#         print('*' + ' ' * 8 + '*')
+#     print('*' * 10)
+#
+#
+# draw_box()
+
+# Звездный треугольник 1
+# def draw_triangle():
+#     for i in range(11):
+#         print('*'*i)
+#
+#
+# draw_triangle()
+
+# 13.2 Функции с параметрами
+# def название_функции(параметры):
+#     блок кода
+
+# def draw_box(height, width):    # функция принимает два параметра
+#     for i in range(height):
+#         print('*' * width)
+
+# draw_box(5, 7)
+
+# def draw_box(height, width):
+#     height = 2
+#     width = 10
+#     for i in range(height):
+#         print('*' * width)
+#
+# n = 5
+# m = 7
+# draw_box(n, m)
+# print(n, m)
+
+# def change_us(a, b):
+#     a = 0
+#     b = 0
+#     print(a, b)
+#
+# x = 1
+# y = 7
+# print(x, y)
+# change_us(x, y)
+# print(x, y)
+
+# Звездный треугольник
+# def draw_triangle(fill, base):
+#
+#     # centr = base // 2 + 1  # находим середину
+#     # count = 0  # кол-во звезд в строке
+#     # for i in range(1, base + 1):
+#     #     if i > centr:
+#     #         count -= 1  # если перешли за середину то убавляем кол-во звезд
+#     #     else:
+#     #         count += 1  # иначе прибавляем кол-во звезд
+#     #
+#     #     for _ in range(count):  # выполняем цикл сколько нужно звезд
+#     #         print(fill, end='')
+#     #     print()
+#     for i in range(1, base + 1):
+#         print(fill * min(i, base - i + 1))
+#
+# fill = input()
+# base = int(input())
+#
+# draw_triangle(fill, base)
+
+
+# ФИО
+# def print_fio(name, surname, patronymic):
+#     print(f"{surname[0]}{name[0]}{patronymic[0]}".upper())
+#     # print(surname[0].upper(),name[0].upper(),patronymic[0].upper(), sep='')
+#
+# name, surname, patronymic = input(), input(), input()
+#
+# print_fio(name, surname, patronymic)
+
+# Сумма цифр
+# def print_digit_sum(num):
+#     print(sum([int(i) for i in str(n)]))
+#
+#
+# # считываем данные
+# n = int(input())
+#
+# # вызываем функцию
+# print_digit_sum(n)
+
+# 13.3 Локальные и глобальные переменные
+# 13.4 Функции с возвратом значения. Часть 1
+
+# функция перевода градусов Фаренгейта в градусы Цельсия
+# def convert_to_celsius(temp):
+#     result = (5 / 9) * (temp - 32)
+#     return result
+#
+# # основная программа
+# temp = float(input('Bвeдитe количество градусов по Фаренгейту: '))
+# celsius = convert_to_celsius(temp)
+# print(celsius)  # градусы Цельсия
+
+# Использование нескольких return
+# def convert_grade(grade):
+#     if grade >= 90:
+#         return 5
+#     elif grade >= 80:
+#         return 4
+#     elif grade >= 70:
+#         return 3
+#     elif grade >= 60:
+#         return 2
+#     else:
+#         return 1
+#
+# # основная программа
+# grade = int(input('Введите вашу отметку по 100-балльной системе: '))
+# print(convert_grade(grade))
+
+# возвращает длину гипотенузы прямоугольного треугольника по известным значениям его катетов
+# def compute_hypotenuse(a, b):
+#     c = (a ** 2 + b ** 2) ** 0.5
+#     return c
+# x = int(input())
+# y = int(input())
+#
+# hypotenuse = compute_hypotenuse(x, y)
+# print(hypotenuse)
+
+# Напишите функцию sum_digits(n), принимающую в качестве аргумента натуральное число и возвращающую сумму его цифр.
+#
+# Решение. Функция sum_digits(n) может иметь вид:
+#
+# def sum_digits(n):
+#     result = 0
+#     while n > 0:
+#         result += n % 10
+#         n //= 10
+#     return result
+# Основная программа имеет вид:
+#
+# n = int(input())
+# print(sum_digits(n))      # вычисляем и выводим сумму цифр считанного числа
+
+# ------------
+# Для подсчета среднего значения элементов списка нужно вычислить сумму всех элементов и их количество
+# def compute_average(numbers):
+#     return sum(numbers) / len(numbers)
+# numbers = [1, 3, 5, 1, 6, 8, 10, 2]
+# print(compute_average(numbers))      # вычисляем и выводим среднее значение элементов списка
+#
+# def do_something(numbers):
+#     result = 1
+#     for i in numbers:
+#         result *= i
+#     return result
+#
+# print(do_something([2, 2, 2, 2]))
+
+
+# def get_sum(x, y, z):
+#     return x + y + z
+#     print('Сумма равна', x + y + z)
+#
+#
+# print(get_sum(1, 2, 3))
+
+# Конвертер километров
+# def convert_to_miles(km):
+#     return km * 0.6214
+#
+# num = int(input())
+# print(convert_to_miles(num))
+
+
+# Количество дней
+# def get_days(month):
+#     m = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+#     return m[num-1]
+# num = int(input())
+# print(get_days(num))
+
+# def get_days(month):
+#     if month in (1, 3, 5, 7, 8, 10, 12): return 31
+#     if month in (4, 6, 9, 11): return 30
+#     if month == 2: return 28
+# num = int(input())
+# print(get_days(num))
+
+
+# Делители 1
+# def get_factors(num):
+#     return [n for n in range(1, num + 1) if num % n == 0]
+#     # sp = []
+#     # for i in range(1, n + 1):
+#     #     if n % i == 0:
+#     #         sp.append(i)
+#     # return sp
+#
+# n = int(input())
+#
+# print(get_factors(n))
+
+
+# Делители 2
+# def get_factors(num):
+#     return [n for n in range(1, num + 1) if num % n == 0]
+#
+# def number_of_factors(num):
+#     return len(get_factors(num))
+#
+# n = int(input())
+# print(number_of_factors(n))
+
+
+# Найти всех
+# def find_all(target, symbol):
+#     # return [x for x in range(len(target)) if target[x] == symbol]  # в 1 строку
+#     a = []
+#     for x in range(len(target)):
+#         if target[x] == symbol:
+#             a.append(x)
+#     return a
+#
+# s = input()
+# char = input()
+#
+# print(find_all(s, char))
+
+
+# Merge lists 1
+# def merge(list1, list2):
+#     return sorted(list1 + list2)
+#
+#
+# numbers1 = [int(c) for c in input().split()]
+# numbers2 = [int(c) for c in input().split()]
+#
+# print(merge(numbers1, numbers2))
+
+
+# Merge lists 2
+
+# def quick_merge(list1, list2):
+#     result = []
+#     p1 = 0  # указатель на первый элемент списка list1
+#     p2 = 0  # указатель на первый элемент списка list2
+#     while p1 < len(list1) and p2 < len(list2):  # пока не закончился хотя бы один список
+#         if list1[p1] <= list2[p2]:
+#             result.append(list1[p1])
+#             p1 += 1
+#         else:
+#             result.append(list2[p2])
+#             p2 += 1
+#     if p1 < len(list1):  # прицепление остатка
+#         result += list1[p1:]
+#     if p2 < len(list2):
+#         result += list2[p2:]
+#     return result
+
+# n=int(input())
+# def quick_merge(n):
+#     return sorted([int(i) for i in range(n) for i in input().split()])
+# print(*quick_merge(n))
+
