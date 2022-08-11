@@ -2606,3 +2606,167 @@
 #     return sorted([int(i) for i in range(n) for i in input().split()])
 # print(*quick_merge(n))
 
+# 13.5 Функции с возвратом значения. Часть 2
+# Возвращение булевых значений
+# если написать булеву функцию is_even(), которая принимает число в качестве аргумента
+# и возвращает True, если оно четное, и False если нечетное.
+# def is_even(number):
+#     if number%2 == 0:
+#         return True
+#     else:
+#         return False
+#
+# number = int(input())
+# if is_even(number):
+#     print('Это число четное. ')
+# else:
+#     print('Это число нечетное.')
+
+# Использование булевых функций для валидации входных данных
+# def is_valid(model):
+#     if model == 100 or model == 200 or model == 300:
+#         return True
+#     else:
+#         return False
+#
+#
+# m = int(input())
+#
+# while not is_valid(m):
+#     print('Допустимыми номерами моделей являются 100, 200 и 300.')
+#     m = int(input())
+
+# Is Valid Triangle?
+
+# def is_valid_triangle(side1, side2, side3):
+#     if side1 + side2 > side3 and side1 + side3 > side2 and side2 + side3 > side1:
+#         return True
+#     else:
+#         return False
+#
+# a, b, c = int(input()), int(input()), int(input())
+#
+# print(is_valid_triangle(a, b, c))
+#
+
+# Is a Number Prime? 🌶️
+# def is_prime(num):
+#     return len([i for i in range(1, num+1) if num % i == 0]) == 2
+#
+# n = int(input())
+# print(is_prime(n))
+
+# Next Prime 🌶️🌶️
+# def get_next_prime(num):
+#     num += 1
+#     for i in range(2, num):
+#         if num % i == 0:
+#             return get_next_prime(num)
+#     return num
+#
+# # считываем данные
+# n = int(input())
+#
+# # вызываем функцию
+# print(get_next_prime(n))
+
+
+# Good password 🌶️
+# def is_password_good(password):
+##     upp = [i for i in password if i.isupper()]
+##     low = [i for i in password if i.islower()]
+##     dig = [i for i in password if i.isdigit()]
+##     return all([len(password) >= 8, upp, low, dig])
+#
+#     result = True
+#
+#         if len(password) < 8:
+#             result = False
+#         if password.lower() == password:
+#             result = False
+#         if password.upper() == password:
+#             result = False
+#         if password.isalpha():
+#             result = False
+#
+#         return result
+#
+# txt = input()
+# print(is_password_good(txt))
+
+
+# Ровно в одном
+# def is_one_away(word1, word2):
+#     if len(word1) != len(word2):
+#         return False
+#     count = 0
+#     for i in range(len(word1)):
+#         if word1[i] != word2[i]:
+#             count += 1
+#     if count == 1:
+#         return True
+#     else:
+#         return False
+# txt1 = input()
+# txt2 = input()
+# print(is_one_away(txt1, txt2))
+
+
+# Палиндром 🌶️
+# объявление функции
+# def is_palindrome(text):
+#     text = [i.lower() for i in text if i not in (',.!?- ')]
+#     return text == text[::-1]
+#
+# txt = input()
+# print(is_palindrome(txt))
+
+# BEEGEEK
+# def is_prime(num):
+#     return len([i for i in range(1, num+1) if num % i == 0]) == 2
+#
+# def is_palindrom(num):
+#     num = str(num)
+#     return(num == num[::-1])
+#
+# def is_even(num):
+#     return(not num % 2)
+#
+# def is_valid_password(password):
+#     try:
+#         a, b, c = map(int, password.split(':'))
+#         return is_palindrom(a) and is_prime(b) and is_even(c)
+#     except: return (False)
+#
+#
+#
+#
+# psw = input()
+# print(is_valid_password(psw))
+
+# Правильная скобочная последовательность 🌶️
+# def is_correct_bracket(text):
+#     while '()' in text:
+#         text = text.replace('()', '')
+#     return not text
+#
+# # считываем данные
+# txt = input()
+#
+# # вызываем функцию
+# print(is_correct_bracket(txt))
+
+
+# Змеиный регистр
+# def convert_to_python_case(text):
+#     zm = ''
+#     for i in text:
+#         if i.isupper():
+#             zm += '_'
+#         zm += i.lower()
+#     return zm[1:]
+#
+# txt = input()
+# print(convert_to_python_case(txt))
+
+# 13.6 Функции с возвратом значения. Часть 3
