@@ -441,5 +441,302 @@
 #     k += 1
 # print(sp)
 
-
+# ///////////////////////////////////////////////////////////
 # 4.4 Матрицы. Часть 1
+##матрицу можно создать с помощью генератора:
+# [[input() for _ in range(m)] for _ in range(n)]
+
+
+# matrix  = [[2, -5, -11, 0],
+#            [-9, 4, 6, 13],
+#            [4, 7, 12, -2]]
+#
+# print(matrix[1][2])  # вывод элемента на позиции (2, 3)  -->6
+
+# Перебор элементов матрицы
+
+# перебирая по строкам:
+# rows, cols = 3, 4           # rows - количество строк, cols - количество столбцов
+# matrix  = [[2, 3, 1, 0],
+#            [9, 4, 6, 8],
+#            [4, 7, 2, 7]]
+# for r in range(rows):
+#     for c in range(cols):
+#         print(matrix[r][c], end=' ')
+#     print()
+
+# перебирая по столбцам
+# rows, cols = 3, 4           # rows - количество строк, cols - количество столбцов
+# matrix  = [[2, 3, 1, 0],
+#            [9, 4, 6, 8],
+#            [4, 7, 2, 7]]
+# for c in range(cols):
+#     for r in range(rows):
+#         print(matrix[r][c], end=' ')
+#     print()
+
+# Функции ljust() и rjust()
+
+# Строковый метод ljust() выравнивает текст по ширине, добавляя пробелы в конец текста.
+# print('a'.ljust(3))
+# print('ab'.ljust(3))
+# print('abc'.ljust(3))
+
+# Строковый метод ljust() использует вместо пробела другой символ, если передать ему второй аргумент,
+# необязательный.
+# print('a'.ljust(5, '*'))
+# print('ab'.ljust(5, '$'))
+# print('abc'.ljust(5, '#'))
+
+
+# Строковый метод rjust() выравнивает текст по ширине, добавляя пробелы в начало текста.
+# print('a'.rjust(3))
+# print('ab'.rjust(3))
+# print('abc'.rjust(3))
+
+# Строковый метод rjust() использует вместо пробела другой символ,
+# если передать ему второй аргумент, необязательный.
+# print('a'.rjust(5, '*'))
+# print('ab'.rjust(5, '$'))
+# print('abc'.rjust(5, '#'))
+
+
+# Применив метод ljust() для выравнивания столбцов при выводе таблицы мы получим
+# rows, cols = 3, 4                # rows - количество строк, cols - количество столбцов
+# matrix  = [[277, -930, 11, 0],
+#            [9, 43, 6, 87],
+#            [4456, 8, 290, 7]]
+# for r in range(rows):
+#     for c in range(cols):
+#         print(str(matrix[r][c]).ljust(8), end='')
+#     print()
+
+# Элементы с равными индексами i == j находятся на главной диагонали. Такие элементы обозначаются matrix[i][i].
+# Элементы с индексами i и j, связанными соотношением i + j + 1 = n (или j = n - i - 1), где n — размерность матрицы,
+# находятся на побочной диагонали.
+
+# n = 8
+# matrix = [[0]*n for _ in range(n)]    # создаем квадратную матрицу размером 8×8
+# for i in range(n):             # заполняем главную диагональ единицами, а побочную двойками
+#     matrix[i][i] = 1
+#     matrix[i][n-i-1] = 2
+# for r in range(n):             # выводим матрицу
+#     for c in range(n):
+#         print(matrix[r][c], end=' ')
+#     print()
+
+# Индексы i и j элементов на главной диагонали связаны соотношением i = j. Индексы i и jэлементов на
+# побочной диагонали связанны соотношением i + j + 1 = n (или  j = n - i - 1), где n — размерность матрицы
+
+
+## Используйте функцию print_matrix() для вывода квадратной матрицы размерности n:
+# def print_matrix(matrix, n, width=1):
+#     for r in range(n):
+#         for c in range(n):
+#             print(str(matrix[r][c]).ljust(width), end=' ')
+#         print()
+#
+## Для считывания матрицы из n строк, заполненной числами, удобно использовать следующий код:
+# n = int(input())
+# matrix = []
+# for i in range(n):
+#     temp = [int(num) for num in input().split()]
+#     matrix.append(temp)
+
+
+# n = 3
+# a = [[1, 2, 3],             #->  9 8 7
+#      [4, 5, 6],             #->  6 5 4
+#      [7, 8, 9]]             #->  3 2 1
+#
+# for i in range(n):
+#     for j in range(n):
+#         print(a[n - i - 1][n - j - 1], end=' ')
+#     print()
+
+
+# считаем максимальное значение главной диагонали  и минимальной  значение побочной диагонали
+# n = 5
+# a = [[19, 21, 33, 78, 99],
+#      [41, 53, 66, 98, 76],
+#      [79, 80, 90, 60, 20],
+#      [33, 11, 45, 67, 90],
+#      [45, 67, 12, 98, 23]]
+#
+# maximum = -1
+# minimum = 100
+#
+# for i in range(n):
+#     if a[i][i] > maximum:
+#         maximum = a[i][i]
+#     if a[i][n - i - 1] < minimum:
+#         minimum = a[i][n - i - 1]
+# print(minimum + maximum)   #-->101
+
+# ----------------------------------
+# создания матрицы
+# ----------------------------------
+
+# N = int(input())
+# M = int(input())
+# matrix = [[0] * M for i in range(N)]
+#
+# # Заполнение матрицы произвольными значениями
+# for i in range(N):
+#     for j in range(M):
+#         matrix[i][j] = input()
+#
+# # вывести матрицу на экран построчно
+# for i in range(len(matrix)):  # len(A) - возвращает количество строк в матрице А
+#     for j in range(len(matrix[i])):  # len(A[i]) - возвращает количество элементов в строке i
+#         print(matrix[i][j], end=' ')
+#     print()
+
+# ----------------------------------
+# ----------------------------------
+
+# Вывести матрицу 1
+# n, m = int(input()), int(input())
+# matrix = [[0] * m for i in range(n)]
+#
+# # Заполнение матрицы
+# for i in range(n):
+#     for j in range(m):
+#         matrix[i][j] = input()
+#
+# # вывести матрицу на экран построчно
+# for i in range(len(matrix)):  # возвращает количество строк в матрице
+#     for j in range(len(matrix[i])):  # возвращает количество элементов в строке i
+#         print(matrix[i][j], end=' ')
+#     print()
+
+# # ------------------------------------
+# n, m = int(input()), int(input())
+# [print(*[input() for i in range(m)]) for i in range(n)]
+# # -------------------------------------
+# # -------------------------------------
+# def input_matrix(rows, cols):
+#     matrix = [[input() for _ in range(cols)] for _ in range(rows)]
+#     return matrix
+#
+# def print_matrix(matrix):
+#     for r in range(len(matrix)):
+#         print(*matrix[r])
+#     return None
+#
+# n, m = int(input()), int(input())
+# print_matrix(input_matrix(n, m))
+# # -------------------------------------
+# # -------------------------------------
+# Вывести матрицу 2
+# rows, cols = int(input()), int(input())  # rows - количество строк, cols - количество столбцов
+# matrix = [[0] * cols for i in range(rows)]
+#
+# for i in range(rows):
+#     for j in range(cols):
+#         matrix[i][j] = input()
+#
+# for i in range(rows):
+#     for j in range(cols):
+#         print(matrix[i][j], end=' ')
+#     print()
+# print()
+#
+# for j in range(cols):
+#     for i in range(rows):
+#         print(matrix[i][j], end=' ')
+#     print()
+# -----------------------
+# def print_matrix(matrix, rows, cols, width=1):
+#     for i in range(rows):
+#         for j in range(cols):
+#             print(matrix[i][j].ljust(width), end=' ')
+#         print()
+#
+#
+# def print_transposed_matrix(matrix, rows, cols, width=1):
+#     for j in range(cols):
+#         for i in range(rows):
+#             print(matrix[i][j].ljust(width), end=' ')
+#         print()
+#
+#
+# n, m = int(input()), int(input())
+# matrix = [[input() for j in range(m)] for i in range(n)]
+# print_matrix(matrix, n, m)
+# print()
+# print_transposed_matrix(matrix, n, m)
+
+##След матрицы
+# n = int(input())
+# maximum = 0
+# matrix = [list(map(int, input().split())) for __ in range(n)]
+# for i in range(n):
+#     maximum += matrix[i][i]
+# print(maximum)
+
+
+# res = 0
+# for i in range(int(input())):
+#     res += int(input().split()[i])
+# print(res)
+
+# Больше среднего
+# n = int(input())
+# counter = 0
+# matrix = [list(map(int, input().split())) for _ in range(n)]
+# for i in matrix:
+#     sr = (sum(list(map(int, i)))) / len(i)
+#     for j in i:
+#         if int(j) > sr:
+#             counter += 1
+#     print(counter)
+#     counter = 0
+
+
+
+# Максимальный в области 1
+# n = int(input())
+# maximum = []
+# matrix = [list(map(int, input().split())) for __ in range(n)]
+# for i in range(n):
+#     for j in range(n):
+#         if i >= j:
+#             maximum.append(matrix[i][j])
+# print(max(maximum))
+
+
+# Максимальный в области 2 🌶️
+# n = int(input())
+# maximum = []
+# matrix = [list(map(int, input().split())) for __ in range(n)]
+# for i in range(n):
+#     for j in range(n):
+#         if (i >= j and i <= n - 1 -j) or (i <= j and i >= n - 1 -j) or (i == j) or (i + j + 1 == n):
+#             maximum.append(matrix[i][j])
+# print(max(maximum))
+
+# Суммы четвертей
+# n = int(input())
+# up = []
+# left = []
+# down = []
+# right = []
+# matrix = [list(map(int, input().split())) for __ in range(n)]
+# for i in range(n):
+#     for j in range(n):
+#         if (i < j and i < n - 1 -j):
+#             up.append(matrix[i][j])
+#         elif (i > j and i < n - 1 -j):
+#             left.append(matrix[i][j])
+#         elif (i > j and i > n - 1 -j):
+#             down.append(matrix[i][j])
+#         elif (i < j and i > n - 1 -j):
+#             right.append(matrix[i][j])
+# print(f'Верхняя четверть: {sum(up)}')
+# print(f'Правая четверть: {sum(right)}')
+# print(f'Нижняя четверть: {sum(down)}')
+# print(f'Левая четверть: {sum(left)}')
+
+
+
