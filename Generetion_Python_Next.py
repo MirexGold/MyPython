@@ -237,7 +237,6 @@
 # print(maximum)
 
 
-
 # list1 = [[1, 7, 8], [9, 7, 102], [102, 106, 105], [100, 99, 98, 103], [1, 2, 3]]
 # for i in list1:
 #     i.reverse()
@@ -308,4 +307,139 @@
 # print(total)
 
 
+# n = 3
+# list1 = []
+# for _ in range(n):
+#     row = input().split()
+#     list1.extend(row)
+# print(list1)   #-> ['9', '7', '6', '2', '1', '3', '4', '45', '67']
 
+
+# my_list = [[12, 221, 3], [41, 5, 633], [71, 8, 99]]
+#
+# maximum = my_list[0][0]
+# minimum = my_list[0][0]
+#
+# for row in my_list:
+#     if max(row) > maximum:
+#         maximum = max(row)
+#     if min(row) < minimum:
+#         minimum = min(row)
+#
+# print(maximum + minimum)
+
+
+# Список по образцу 1
+# n = int(input())
+# matrix = [[i for i in range(1, n + 1)] for j in range(1, n + 1)]
+# print(*matrix, sep='\n')
+
+# n = int(input())
+# matrix = []
+# for i in range(1, n + 1):
+#    matrix.append(i)
+# for j in range(1, n + 1):
+#    print(matrix)
+
+# Список по образцу 2
+# n = int(input())
+# matrix = [[j for j in range(1, i + 1)] for i in range(1, n + 1)]
+# print(*matrix, sep='\n')
+
+# n = int(input())
+# matrix = []
+# for i in range(1, n + 1):
+#     matrix.append(i)
+#     print(matrix)
+
+# Треугольник Паскаля 1 🌶️
+# n = int(input())
+#
+# li = [1]
+# for i in range(n):
+#     for j in range(len(li) - 1):
+#         li[j] = li[j] + li[j + 1]
+#     li.insert(0, 1)
+#
+# print(li)
+#
+# from math import factorial
+# n = int(input())
+# b = []
+# for i in range(n+1):
+#     b.append (int((factorial(n))/(factorial(i)*factorial(n-i))))
+# print(b)
+
+
+# a = [1]
+# for i in range(int(input())):
+#     a = [x + y for x, y in zip([*a, 0], [0, *a])]
+# print(a)
+
+# Треугольник Паскаля 2
+# n = int(input())
+# P=[]
+# for i in range(0,n):
+#     row=[1]*(i+1)
+#     for j in range(i+1):
+#         if j!=0 and j!=i:
+#             row[j]=P[i-1][j-1]+P[i-1][j]
+#     P.append(row)
+#
+# for r in P:
+#     print(*r)
+
+# # -------------------ФУНКЦИЯ-------------------
+# def pascal(n):
+#     triangle = [[1]]
+#
+#     for i in range(n - 1):
+#         row = [1]
+#         for j in range(1, len(triangle[i])):
+#             row += [sum(triangle[i][j - 1: j + 1])]
+#         row += [1]
+#         triangle.append(row.copy())
+#
+#     return triangle
+#
+#
+# # --------------------ВЫЗОВ--------------------
+# [print(*row) for row in pascal(int(input()))]
+
+
+# Упаковка дубликатов 🌶️
+# res = []
+# for el in input().split():
+#     if res and el in res[-1]:
+#         res[-1].append(el)
+#     else:
+#         res.append([el])
+# print(res)
+#
+# #Разбиение на чанки 🌶️
+# def chunked(st, n):
+#     st = st.split()
+#     a = [[] for _ in range(0, len(st), n)]
+#     for i in range(len(a)):
+#         a[i].extend(st[:n])
+#         st = st[n:]
+#     return a
+#
+# string = input()
+# num = int(input())
+#
+# print(chunked(string, num))
+
+# Подсписки списка 🌶️🌶️
+# n = input().split()
+# sp = [[]]
+# k = 1
+# while k != len(n) + 1:
+#     for j in range(len(n)):
+#         if len(n[j:j + k]) == k:
+#             sp.append(n[j:j + k])
+#     k += 1
+# print(sp)
+
+
+# 4.4 Матрицы. Часть 1
