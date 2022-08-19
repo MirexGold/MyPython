@@ -997,7 +997,6 @@
 #     print()
 
 
-
 # Заполнение змейкой
 # s=input().split()
 # n=int(s[0])
@@ -1119,4 +1118,240 @@
 #     print()
 
 
-4.7 Операции над матрицами в математике
+# 4.7 Операции над матрицами в математике
+# Сложение матриц
+# n, m = [int(i) for i in input().split()]
+# matrix1 = [[int(i) for i in input().split()] for _ in range(n)]
+# _ = input()
+# matrix2 = [[int(i) for i in input().split()] for _ in range(n)]
+# matrix3 = [[0] * m for _ in range(n)]
+#
+# for i in range(n):
+#     for j in range(m):
+#         matrix3[i][j] += matrix1[i][j] + matrix2[i][j]
+#
+# for row in matrix3:
+#     print(*row)
+
+# n, m = [int(x) for x in input().split()]
+# A = [[int(x) for x in input().split()] for _ in range(n)]
+# input()
+# B = [[int(x) for x in input().split()] for _ in range(n)]
+# C = [[A[i][j] + B[i][j] for j in range(m)] for i in range(n)]
+# [print(*i) for i in C]
+
+# Умножение матриц 🌶️
+# n, m = [int(x) for x in input().split()]
+# matrix1 = [[int(x) for x in input().split()] for _ in range(n)]
+# input()
+# m, k = [int(x) for x in input().split()]
+# matrix2 = [[int(x) for x in input().split()] for _ in range(m)]
+# matrix3 = [[0] * k for i in range(n)]
+# for i in range(n):
+#     for j in range(k):
+#         for q in range(m):
+#             matrix3[i][j] += matrix1[i][q] * matrix2[q][j]
+# [print(*i) for i in matrix3]
+
+
+# Возведение в степень каждого элемента матрицы
+# n = int(input())
+# a = [list(map(int, list(input().split()))) for _ in range(n)]
+# m = int(input())
+#
+# def multi(a, b):
+#     n = len(a)
+#     b = list(zip(*b))
+#     return [[sum([a[i][r] * b[j][r] for r in range(n)]) for j in range(n)] for i in range(n)]
+#
+# def expo(a, m):
+#     c = list(a)
+#     for _ in range(m-1):
+#         c = multi(c, a)
+#     return c
+#
+# result = expo(a, m)
+#
+# [print(*row) for row in result]
+
+# Каждый n-ый элемент
+# s = input().split()
+# n = int(input())
+# res = []
+# for i in range(n):
+#     res.append(s[i::n])
+# print(res)
+
+# Максимальный в области 2
+# n = int(input())
+# arr = []
+# maximum = 0
+# for i in range(n):
+#     arr.append([int(elem) for elem in input().split()])
+# for i in range(n):
+#     for j in range(n):
+#         if i >= n - 1 - j and arr[i][j] > maximum:
+#             maximum = arr[i][j]
+# print(maximum)
+
+#  берем размер матрицы
+# n = int(input())
+# #  выпиливаем матрицу из входных данных
+# matrix = [[int(x) for x in input().split()] for i in range(n)]
+# #  вычисляем больший (элемент) из больших (элементов) в бегущем срезе
+# answer = max(max(matrix[i][n-i-1:]) for i in range(n))
+# #  закидываем результат
+# print(answer)
+
+# Транспонирование матрицы
+# import numpy as np
+# n = int(input())
+# arr = []
+# for i in range(n):
+#     arr.append([int(elem) for elem in input().split()])
+# a_t = np.matrix(arr).transpose().tolist()
+# for i in range(n):
+#     print(*a_t[i])
+
+# n = int(input())
+# matrix = [input().split() for _ in range(n)]
+#
+# for i in range(n):
+#     for j in range(i, n):
+#         matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+#
+# for row in matrix:
+#     print(*row)
+
+
+# Снежинка
+# n = int(input())
+# arr = []
+#
+# for i in range(n):
+#     arr.append([])
+#     for j in range(n):
+#         if i == n//2 or j == n//2 or i == j or i == n-j-1:
+#             arr[i].append('*')
+#         else:
+#             arr[i].append('.')
+#
+# for i in range(n):
+#     print(*arr[i])
+
+
+# Симметричная матрица
+# def is_symmetric(arr, n):
+#     for i in range(n):
+#         for j in range(n):
+#             if arr[i][j] != arr[n-j-1][n-i-1]:
+#                 return 'NO'
+#     return 'YES'
+#
+# n = int(input())
+# arr = []
+#
+# for i in range(n):
+#     arr.append([int(elem) for elem in input().split()])
+#
+# print(is_symmetric(arr, n))
+
+# n = int(input())
+# arr = [list(map(int, input().split())) for _ in range(n)]
+# res = 'YES'
+# for i in range(n - 1):
+#     for j in range(n - i - 1):
+#         if arr[i][j] != arr[n - j - 1][n - i - 1]:
+#             res = 'NO'
+#             break
+#     if res == 'NO':
+#         break
+# print(res)
+
+
+# Латинский квадрат 🌶️
+# import numpy as np
+#
+# def is_every_digit_in_arr(arr, n):
+#     for i in range(1, n + 1):
+#         if i not in arr:
+#             return False
+#     return True
+#
+# def is_latin_square(arr, n):
+#     result = []
+#     a_t = np.matrix(arr).transpose().tolist()
+#     for i in range(n):
+#         arr[i] = sorted(arr[i])
+#         if (result != [] and result != arr[i]) or not is_every_digit_in_arr(arr[i], n):
+#             return 'NO'
+#         result = arr[i]
+#     result = []
+#     for i in range(n):
+#         a_t[i] = sorted(a_t[i])
+#         if (result != [] and result != a_t[i]) or not is_every_digit_in_arr(arr[i], n):
+#             return 'NO'
+#         result = a_t[i]
+#
+#     return 'YES'
+#
+# n = int(input())
+# arr = []
+#
+# for i in range(n):
+#     arr.append([int(elem) for elem in input().split()])
+#
+# print(is_latin_square(arr, n))
+
+# n = int(input())
+# matrix = [[int(i) for i in input().split()] for _ in range(n)]
+# numbers = list(range(1, n + 1))
+# result = 'YES'
+#
+# for i in range(n):
+#     row_nums = sorted(matrix[i])
+#     col_nums = sorted([matrix[j][i] for j in range(n)])
+#     if row_nums != numbers or col_nums != numbers:
+#         result = 'NO'
+#         break
+#
+# print(result)
+
+# # Ходы ферзя
+# slovarx = {'a':0, 'b':1, 'c':2, 'd':3, 'e':4, 'f':5, 'g':6, 'h':7}
+# slovary = {'8':0, '7':1, '6':2, '5':3, '4':4, '3':5, '2':6, '1':7, '0':8}
+#
+# position = input()
+# arr = []
+#
+# for i in range(8):
+#     arr.append([])
+#     for j in range(8):
+#         if j == slovarx[position[0]] and i == slovary[position[1]]:
+#             arr[i].append('Q')
+#         elif j == slovarx[position[0]] or i == slovary[position[1]]:
+#             arr[i].append('*')
+#         elif abs(slovarx[position[0]] - j) == abs(slovary[position[1]] - i):
+#             arr[i].append('*')
+#         else:
+#             arr[i].append('.')
+#
+# for i in range(8):
+#     print(*arr[i])
+#
+# # Диагонали параллельные главной
+# n = int(input())
+# arr = []
+#
+# for i in range(n):
+#     arr.append([])
+#     for j in range(n):
+#         arr[i].append(abs(i-j))
+#
+# for i in range(n):
+#     print(*arr[i])
+
+# //////////////////////////////  6.1 Введение в кортежи   //////////////////////////////
+
+
+
