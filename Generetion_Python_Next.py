@@ -1352,6 +1352,74 @@
 #     print(*arr[i])
 
 # //////////////////////////////  6.1 Введение в кортежи   //////////////////////////////
+# Кортежи поддерживают:
+# 
+# доступ к элементу по индексу (только для получения значений элементов);
+# методы, в частности index(), count();
+# встроенные функции, в частности len(), sum(), min() и max();
+# срезы;
+# оператор принадлежности in;
+# операторы конкатенации (+) и повторения (*).
+
+# 6 elementov
+# primes = (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71)
+# print(primes[:6])
+
+# кроме первых двух.
+# countries = ('Russia', 'Argentina', 'Slovakia', 'Canada', 'Slovenia', 'Italy', 'Spain', 'Ukraine', 'Chile', 'Cameroon')
+# print(countries[2:])
 
 
+# # кроме последних трех.
+# countries = ('Russia', 'Argentina', 'Slovakia', 'Canada', 'Slovenia', 'Italy', 'Spain', 'Ukraine', 'Chile', 'Cameroon')
+# print(countries[:-3])
 
+# кроме двух последних и трех первых.
+# countries = ('Russia', 'Argentina', 'Slovakia', 'Canada', 'Slovenia', 'Italy', 'Spain', 'Ukraine', 'Chile', 'Cameroon')
+# print(countries[3:-2])
+
+# # количество элементов кортежа
+# countries = ('Romania', 'Poland', 'Estonia', 'Bulgaria', 'Slovakia', 'Slovenia', 'Hungary')
+# number = len(countries)
+# print(number)
+
+# # сумму минимального и максимального элементов кортежа
+# numbers = (12.5, 3.1415, 2.718, 9.8, 1.414, 1.1618, 1.324)
+# print(min(numbers)+max(numbers))
+
+# # переменная index содержала индекс элемента «Slovenia»
+# countries = ('Russia', 'Argentina', 'Spain', 'Slovakia', 'Canada', 'Slovenia', 'Italy')
+# index = countries.index('Slovenia')
+# print(index)
+
+
+# # number, содержала количество вхождений «Spain»
+# countries = ('Russia', 'Argentina', 'Spain', 'Slovakia', 'Canada', 'Slovenia', 'Italy', 'Spain', 'Ukraine', 'Chile', 'Spain', 'Cameroon')
+# number = countries.count('Spain')
+# print(number)
+
+
+# # чтобы он вывел кортеж:  (1, 2, 3, 1, 2, 3, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 8, 9, 10, 11, 12, 13)
+# numbers1 = (1, 2, 3)
+# numbers2 = (6,)
+# numbers3 = (7, 8, 9, 10, 11, 12, 13)
+#
+# print(numbers1 * 2 + numbers2 * 9 + numbers3)
+#
+# city_name = input()
+# city_year = int(input())
+# city = (city_name, city_year)
+# print(city)
+
+
+# получить список, содержащий только непустые кортежи
+# tuples = [(), (), ('',), ('a', 'b'), (), ('a', 'b', 'c'), (1,), (), (), ('d',), ('', ''), ()]
+# # non_empty_tuples = [tuples[2],tuples[3],tuples[5],tuples[6],tuples[9],tuples[10]]
+# non_empty_tuples = [i for i in tuples if i]
+# print(non_empty_tuples)
+
+# # Дополните приведенный код так, чтобы переменная new_tuples, содержала список кортежей на основе
+# # списка tuples с последним элементом каждого кортежа, замененным на численное значение 100.
+# tuples = [(10, 20, 40), (40, 50, 60), (70, 80, 90), (10, 90), (1, 2, 3, 4), (5, 6, 10, 2, 1, 77)]
+# new_tuples = [i[:-1] + (100,) for i in tuples]
+# print(new_tuples)
