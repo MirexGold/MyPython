@@ -694,7 +694,6 @@
 #     counter = 0
 
 
-
 # Максимальный в области 1
 # n = int(input())
 # maximum = []
@@ -739,4 +738,385 @@
 # print(f'Левая четверть: {sum(left)}')
 
 
+# Таблица умножения
+# n, m = int(input()), int(input())
+# for i in range(n):
+#     mult = []
+#     for j in range(m):
+#         mult.append(str(i*j).ljust(3))
+#     print(*mult)
+#
+# n, m = int(input()), int(input())
+# mult = [[i * j for j in range(m)] for i in range(n)]
+# for i in range(n):
+#     for j in range(m):
+#         print(str(mult[i][j]).ljust(3), end='')
+#     print()
 
+
+# Максимум в таблице
+# n, m = int(input()), int(input())
+# row, col = 0, 0
+# matrix = [[int(i) for i in input().split()] for _ in range(n)]
+# for i in range(n):
+#     for j in range(m):
+#         if matrix[i][j] > matrix[row][col]:
+#             row, col = i, j
+# print(row, col)
+
+
+# Обмен столбцов
+# n, m = int(input()), int(input())
+# matrix = [[int(i) for i in input().split()] for _ in range(n)]
+# a, b = [int(i) for i in input().split()]
+#
+# for i in range(n):
+#     matrix[i][a], matrix[i][b] = matrix[i][b], matrix[i][a]
+# for i in matrix:
+#     print(*i)
+
+# Симметричная матрица
+# n = int(input())
+# flag = True
+# matrix = [list(map(int, input().split())) for __ in range(n)]
+# for i in range(n):
+#     for j in range(n):
+#         if matrix[i][j] != matrix[j][i]:
+#             flag = False
+#     if flag == False:
+#         print('NO')
+#         break
+# else:
+#     print('YES')
+
+
+# Обмен диагоналей
+# n = int(input())
+# matrix = [[int(i) for i in input().split()] for _ in range(n)]
+#
+# for i in range(n):
+#     matrix[i][i], matrix[n - i - 1][i] = matrix[n - i - 1][i], matrix[i][i]
+#
+# for row in matrix:
+#     print(*row)
+
+#
+# # Зеркальное отображение
+# n = int(input())
+# matrix = [input().split() for _ in range(n)]
+#
+# for i in range(n // 2):
+#     matrix[i], matrix[n - i - 1] = matrix[n - i - 1], matrix[i]
+# for row in matrix:
+#     print(*row)
+
+
+# n = int(input())
+# matrix = [[int(i) for i in input().split()] for _ in range(n)]
+# matrix.reverse()
+#
+# for row in matrix:
+#     print(*row)
+
+# # Поворот матрицы
+# n = int(input())
+# matrix = [[int(i) for i in input().split()] for _ in range(n)]
+#
+# for j in range(n):
+#     for i in range(n - 1, -1, -1):
+#         print(matrix[i][j], end=' ')
+#     print()
+
+
+# Ходы коня
+# col, row = input().strip()
+# coor_col = {'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, 'f': 5, 'g': 6, 'h': 7}
+# coor_row = {'1': 7, '2': 6, '3': 5, '4': 4, '5': 3, '6': 2, '7': 1, '8': 0}
+# arr = [["N" if [i, j] == [coor_row[row], coor_col[col]] else '.' for j in range(8)] for i in range(8)]
+# for i in range(8):
+#     for j in range(8):
+#         if (coor_row[row] - i) * (coor_col[col] - j) in [-2, 2]: arr[i][j] = "*"
+# for line in arr:
+#     print(*line, sep = ' ')
+#
+# x, y = input()
+# n = 8
+# board = [['.'] * n for _ in range(n)]
+# x = ord(x) - 97
+# y = n - int(y)
+# board[y][x] = 'N'
+#
+# for i in range(n):
+#     for j in range(n):
+#         if abs(y - i) * abs(x - j) == 2:
+#             board[i][j] = '*'
+#
+# for row in board:
+#     print(*row)
+
+
+# Магический квадрат 🌶️
+# n = int(input())
+# matrix = [[int(i) for i in input().split()] for j in range(n)]
+#
+# magic = sum(matrix[0])
+# flag = 'YES'
+# digits = [i for i in range(1, n ** 2 + 1)]
+#
+# for i in range(n):
+#     for j in range(n):
+#         if matrix[i][j] in digits:
+#             digits.remove(matrix[i][j])
+#     if i == n - 1 and j == n - 1 and digits != []:
+#         flag = 'NO'
+#
+# for i in range(n):
+#     if sum(matrix[i]) != magic:
+#         flag = 'NO'
+#         break
+#
+# for j in range(n):
+#     result = 0
+#     for i in range(n):
+#         result += matrix[i][j]
+#         if i == n - 1 and result != magic:
+#             flag = 'NO'
+#             break
+#
+# print(flag)
+
+# Шахматная доска
+# x, y = [int(i) for i in input().split()]
+# matrix = [['.'] * y for _ in range(x)]
+#
+# for i in range(x):
+#     if i == 0 or i % 2 == 0:
+#         for j in range(1, y, 2):
+#             matrix[i][j] = '*'
+#     else:
+#         for j in range(0, y, 2):
+#             matrix[i][j] = '*'
+#
+# for row in matrix:
+#     print(*row)
+
+# n, m = map(int, input().split())
+# for i in range(n):
+#     row = ['.' if (i + j) % 2 == 0 else '*' for j in range(m)]
+#     print(*row)
+
+# Побочная диагональ
+# n = int(input())
+# matrix = [[0] * n for _ in range(n)]
+# for i in range(n):
+#     matrix[i][n - 1 - i] = 1
+#     for j in range(n):
+#         if i > n - 1 - j:
+#             matrix[i][j] = 2
+#         print(matrix[i][j], end=" ")
+#     print()
+
+# def matrix(i, j, n):
+#     if i == n - j - 1:
+#         return 1
+#     elif i < n - j - 1:
+#         return 0
+#     else:
+#         return 2
+# n = int(input())
+# res = [[matrix(i, j, n) for j in range(n)] for i in range(n)]
+# for x in res:
+#     print(*x)
+
+
+# Заполнение 1
+# n, m = map(int, input().split())
+# matrix = []
+# counter = 1
+#
+# for i in range(n):
+#     matrix.append([])
+#     for j in range(m):
+#         matrix[i].append(counter)
+#         counter += 1
+#
+#         print(f'{matrix[i][j]}'.ljust(3), end='')
+#     print()
+
+# Заполнение 2
+# n, m = [int(i) for i in input().split()]
+# matrix = [[0] * m for _ in range(n)]
+#
+# for j in range(m):
+#     for i in range(n):
+#         matrix[i][j] = j * n + i + 1
+#
+# for i in range(n):
+#     for j in range(m):
+#         print(str(matrix[i][j]).ljust(3), end=' ')
+#     print()
+
+
+# Заполнение 3
+# n = int(input())
+# matr = [[0] * n for _ in range(n)]
+# for i in range(n):
+#     matr[i][i] = 1
+#     matr[i][n - 1 - i] = 1
+# for i in range(n):
+#     for j in range(n):
+#         print(str(matr[i][j]).ljust(3), end='')
+#     print()
+
+# Заполнение 4
+# n = int(input())
+# matrix = [[0] * n for _ in range(n)]
+#
+# for i in range(n):
+#     for j in range(n):
+#         if (i <= j and i + j + 1 <= n) or (i >= j and i + j + 1 >= n):
+#             matrix[i][j] = 1
+#
+# for i in range(n):
+#     for j in range(n):
+#         print(str(matrix[i][j]).ljust(3), end=' ')
+#     print()
+
+
+# Заполнение 5 🌶️
+# n, m = [int(i) for i in input().split()]
+# matrix = [[0] * m for _ in range(n)]
+#
+# for i in range(n):
+#     for j in range(m):
+#         matrix[i][j] = (i + j) % m + 1
+#
+# for i in range(n):
+#     for j in range(m):
+#         print(str(matrix[i][j]).ljust(3), end=' ')
+#     print()
+
+
+
+# Заполнение змейкой
+# s=input().split()
+# n=int(s[0])
+# m=int(s[1])
+# matrix=[[0 for i in range(m)] for _ in range(n)]
+# count =1
+# for i in range(n):
+#     for j in range(m):
+#         matrix[i][j] += count
+#         count+=1
+# for i in range(n):
+#     if i%2==0:
+#         print(*matrix[i])
+#     else:
+#         matrix[i].reverse()
+#         print(*matrix[i])
+
+
+# n, m = [int(i) for i in input().split()]
+# matrix = [[0] * m for _ in range(n)]
+#
+# for i in range(n):
+#     for j in range(m):
+#         matrix[i][j] = i * m + j + 1
+#     if i % 2:
+#         matrix[i].reverse()
+#
+# for i in range(n):
+#     for j in range(m):
+#         print(str(matrix[i][j]).ljust(3), end=' ')
+#     print()
+
+# Заполнение диагоналями 🌶️
+# n, m = [int(i) for i in input().split()]
+# mtx = [[0] * m for _ in range(n)]
+# sequence, k = 1, 0
+#
+# while sequence != n * m + 1:
+#     for i in range(n):
+#         for j in range(m):
+#             if i + j == k:
+#                 mtx[i][j] = sequence
+#                 sequence += 1
+#     k += 1
+#
+# for i in range(n):
+#     for j in range(m):
+#         print(str(mtx[i][j]).ljust(3), end='')
+#     print()
+
+
+# n, m = [int(i) for i in input().split()]
+#
+# matrix = [[1] * m for _ in range(n)]
+# row, col, diag = 0, 0, 0
+#
+# for i in range(1, n * m):
+#     col -= 1
+#     row += 1
+#     if col < 0 or row == n:
+#         diag += 1
+#         col = diag if diag < m else m - 1
+#         row = diag - col
+#
+#     matrix[row][col] += i
+#
+# [print(*i) for i in matrix]
+
+# # Принимаем параметры матрицы
+# n, m = map(int, input().split())
+# # Создаем скелет матрицы
+# matrix = [[0] * m for i in range(n)]
+# # Задаем отсчет с единицы
+# d = 1
+#
+# for k in range(1, n + m):               # Цикл перебирающий сумму индексов в диагонали
+#     for i in range(n):                  # Перебираем строки
+#         for j in range(m):              # Перебираем столбцы
+#             if i + j + 1 == k:          # Выявляем ячейки, относящиеся к искомой диагонали
+#                 matrix[i][j] = d        # Присваиваем обнаруженной ячейке порядковый номер
+#                 d += 1                  # Обновляем счетчик
+#
+# # Распечатываем полученную матрицу
+# for row in range(n):
+#     for col in range(m):
+#         print(str(matrix[row][col]).ljust(3), end=' ')
+#     print()
+
+
+# Заполнение спиралью 😈😈
+# n, m = map(int, input().split())
+# l = [[0] * m for _ in range(n)]
+# num = 1
+# k = 0                                 # уровень квадрата: 0 - внешний, 1 - вложенный и т.д.
+# product = n * m + 1                   # вынесено в переменную, т.к. n и m меняются в цикле
+#
+# while num < product:
+#     for j in range(k, m):             # верхняя сторона
+#         l[k][j] = num
+#         num += 1
+#     for i in range(k + 1, n):         # правая сторона
+#         l[i][j] = num
+#         num += 1
+#     if num == product:                # костыль для случаев с маленькими n, m
+#         break
+#     for j in range(m - 2, k - 1, -1): # нижняя сторона
+#         l[i][j] = num
+#         num += 1
+#     for i in range(n - 2, k, -1):     # левая сторона
+#         l[i][j] = num
+#         num += 1
+#     m -= 1                            # изменяю размер сторон для будущего квадрата
+#     n -= 1
+#     k += 1
+#
+# for row in l:
+#     for el in row:
+#         print(str(el).ljust(3), end='')
+#     print()
+
+
+4.7 Операции над матрицами в математике
