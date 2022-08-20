@@ -1423,3 +1423,34 @@
 # tuples = [(10, 20, 40), (40, 50, 60), (70, 80, 90), (10, 90), (1, 2, 3, 4), (5, 6, 10, 2, 1, 77)]
 # new_tuples = [i[:-1] + (100,) for i in tuples]
 # print(new_tuples)
+
+
+# # вывел список, содержащий средние арифметические значения чисел каждого вложенного кортежа
+# numbers = ((10, 10, 10, 12), (30, 45, 56, 45), (81, 80, 39, 32), (1, 2, 3, 4), (90, 10))
+# # tupl = []
+# # for i in range(len(numbers)):
+# #     tupl.append(sum(numbers[i])/len(numbers[i]))
+# # print(tupl)
+#
+# print([sum(i) / len(i) for i in numbers])
+
+# Вершина параболы
+# a, b, c = int(input()), int(input()), int(input()),
+# print([(- (b / (2 * a))), (((4 * a * c) - b**2)/ (4 * a))])
+
+
+# Конкурсный отбор
+# n = int(input())
+# sp = [input().split() for _ in range(n)]
+# for i in sp:
+#     print(*i)
+# print()
+# for i in sp:
+#     if i[-1] == '5' or i[-1] == '4':
+#         print(*i)
+# --
+# pup = [input() for _ in range(int(input()))]
+# print(*pup, sep='\n')
+# print()
+# [print(x) for x in pup if int(x[-1]) > 3]
+
