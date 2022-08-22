@@ -1454,3 +1454,72 @@
 # print()
 # [print(x) for x in pup if int(x[-1]) > 3]
 
+# colors = ('red', 'green', 'blue', 'cyan')
+# a, b, c, d = colors
+# print(a, d)
+
+
+# 8.3 Введение в множества в Python
+# numbers = {1.414, 12.5, 3.1415, 2.718, 9.8, 1.414, 1.1618, 1.324, 2.718, 1.324}
+# print(min(numbers)+max(numbers))
+
+#
+# numbers = {20, 6, 8, 18, 18, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 12, 8, 8, 10, 4, 2, 2, 2, 16, 20}
+# average = sum(numbers)/len(numbers)
+#
+# print(average)
+
+# Перебор элементов множества
+# numbers = {0, 1, 1, 2, 3, 3, 3, 5, 6, 7, 7}
+# for num in numbers:
+#     print(num)
+
+# можем использовать операцию распаковки множества.
+# numbers = {0, 1, 1, 2, 3, 3, 3, 5, 6, 7, 7}
+# print(*numbers, sep='\n')
+
+# # Если нужно гарантировать порядок вывода элементов (по возрастанию / убыванию)
+# numbers = {0, 1, 1, 2, 3, 3, 3, 5, 6, 7, 7}
+# sorted_numbers = sorted(numbers)
+# print(*sorted_numbers, sep='\n')
+
+# numbers = {0, 1, 1, 2, 3, 3, 3, 5, 6, 7, 7}
+# sortnumbers = sorted(numbers, reverse=True)
+# print(*sortnumbers, sep='\n')
+
+
+# сумму квадратов
+# numbers = {9089, -67, -32, 1, 78, 23, -65, 99, 9089, 34, -32, 0, -67, 1, 11, 111, 111, 1, 23}
+# summa = 0
+# for i in numbers:
+#     summa += i ** 2
+# print(summa)
+#
+# print(sum([i*i for i in numbers]))
+
+
+# элементы множества fruits, каждый на отдельной строке, отсортированные по убыванию
+# fruits = {'apple', 'banana', 'cherry', 'avocado', 'pineapple', 'apricot', 'banana', 'avocado', 'grapefruit'}
+# print(*sorted(fruits, reverse=True), sep='\n')
+
+# # Количество различных символов
+# print(len(set(input())))
+
+# Неповторимые цифры
+# s = list(input())
+# print('YES' if len(s) == len(set(s)) else 'NO')
+
+# верно ли, что в записи этих двух строк используются все 10 цифр?
+# a, b = input(), input()
+# print('YES' if len(set(a+b)) == 10 else 'NO')
+
+
+# # Одинаковые наборы
+# # a, b = input(), input()
+# print('YES' if set(input()) == set(input()) else 'NO')
+
+# # Верно ли, что для записи всех трех слов был использован один и тот же набор букв?
+# s = input().split()
+# print(('NO', 'YES')[set(s[0]) == set(s[1]) == set(s[2])])
+
+# 8.5 Методы множеств. Часть 1
