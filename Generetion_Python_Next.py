@@ -1565,3 +1565,248 @@
 #         print('NO')
 
 # 8.6 Методы множеств. Часть 2
+# Объединение множеств: метод union()
+# myset1 = {1, 2, 3, 4, 5}
+# myset2 = {3, 4, 6, 7, 8}
+# myset3 = myset1.union(myset2)
+# print(myset3)   #->{1, 2, 3, 4, 5, 6, 7, 8}
+
+# Для объединения двух множеств можно также использовать оператор |
+# myset1 = {1, 2, 3, 4, 5}
+# myset2 = {3, 4, 6, 7, 8}
+# myset3 = myset1 | myset2
+# print(myset3)
+
+# Пересечение множеств: метод intersection(), можно также использовать оператор &
+# myset1 = {1, 2, 3, 4, 5}
+# myset2 = {3, 4, 6, 7, 8}
+# myset3 = myset1.intersection(myset2)
+# print(myset3)  #--> {3, 4}
+
+# Разность множеств: метод difference(), можно также использовать оператор -
+# myset1 = {1, 2, 3, 4, 5}
+# myset2 = {3, 4, 6, 7, 8}
+# myset3 = myset1.difference(myset2)
+# print(myset3)    #-->{1, 2, 5}
+
+# Симметрическая разность: метод symmetric_difference(), можно также использовать оператор ^
+# myset1 = {1, 2, 3, 4, 5}
+# myset2 = {3, 4, 6, 7, 8}
+# myset3 = myset1.symmetric_difference(myset2)
+# print(myset3)   # -->{1, 2, 5, 6, 7, 8}
+
+
+# Методы union(), intersection(), difference(), symmetric_difference() не изменяют исходные множества,
+# а возвращают новые. Часто на практике нужно изменять исходные множества. Для таких целей используются
+# парные методы update(), intersection_update(), difference_update(), symmetric_difference_update().
+
+
+# Метод update() изменяет исходное множество по объединению., |=
+# myset1 = {1, 2, 3, 4, 5}
+# myset2 = {3, 4, 6, 7, 8}
+# myset1.update(myset2)      # изменяем множество myset1
+# print(myset1)   # --> {1, 2, 3, 4, 5, 6, 7, 8}
+
+# Метод intersection_update() изменяет исходное множество по пересечению.
+# myset1 = {1, 2, 3, 4, 5}
+# myset2 = {3, 4, 6, 7, 8}
+# myset1.intersection_update(myset2)      # изменяем множество myset1
+# print(myset1)   # --> {3, 4}
+
+# Метод difference_update() изменяет исходное множество по разности.
+# myset1 = {1, 2, 3, 4, 5}
+# myset2 = {3, 4, 6, 7, 8}
+# myset1.difference_update(myset2)      # изменяем множество myset1
+# print(myset1) # -->{1, 2, 5}
+
+# Метод symmetric_difference_update() изменяет исходное множество по симметрической разности.
+# myset1 = {1, 2, 3, 4, 5}
+# myset2 = {3, 4, 6, 7, 8}
+# myset1.symmetric_difference_update(myset2)      # изменяем множество myset1
+# print(myset1)   # --> {1, 2, 5, 6, 7, 8}
+
+
+# mylist = [2021, 2020, 2019, 2018, 2017, 2016]
+# mytuple = (2021, 2020, 2016)
+# mystr = 'abcd'
+# myset = {2009, 2010, 2016}
+# print(myset.union(mystr))              # объединяем со строкой
+# print(myset.intersection(mylist))      # пересекаем со списком
+# print(myset.difference(mytuple))       # находим разность с кортежем
+
+
+# A | B , A.union(B) - Возвращает множество, являющееся объединением множеств A и B
+# A |= B , A.update(B) - Добавляет в множество A все элементы из множества B
+# A & B, A.intersection(B) - Возвращает множество, являющееся пересечением множеств A и B
+# A &= B, A.intersection_update(B) - Оставляет в множестве A только те элементы, которые есть в множестве B
+# A - B , A.difference(B) - Возвращает разность множеств A и B
+# A -= B , A.difference_update(B) - Удаляет из множества A все элементы, входящие в B
+# A ^ B , A.symmetric_difference(B) - Возвращает симметрическую разность множеств A и B
+# A ^= B,  A.symmetric_difference_update(B) - Записывает в A симметрическую разность множеств A и B
+
+# Количество совпадающих
+# a = set(list(map(int, input().split())))
+# b = set(list(map(int, input().split())))
+# print(len(a.intersection(b)))
+
+
+# # Общие числа
+# a = set(list(map(int, input().split())))
+# b = set(list(map(int, input().split())))
+# print(*sorted(a.intersection(b)))
+
+# Числа первой строки
+# a = set(map(int, input().split()))
+# b = set(map(int, input().split()))
+# print(*sorted(a - b))
+
+# Общие цифры
+# n = int(input())
+# numbers = [input() for _ in range(n)]
+#
+# num_set = set(numbers[0]).intersection(*numbers)
+# print(*sorted(num_set))
+
+# 8.7 Методы множеств. Часть 3
+# Для определения, является ли одно из множеств подмножеством другого, используется метод issubset()
+# также применяются операторы <= (нестрогое подмножество) и < (строгое подмножество).
+# set1 = {2, 3}
+# set2 = {1, 2, 3, 4, 5, 6}
+# print(set1.issubset(set2))    #--> True
+# В этом примере set2 содержит все элементы set1. Это означает,
+# что set1 – подмножество set2. Это также означает, что set2 – надмножество set1.
+
+
+# Для определения, является ли одно из множеств надмножеством другого, используется метод issuperset()
+# set1 = {'a', 'b', 'c', 'd', 'e'}
+# set2 = {'c', 'e'}
+# print(set1.issuperset(set2))    #--> True
+# В этом примере set1 содержит все элементы set2. Это означает,
+# что set1 – надмножество set2. Это также означает, что set2 – подмножество set1.
+
+# Для определения отсутствия общих элементов в множествах используется метод isdisjoint()
+# Данный метод возвращает значение True, если множества не имеют общих элементов, и  False, когда
+# множества имеют общие элементы.
+
+# set1 <= set2 , set1.issubset(set2) - Возвращает True, если set1 является подмножеством set2
+# set1 >= set2 , set1.issuperset(set2) - Возвращает True, если set1 является надмножеством set2
+# set1 < set2 - Эквивалентно set1 <= set2 and set1 != set2 (строгое подмножество)
+# set1 > set2 - Эквивалентно set1 >= set2 and set1 != set2 (строгое надмножество)
+
+
+# Одинаковые цифры
+# print(("YES", "NO")[set(input()).isdisjoint(input())])
+
+# Все цифры
+# print(['NO', 'YES'][set(input()) >= set(input())])
+
+# Урок информатики
+# a, b, c = (set(int(i) for i in input().split()) for i in range(3))
+# print(*sorted(set(a.intersection(b).difference(c)))[::-1])
+
+# Урок математики
+# set1, set2, set3 = [set([int(i) for i in input().split()]) for k in range(3)]
+# print(*sorted((set1 | set2 | set3) - (set1 & set2 & set3)))
+
+
+# Урок физики
+# set_1, set_2, set_3 = (set(input().split()) for _ in range(3))
+# print(*(sorted(set_3 - (set_1 | set_2), key=int, reverse=True)))
+
+# Урок биологии
+# a = set(input().split() + input().split() + input().split())
+# b = set(map(str, range(11)))
+# print(*sorted(b - a, key=int))
+
+# 8.8 Генераторы множеств и frozenset
+# digits = set(input())
+# при вводе строки '12345' создает множество символов {'1', '2', '3', '4', '5'},
+# а не множество цифр {1, 2, 3, 4, 5}.
+
+# digits = {int(c) for c in input()}
+#
+# Примеры использования генератора множеств
+# 1. Создать множество, заполненное квадратами целых чисел от 0 до 9 можно так:
+#
+# squares = {i ** 2 for i in range(10)}
+# 2. Создать множество, заполненное кубами целых чисел от 10 до 20 можно так:
+#
+# cubes = {i ** 3 for i in range(10, 21)}
+# 3. Создать множество, заполненное символами строки можно так:
+#
+# chars = {c for c in 'abcdefg'}
+#
+# В генераторах множеств можно использовать условный оператор. Например, если требуется создать
+# множество, заполненное только цифрами некоторой строки, то мы можем написать такой код:
+#
+# digits = {int(d) for d in 'abcd12ef78ghj90' if d.isdigit()}
+
+
+# получить множество, содержащее первую букву каждого слова (в нижнем регистре) списка words
+# items = [10, '30', 30, 10, '56', 34, '12', 90, 89, 34, 45, '67', 12, 10, 90, 23, '45', 56, '56', 1, 5, '6', 5]
+# myset = {int(d) for d in items}
+# print(*sorted(myset))
+#
+#
+# получить множество, содержащее первую букву каждого слова (в нижнем регистре) списка words
+# words = ['Plum', 'Grapefruit', 'apple', 'orange', 'pomegranate', 'Cranberry', 'lime', 'Lemon', 'grapes', 'persimmon',
+#          'tangerine', 'Watermelon', 'currant', 'Almond']
+# myset = {d[0].lower() for d in words}
+# print(*sorted(myset))
+#
+
+# получить множество, содержащее уникальные слова (в нижнем регистре) строки sentence
+# sentence = '''My very photogenic mother died in a freak accident (picnic, lightning) when I was three, and, save for a pocket of warmth in the darkest past, nothing of her subsists within the hollows and dells of memory, over which, if you can still stand my style (I am writing under observation), the sun of my infancy had set: surely, you all know those redolent remnants of day suspended, with the midges, about some hedge in bloom or suddenly entered and traversed by the rambler, at the bottom of a hill, in the summer dusk; a furry warmth, golden midges.'''
+# myset = {d.lower().strip('.,;:-?!()') for d in sentence.split()}
+# print(*sorted(myset))
+
+# получить множество, содержащее уникальные слова строки sentence длиною меньше 4 символов
+# sentence = '''My very photogenic mother died in a freak accident (picnic, lightning) when I was three, and, save for a pocket of warmth in the darkest past, nothing of her subsists within the hollows and dells of memory, over which, if you can still stand my style (I am writing under observation), the sun of my infancy had set: surely, you all know those redolent remnants of day suspended, with the midges, about some hedge in bloom or suddenly entered and traversed by the rambler, at the bottom of a hill, in the summer dusk; a furry warmth, golden midges.'''
+# myset = {d.lower().strip('.,:():;!?') for d in sentence.split() if len(d.strip('.,:():;!?')) < 4}
+# print(*sorted(myset))
+
+# выбрал из списка files уникальные имена файлов c расширением .png
+
+# files = ['python.png', 'qwerty.py', 'stepik.png', 'beegeek.org', 'windows.pnp', 'pen.txt', 'phone.py', 'book.txT',
+#          'board.pNg', 'keyBoard.jpg', 'Python.PNg', 'apple.jpeg', 'png.png', 'input.tXt', 'split.pop', 'solution.Py',
+#          'stepik.org', 'kotlin.ko', 'github.git']
+# myset = {d.lower() for d in files if d[-3::].lower() == 'png'}
+# print(*sorted(myset))
+
+# Frozenset
+# Кортеж (тип tuple) – неизменяемая версия списка (тип list), а замороженное множество (тип frozenset) – неизменяемая
+# версия обычного множества (тип set).
+# myset1 = frozenset({1, 2, 3})                         # на основе множества
+# myset2 = frozenset([1, 1, 2, 3, 4, 4, 4, 5, 6, 6])    # на основе списка
+# myset3 = frozenset('aabcccddee')                      # на основе строки
+#
+# print(myset1)
+# print(myset2)
+# print(myset3)
+
+# Над замороженными множествами можно производить все операции, которые можно производить над обычными множествами:
+#
+# объединение множеств: метод union() или оператор |;
+# пересечение множеств: метод intersection() или оператор &;
+# разность множеств: метод difference() или оператор -;
+# симметрическая разность множеств: метод symmetric_difference() или оператор ^.
+# Приведенный ниже код:
+#
+# myset1 = frozenset('hello')
+# myset2 = frozenset('world')
+#
+# print(myset1 | myset2)
+# print(myset1 & myset2)
+# print(myset1 ^ myset2)
+
+# Методы изменяющие множество отсутствуют у замороженных множеств:
+# add()
+# remove()
+# discard()
+# pop()
+# clear()
+# update()
+# intersection_update()
+# difference_update()
+# symmetric_difference_update()
+
