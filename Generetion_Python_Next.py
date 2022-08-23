@@ -1825,7 +1825,6 @@
 n = int(input())
 arr = set()
 
-
 # def is_repeat(arr, n):
 #     for i in range(n + 1):
 #         s = input()
@@ -1899,3 +1898,10 @@ arr = set()
 #     print(len(maths.symmetric_difference(informatics)))
 
 # ///////////////////////////// 10.1 Введение в словари в Python ////////////////////////////////////
+# my_dict = dict{}
+# print(my_dict)
+
+# my_dict = {1.12: 'aa', 67.9: 45, 3.11: 'ccc', 7.9: 'dd', 9.2: 'ee', 7.1: 'ff', 0.12: 'qq', 1.91: 'aa', 10.12: [1, 2, 3],
+#            99.0: {9, 0, 1}}
+# print(min(my_dict) + max(my_dict))
+print('dfsf')
