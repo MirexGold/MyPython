@@ -1810,3 +1810,92 @@
 # difference_update()
 # symmetric_difference_update()
 
+
+# n = int(input())
+# m = int(input())
+# k = int(input())
+# p = int(input())
+#
+# print(n+p-m-k)
+
+# arr = [int(elem) for elem in input().split()]
+# print(len(arr) - len(set(arr)))
+
+
+n = int(input())
+arr = set()
+
+
+# def is_repeat(arr, n):
+#     for i in range(n + 1):
+#         s = input()
+#         length = len(arr)
+#         arr.add(s)
+#         if length == len(arr):
+#             return 'REPEAT'
+#     return 'OK'
+#
+#
+# print(is_repeat(arr, n))
+
+
+# m = int(input())
+# n = int(input())
+# library = []
+# toRead = []
+#
+# for i in range(m):
+#     library.append(input())
+#
+# for i in range(n):
+#     toRead.append(input())
+#
+# for elem in toRead:
+#     if elem in library:
+#         print('YES')
+#     else:
+#         print('NO')
+
+
+# arr1 = {int(elem) for elem in input().split()}
+# arr2 = {int(elem) for elem in input().split()}
+#
+# if len(arr1.intersection(arr2)) == 0:
+#     print('BAD DAY')
+# else:
+#     print(*sorted(arr1.intersection(arr2), reverse=True))
+
+
+# arr1 = {int(elem) for elem in input().split()}
+# arr2 = {int(elem) for elem in input().split()}
+# if arr1 == arr2:
+#     print('YES')
+# else:
+#     print('NO')
+
+
+# m = int(input())
+# n = int(input())
+# maths = set()
+# informatics = set()
+# for i in range(m):
+#     maths.add(input())
+# for i in range(n):
+#     informatics.add(input())
+# print(len(maths.difference(informatics)))
+
+
+# m = int(input())
+# n = int(input())
+# maths = set()
+# informatics = set()
+# for i in range(m):
+#     maths.add(input())
+# for i in range(n):
+#     informatics.add(input())
+# if len(maths.symmetric_difference(informatics)) == 0:
+#     print('NO')
+# else:
+#     print(len(maths.symmetric_difference(informatics)))
+
+# ///////////////////////////// 10.1 Введение в словари в Python ////////////////////////////////////
