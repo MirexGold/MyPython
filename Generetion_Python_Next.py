@@ -2720,3 +2720,76 @@
 #
 #
 # 12.1 Модуль random. Часть 1
+
+# Функция randint() принимает два обязательных аргумента a и b и возвращает
+# псевдослучайное целое число из отрезка [a;b], Левая и правая граница a и b включаются в диапазон
+# import random
+# num1 = random.randint(0, 17)
+
+# Функция randrange() возвращает случайно выбранное число из последовательности чисел.
+# import random
+# num = random.randrange(10)
+# возвратит случайно выбранное число из последовательности чисел от 0 до конечного предела, исключая сам предел
+
+# Функции randint() и randrange() возвращают псевдослучайное целое число. А вот функция random() возвращает
+# псевдослучайное число с плавающей точкой (вещественное число). В функцию random() никаких аргументов
+# не передается. Функция random() возвращает случайное число с плавающей точкой в
+# диапазоне от 0 до 1 (исключая 1).
+# import random
+# num = random.random()
+
+# Функция uniform() тоже возвращает случайное число с плавающей точкой, но при этом она позволяет
+# задавать диапазон для отбора значений.
+# псевдослучайное число с плавающей точкой из диапазона [1.5;17.3] (включительно):
+# import random
+# num = random.uniform(1.5, 17.3)
+
+# Функция seed() явно устанавливает начальное значение для генератора случайных чисел
+# import random
+#
+# random.seed(17)   # явно устанавливаем начальное значение для генератора случайных чисел
+#
+# for _ in range(10):
+#     print(random.randint(1, 100))
+#
+
+# import random
+# for i in range(int(input())):
+#     if random.randint(0,1):
+#         print('Орел')
+#     else:
+#         print('Решка')
+
+# import random
+# n = int(input())    # количество попыток
+# for _ in range(n):
+#     num = random.randint(0, 1)
+#     if num == 0:
+#         print('Орел')
+#     else:
+#         print('Решка')
+
+# import random
+# n = int(input())    # количество попыток
+# for _ in range(n):
+#     num = random.randint(1, 6)
+#     print(num)
+
+
+# генерирует случайный пароль
+# import random
+# length = int(input())    # длина пароля
+# for _ in range(length):
+#     r = random.randint(0,1)  #регистр
+#     if r == 0:
+#         pas = random.randint(65,90)
+#     else:
+#         pas = random.randint(97, 122)
+#     print(chr(pas),end='')
+
+# Лотерейный билет
+import random
+s = set()
+while len(s) < 7:
+    s.add(random.randint(1, 49))
+print(*sorted(s))
