@@ -2354,7 +2354,6 @@
 #         break
 
 
-
 # # Исправление дубликатов 🌶️
 # d, l = {}, []
 #
@@ -2366,7 +2365,6 @@
 #         l.append(c + '_' + str(d[c]))
 #
 # print(*l)
-
 
 
 # # Словарь программиста
@@ -2595,7 +2593,6 @@
 # result = {key: value for key, value in students.items() if value[0] > 167 and value[1] < 75}
 
 
-
 # # получить словарь result, в котором ключом является первый элемент каждого кортежа, а значением – кортеж
 # # из оставшихся двух элементов.
 # tuples = [(1, 2, 3), (4, 5, 6), (7, 8, 9), (10, 11, 12), (13, 14, 15), (16, 17, 18), (19, 20, 21), (22, 23, 24), (25, 26, 27), (28, 29, 30), (31, 32, 33), (34, 35, 36)]
@@ -2610,7 +2607,116 @@
 # result = [{student_ids[i]: {student_names[i]: student_grades[i]}} for i in range(len(student_ids))]
 
 
+# # вывел все электронные адреса в алфавитном порядке, каждый на отдельной строке, в формате username @ domain.
+# emails = {'nosu.edu': ['timyr', 'joseph', 'svetlana.gaeva', 'larisa.mamuk'],
+#           'gmail.com': ['ruslan.chaika', 'rustam.mini', 'stepik-best'],
+#           'msu.edu': ['apple.fruit', 'beegeek', 'beegeek.school'],
+#           'yandex.ru': ['surface', 'google'],
+#           'hse.edu': ['tomas-henders', 'cream.soda', 'zivert'],
+#           'mail.ru': ['angel.down', 'joanne', 'the.fame.moster']}
+# arr = []
+#
+# for elem in emails:
+#         for address in emails[elem]:
+#                 arr.append(address + '@' + elem)
+#
+# for elem in sorted(arr):
+#         print(elem)
 
 
+# # Минутка генетики
+# d = {'A': 'U', 'C': 'G', 'G': 'C', 'T': 'A'}
+# arr = [d[elem] for elem in input()]
+#
+# print(''.join(arr))
+
+# # Порядковый номер
+# s = input().split()
+# arr = []
+# d = {}
+#
+# for elem in s:
+#     if elem in d:
+#         d[elem] += 1
+#         arr.append(d[elem])
+#     else:
+#         d[elem] = 1
+#         arr.append(d[elem])
+#
+# print(*arr)
+
+# # Scrabble game
+# d = {'A': 1, 'E': 1, 'I': 1, 'L': 1, 'N': 1, 'O': 1, 'R': 1, 'S': 1, 'T': 1, 'U': 1, 'D': 2, 'G': 2, 'B': 3, 'C': 3,
+#      'M': 3, 'P': 3, 'F': 4, 'H': 4, 'V': 4, 'W': 4, 'Y': 4, 'K': 5, 'J': 8, 'X': 8, 'Q': 10, 'Z': 10}
+#
+# summa = 0
+#
+# for elem in input():
+#     summa += d[elem]
+#
+# print(summa)
+
+# # Строка запроса
+# def build_query_string(params):
+#     result = ''
+#     for elem in sorted(params):
+#         result += elem
+#         result += '='
+#         result += str(params[elem])
+#         result += '&'
+#     return result[:-1]
 
 
+# # Слияние словарей 🌶️
+# def merge(values):
+#     result = {}
+#     for elem in values:
+#         for i in elem:
+#             if i in result:
+#                 result[i].add(elem[i])
+#             else:
+#                 result[i] = set()
+#                 result[i].add(elem[i])
+#
+#     return result
+
+# # Опасный вирус 😈
+# s = {'write': 'W', 'read': 'R','execute': 'X'}
+# d = {}
+#
+# n = int(input())
+#
+# for i in range(n):
+#     arr = input().split()
+#     d[arr[0]] = arr[1:]
+#
+# m = int(input())
+#
+# for i in range(m):
+#     arr = input().split()
+#     if s[arr[0]] in d[arr[1]]:
+#         print('OK')
+#     else:
+#         print('Access denied')
+
+# # Покупки в интернет-магазине 🌶️
+# n = int(input())
+# d = {}
+#
+# for i in range(n):
+#     arr = input().split()
+#     if arr[0] in d:
+#         if arr[1] in d[arr[0]]:
+#             d[arr[0]][arr[1]] += int(arr[2])
+#         else:
+#             d[arr[0]][arr[1]] = int(arr[2])
+#     else:
+#         d[arr[0]] = {arr[1]: int(arr[2])}
+#
+# for name in sorted(d):
+#     print(name + ':')
+#     for product in sorted(d[name]):
+#         print(product + ' ' + str(d[name][product]))
+#
+#
+# 12.1 Модуль random. Часть 1
