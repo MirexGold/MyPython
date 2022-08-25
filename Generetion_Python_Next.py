@@ -2787,9 +2787,212 @@
 #         pas = random.randint(97, 122)
 #     print(chr(pas),end='')
 
-# Лотерейный билет
-import random
-s = set()
-while len(s) < 7:
-    s.add(random.randint(1, 49))
-print(*sorted(s))
+# # Лотерейный билет
+# import random
+# s = set()
+# while len(s) < 7:
+#     s.add(random.randint(1, 49))
+# print(*sorted(s))
+
+
+# Метод shuffle() принимает список в качестве обязательного аргумента и перемешивает его случайным образом.
+# import random
+# numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+# random.shuffle(numbers)
+# print(numbers)   #--> [4, 7, 8, 1, 2, 3, 6, 5]
+
+# Метод choice() принимает список (строку, кортеж) в качестве обязательного аргумента и возвращает один
+# случайный элемент.
+
+# Метод sample() принимает два обязательных аргумента: первый – список (строка, кортеж, множество),
+# второй – количество случайных элементов. Возвращает список из указанного количества уникальных
+# (имеющих разные индексы) случайных элементов.
+
+# # в модуле string остались удобные константные строки
+# import string
+#
+# print(string.ascii_letters)
+# print(string.ascii_uppercase)
+# print(string.ascii_lowercase)
+# print(string.digits)
+# print(string.hexdigits)
+# print(string.octdigits)
+# print(string.punctuation)
+# print(string.printable)
+# выводит:
+#
+# abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+# ABCDEFGHIJKLMNOPQRSTUVWXYZ
+# abcdefghijklmnopqrstuvwxyz
+# 0123456789
+# 0123456789abcdefABCDEF
+# 01234567
+# !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+# 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ \t\n\r\x0b\x0c
+
+
+# generate_ip()
+# import random
+# def generate_ip():
+#     numbers = [i for i in range(256)]
+#     ip = str(random.choice(numbers)) + '.' + str(random.choice(numbers)) + '.' + str(random.choice(numbers)) + '.' + str(random.choice(numbers))
+#     return ip
+#
+# from random import randrange as r
+# def generate_ip():
+#     return f'{r(256)}.{r(256)}.{r(256)}.{r(256)}'
+
+# генерирует и возвращает случайный корректный почтовый индекс Латверии.
+# import string, random
+# from random import randrange as r
+# def generate_index():
+#     return f'{random.choice(string.ascii_uppercase)}{random.choice(string.ascii_uppercase)}{r(1,9)}{r(1,9)}_{r(1,9)}{r(1,9)}{random.choice(string.ascii_uppercase)}{random.choice(string.ascii_uppercase)}'
+#
+# print(generate_index())
+
+
+# перемешивает случайным образом содержимое матрицы (двумерного списка).
+# import random
+# matrix = [[1, 2, 3, 4],
+#           [5, 6, 7, 8],
+#           [9, 10, 11, 12],
+#           [13, 14, 15, 16]]
+# random.shuffle(matrix)
+# print(matrix)
+
+# с помощью модуля random генерирует 100 случайных номеров лотерейных билетов
+# и выводит их каждый на отдельной строке
+
+# from random import randrange
+# tickets = set()
+# while len(tickets) != 100:
+#     tickets.add(randrange(1000000, 10000000))
+# print(*tickets, sep='\n')
+
+# Напишите программу, которая считывает одно слово и выводит с помощью модуля random его случайную анаграмму.
+# import random
+# a = list(input())
+# random.shuffle(a)
+# print(''.join(a))
+#
+
+
+# с помощью модуля random генерирует и выводит случайную карточку для игры в бинго.
+# import random
+# num = random.sample(range(1, 76), 25)
+# num[12] = 0
+# for i in range(len(num)):
+#     print(str(num[i]).ljust(3), end = '')
+#     if i in [4, 9, 14, 19]:
+#         print()
+
+
+# Тайный друг 🌶️
+# from random import *
+# fri = [input() for _ in range(int(input()))]
+# fricop = fri.copy()
+# a = 0
+# def rand(a, b):
+# 	r = 0
+# 	for i, j in zip(a, b):
+# 		if i!=j:
+# 			r+=1
+# 	return r
+# while a != len(fri):
+# 	shuffle(fricop)
+# 	a = rand(fri, fricop)
+# for k, l in zip(fri, fricop):
+# 	print(k,'-',l)
+
+
+# Генератор паролей 1
+# import random
+# n, m = int(input()), int(input())
+# s = [i for i in '23456789']
+# s.extend([chr(i) for i in range(ord('a'), ord('z')) if i not in [ord('l'),ord('i'), ord('o')] ])
+# s.extend([chr(i) for i in range(ord('A'), ord('Z')) if i not in [ord('L'),ord('I'), ord('O')] ])
+# for _ in range(n):
+#     random.shuffle(s)
+#     p = ""
+#     for i in range(m):
+#         p += s[i][0]
+#     print(p)
+
+# from string import *
+# from random import sample
+#
+# LETTER = ''.join((set(ascii_letters) | set(digits)) - set('lI1oO0'))
+#
+# def generate_password(length):
+#     return ''.join(sample(LETTER, length))
+#
+# def generate_passwords(count, length):
+#     return [generate_password(length) for _ in range(count)]
+#
+# n, m = int(input()), int(input())
+# print(*generate_passwords(n, m), sep='\n')
+
+# Генератор паролей 2 🌶️
+# import string
+# import random
+# def generate_password(length):
+#     s = ''.join([i for i in (string.printable[:62]) if i not in '10OolI'])
+#     return (''.join(random.sample(s[:8], 1) + random.sample(s[8:30], 1) + random.sample(s[30:], length - 2)))
+# def generate_passwords(count):
+#     return [generate_password(m) for _ in range(count)]
+# n, m = int(input()), int(input())
+# print(*generate_passwords(n), sep='\n')
+
+# import random
+#
+# n = 10 ** 6
+# k = 0
+# s0 = 16
+# for _ in range(n):
+#     x = random.uniform(-2, 2)  # случайное число с плавающей точкой от 0 до 1
+#     y = random.uniform(-2, 2)  # случайное число с плавающей точкой от 0 до 1
+#
+#     if x ** 3 + y ** 4 + 2 >= 0 and 3 * x + y ** 2 <= 2:  # если попадает в нужную область
+#         k += 1
+#
+# print((k / n) * s0)
+
+# import random
+#
+# n = 10 ** 6
+# k = 0
+# s0 = 4
+# for _ in range(n):
+#     x = random.uniform(-1, 1)  # случайное число с плавающей точкой от 0 до 1
+#     y = random.uniform(-1, 1)  # случайное число с плавающей точкой от 0 до 1
+#
+#     if x ** 2 + y ** 2 <= 1:  # если попадает в нужную область
+#         k += 1
+#
+# print((k / n) * s0)
+
+# Болотная сортировка
+# import random
+#
+# def is_sort(nums):                   # отсортирован ли список?
+#     for i in range(len(nums) - 1):
+#         if nums[i] > nums[i + 1]:
+#             return False
+#     return True
+#
+# def bogosort(nums):                  # реализация алгоритма болотной сортировки
+#     while not is_sort(nums):
+#         random.shuffle(nums)
+#     return nums
+#
+# numbers = list(range(10))
+# random.shuffle(numbers)              # перемешиваем начальный список
+# print(numbers)                       # выводим начальный список
+#
+# sorted_numbers = bogosort(numbers)
+#
+# print(sorted_numbers)
+
+# 13.1 Модуль decimal
+
+
