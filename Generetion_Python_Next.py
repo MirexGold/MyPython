@@ -3167,4 +3167,201 @@
 # answer = sorted(map(Fraction, result))
 # print(*answer, sep='\n')
 
-# 13.3 Тип данных complex
+# matrix() — возвращает матрицу 1 \times 11× 1, в которой единственное число равно нулю;
+# matrix(n) — возвращает матрицу n \times nn× n, заполненную нулями;
+# matrix(n, m) — возвращает матрицу из nn строк и mm столбцов, заполненную нулями;
+# matrix(n, m, value) — возвращает матрицу из nn строк и mm столбцов, в которой каждый элемент равен числу value.
+#
+# def matrix(n=1, m=0, a=0):
+#     if n == 1 and not m:
+#         m = 1
+#     elif n != 1 and not m:
+#         m = n
+#     return [[a] * m for _ in range(n)]
+
+# 15.2 Функции с переменным количеством аргументов
+# def my_sum(*args):
+#     return sum(args)
+#
+# print(my_sum(*[1, 2, 3, 4, 5]))   #  распаковка списка
+# print(my_sum(*(1, 2, 3)))         #  распаковка кортежа
+# print(my_sum(1, 2, *[3, 4, 5], *(7, 8, 9), 10))
+
+# Позиционные аргументы можно получать в виде *args, причём произвольное их количество.
+# Такая возможность существует и для именованных аргументов. Только именованные аргументы
+# получаются в виде словаря, что позволяет сохранить имена аргументов в ключах.
+# Рассмотрим определение функции my_func():
+#
+# def my_func(**kwargs):
+#     print(type(kwargs))
+#     print(kwargs)
+# Приведенный ниже код:
+#
+# my_func()
+# my_func(a=1, b=2)
+# my_func(name='Timur', job='Teacher')
+# выводит:
+#
+# <class 'dict'>
+# {}
+# <class 'dict'>
+# {'a': 1, 'b': 2}
+# <class 'dict'>
+# {'name': 'Timur', 'job': 'Teacher'}
+
+# # Передача именованных аргументов в форме словаря
+# Рассмотрим определение функции my_func():
+#
+# def my_func(**kwargs):
+#     print(type(kwargs))
+#     print(kwargs)
+# Приведенный ниже код:
+#
+# info = {'name':'Timur', 'age':'28', 'job':'teacher'}
+#
+# my_func(**info)
+# выводит:
+#
+# <class 'dict'>
+# {'name': 'Timur', 'age': '28', 'job': 'teacher'}
+#
+
+# def func(*args):
+#     return max(args) + min(args)
+#
+#
+# print(func(10, 15, *[31, 42, 5, 1], *(17, 28, 19, 100), 13, 12))
+
+# def count_args(*args):
+#     return len(args)
+
+# принимает произвольное количество числовых аргументов и возвращает сумму их квадратов.
+# def sq_sum(*args):
+#     return sum(i ** 2 for i in args)
+
+
+# принимает произвольное количество аргументов и возвращает среднее арифметическое переданных
+# в нее числовых (int или float) аргументов.
+
+# def mean(*args):
+#     sp = [i for i in args if type(i) == int or type(i) == float]
+#     if len(sp) != 0:
+#         return sum(sp)/len(sp)
+#     else:
+#         return 0.0
+#
+# print(mean())
+# print(mean(7))
+# print(mean(1.5, True, ['stepik'], 'beegeek', 2.5, (1, 2)))
+# print(mean(True, ['stepik'], 'beegeek', (1, 2)))
+# print(mean(-1, 2, 3, 10, ('5')))
+# print(mean(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+
+
+# принимает произвольное количество аргументов строк имен (как минимум одно)
+# и возвращает приветствие в соответствии с образцом.
+# def greet(name, *args):
+#     sp = ' and '.join((name,) + args)
+#     return f"Hello, {sp}!"
+
+
+# выводит список продуктов (любая непустая строка) по образцу: <номер продукта>) <название продукта>
+# (нумерация продуктов начинается с единицы). Если среди переданных аргументов нет ни одного продукта,
+# необходимо вывести текст Нет продуктов.
+
+# def print_products(*products):
+#     filtered = [product for product in products if product and isinstance(product, str)]
+#     if filtered:
+#         for indx, product in enumerate(filtered, 1):
+#             print(f"{indx}) {product}")
+#     else:
+#         print("Нет продуктов")
+
+# def print_products(*args):
+#     i = 0
+#     for elem in args:
+#         if type(elem) is str and elem:
+#             i += 1
+#             print(f'{i}) {elem}')
+#     if not i: print('Нет продуктов')
+#
+#
+#
+# print_products('Бананы', [1, 2], ('Stepik',), 'Яблоки', '', 'Макароны', 5, True)
+
+
+# Напишите функцию info_kwargs(), которая принимает произвольное количество именованных аргументов
+# и печатает именованные аргументы в соответствии с образцом: <имя аргумента>: <значение аргумента>,
+# при этом имена аргументов следуют в алфавитном порядке (по возрастанию).
+# def info_kwargs(**kwargs):
+#     for key, value in sorted(kwargs.items()):
+#         print(key + ": " + str(value))
+
+
+# Дан список numbers, содержащий кортежи чисел. Напишите программу, которая с помощью встроенных
+# функций min() и max() выводит те кортежи (каждый на отдельной строке), которые имеют минимальное
+# и максимальное среднее арифметическое значение элементов.
+
+# numbers = [(10, 10, 10), (30, 45, 56), (81, 39), (1, 2, 3), (12,), (-2, -4, 100), (1, 2, 99), (89, 9, 34),
+#            (10, 20, 30, -2), (50, 40, 50), (34, 78, 65), (-5, 90, -1, -5), (1, 2, 3, 4, 5, 6), (-9, 8, 4),
+#            (90, 1, -45, -21)]
+#
+# def f(x):
+#     return sum(x)/len(x)
+#
+# print(min(numbers, key=f))
+# print(max(numbers, key=f))
+
+#
+# points = [(-1, 1), (5, 6), (12, 0), (4, 3), (0, 1), (-3, 2), (0, 0), (-1, 3), (2, 0), (3, 0), (-9, 1), (3, 6), (8, 8)]
+# def f(n):
+#     return 0.5 ** (n[0] ** 2 + n[1] ** 2)
+#
+# points.sort(key=f, reverse=True)
+# print(points)
+
+# numbers = [(10, 10, 10), (30, 45, 56), (81, 80, 39), (1, 2, 3), (12, 45, 67), (-2, -4, 100), (1, 2, 99), (89, 90, 34), (10, 20, 30), (50, 40, 50), (34, 78, 65), (-5, 90, -1)]
+# f = lambda x: min(x) + max(x)
+# numbers.sort(key=f)
+#
+# print(numbers)
+
+# Сортируй как хочешь
+# v = int(input())
+# athletes = [('Дима', 10, 130, 35), ('Тимур', 11, 135, 39), ('Руслан', 9, 140, 33), ('Рустам', 10, 128, 30),
+#             ('Амир', 16, 170, 70), ('Рома', 16, 188, 100), ('Матвей', 17, 168, 68), ('Петя', 15, 190, 90)]
+# stroka = sorted(athletes, key=lambda x: x[v - 1])
+# for i in stroka:
+#     print(*i)
+
+
+# Математические функции
+# from math import *
+# def get_res(n, f):
+#     funcs = {'квадрат': n**2,
+#              'куб': n**3,
+#              'корень': n**0.5,
+#              'модуль': abs(n),
+#              'синус': sin(n)}
+#     return funcs[f]
+# a, b = int(input()), input().lower()
+# print(get_res(a, b))
+
+# Интересная сортировка-1
+# nums = input().split()
+# def cmp(num):
+#     n = [int(i) for i in num]
+#     return sum(n)
+# nums.sort(key=cmp)
+# print(*nums)
+
+
+# # Интересная сортировка-2
+# def sum_nums(numstr):
+#     nums = list(map(int, list(numstr)))
+#     return sum(nums), int(numstr)
+#
+# s = input().split()
+# print(*sorted(s, key=sum_nums))
+
+
