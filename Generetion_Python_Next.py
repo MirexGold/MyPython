@@ -3998,4 +3998,259 @@
 # eval = lambda coef, x: r(lambda v, c: c + v * x, map(int, coef))
 # print(eval(input().split(), int(input())))
 
-15.9 Встроенные функции any(), all(), zip(), enumerate()
+# 15.9 Встроенные функции any(), all(), zip(), enumerate()
+
+# Встроенная функция all() возвращает значение True, если все элементы переданной ей последовательности (итерируемого
+# объекта) истинны (приводятся к значению True), и False в противном случае.
+
+# Встроенная функция any() возвращает значение True, если хотя бы один элемент переданной ей последовательности
+# (итерируемого объекта) является истинным (приводится к значению True), и False в противном случае.
+
+# Функция enumerate()
+# Встроенная функция enumerate() возвращает кортеж из индекса элемента и самого элемента переданной
+# ей последовательности (итерируемого объекта).
+# Приведенный ниже код:
+# colors = ['red', 'green', 'blue']
+# for pair in enumerate(colors):
+#     print(pair)
+# выводит:
+# (0, 'red')
+# (1, 'green')
+# (2, 'blue')
+#
+# Если счет нужно начать с отличного от нуля числа, то нужно передать значение аргумента start.
+# Приведенный ниже код:
+# colors = ['red', 'green', 'blue']
+# for pair in enumerate(colors, 100):
+#     print(pair)
+# выводит:
+# (100, 'red')
+# (101, 'green')
+# (102, 'blue')
+# Обратите внимание, функция enumerate() возвращает не список, а специальный объект,
+# который называется итератором. Такой объект похож на список тем, что его можно перебирать циклом for, то есть итерировать. Итератор можно преобразовать в список с помощью функции list().
+#
+# Приведенный ниже код:
+#
+# colors = ['red', 'green', 'blue']
+#
+# pairs = enumerate(colors)
+#
+# print(pairs)
+# print(list(pairs))
+# выводит:
+#
+# <enumerate object at 0x...>
+# [(0, 'red'), (1, 'green'), (2, 'blue')]
+# Мы также можем использовать распаковку кортежей при итерировании с помощью цикла for.
+#
+# Приведенный ниже код:
+#
+# colors = ['red', 'green', 'blue']
+# for index, item in enumerate(colors):
+#     print(index, item)
+# выводит:
+#
+# 0 red
+# 1 green
+# 2 blue
+# Такой код является альтернативой коду:
+#
+# colors = ['red', 'green', 'blue']
+# for i in range(len(colors)):
+#     print(i, colors[i])
+#
+# Функция zip()
+# Встроенная функция zip() объединяет отдельные элементы из каждой переданной ей
+# последовательности (итерируемого объекта) в кортежи.
+# Приведенный ниже код:
+# numbers = [1, 2, 3]
+# words = ['one', 'two', 'three']
+# for pair in zip(numbers, words):
+#     print(pair)
+# выводит:
+# (1, 'one')
+# (2, 'two')
+# (3, 'three')
+# Частые сценарии использования функции zip()
+# Сценарий 1. Функция zip() удобна для создания словарей, когда ключи и значения находятся в разных списках.
+# Приведенный ниже код:
+# keys = ['name', 'age', 'gender']
+# values = ['Timur', 28, 'male']
+# info = dict(zip(keys, values))
+# print(info)
+# выводит:
+# {'name': 'Timur', 'age': 28, 'gender': 'male'}
+
+# Сценарий 2. Функция zip() удобна для одновременного (параллельного) итерирования сразу по нескольким коллекциям.
+# Приведенный ниже код:
+# name = ['Timur', 'Ruslan', 'Rustam']
+# age = [28, 21, 19]
+# for x, y in zip(name, age):
+#     print(x, y)
+# выводит: 
+# Timur 28
+# Ruslan 21
+# Rustam 19
+
+# Примечание 2. Реализация встроенных функций all() и any() выглядит примерно так:
+# def all(iterable):
+#     for item in iterable:
+#        if not item:
+#            return False
+#     return True
+#
+# def any(iterable):
+#     for item in iterable:
+#         if item:
+#             return True
+#     return False
+# Примечание 3. Мы можем использовать одновременно функции zip() и enumerate():
+#
+# Приведенный ниже код:
+#
+# list1 = ['a1', 'a2', 'a3']
+# list2 = ['b1', 'b2', 'b3']
+#
+# for index, (item1, item2) in enumerate(zip(list1, list2)):
+#     print(index, item1, item2)
+# выводит:
+#
+# 0 a1 b1
+# 1 a2 b2
+# 2 a3 b3
+
+
+# Используя параллельную итерацию сразу по трем спискам countries, capitals и population
+# выведите информацию о стране в формате:
+# <capital> is the capital of <country>, population equal <population> people.
+
+# countries = ['Russia', 'USA', 'UK', 'Germany', 'France', 'India']
+# capitals = ['Moscow', 'Washington', 'London', 'Berlin', 'Paris', 'Delhi']
+# population = [145_934_462, 331_002_651, 80_345_321, 67_886_011, 65_273_511, 1_380_004_385]
+# for country, capital, people in zip(countries, capitals, population):
+#     print(f'{capital} is the capital of {country}, population equal {people} people.')
+
+# Внутри шара
+# abscissas = [float(i) for i in input().split()]
+# ordinates = [float(i) for i in input().split()]
+# applicates = [float(i) for i in input().split()]
+# print(all(map(lambda x: x[0]**2 + x[1]**2 + x[2]**2 <= 4, zip(abscissas, ordinates, applicates))))
+
+# # # Корректный IP-адрес
+# ip=input().split('.')
+# print(all(map(lambda n:n.isdigit() and int(n)<=255,ip)))
+
+
+# Интересные числа
+# a, b = int(input()), int(input())
+# print(*filter(lambda n: all(map(lambda x: x != 0 and n % x == 0, map(int, str(n)))), range(a, b+1)))
+
+
+# Хороший пароль
+# s = input()
+# print('YES' if all((any(i.isupper() for i in s),
+#                     any(i.islower() for i in s),
+#                     any(i.isdigit() for i in s),
+#                     len(s) >= 7)) else 'NO')
+
+# Отличники
+# progress = []
+# for i in range(int(input())):
+#     progress.append(any(['5' in input().split() for j in range(int(input()))]))
+#
+# print('YES' if all(progress) else 'NO')
+
+# Письмо для экзамена
+# def generate_letter(mail, name, date, time, place, teacher = 'Тимур Гуев', number = 17):
+#     return 'To: ' + mail + \
+#     '\nПриветствую, ' + name + \
+#     '!\nВам назначен экзамен, который пройдет ' + date + ', в ' + time + \
+#     '.\nПо адресу: ' + place + \
+#     '.\nЭкзамен будет проводить ' + teacher + ' в кабинете ' + str(number) + '.\nЖелаем удачи на экзамене!'
+
+# # Pretty print
+# def pretty_print(data, side = '-', delimiter = '|'):
+#     mainStr = delimiter + ' ' + (' ' + delimiter + ' ').join(map(str, data)) + ' ' + delimiter
+#     print(' ' + side * (len(mainStr) - 2))
+#     print (mainStr)
+#     print(' ' + side * (len(mainStr) - 2))
+
+
+# def concat(*elems, sep = ' '):
+#     return sep.join([str(elem) for elem in elems])
+
+# from functools import reduce
+# def product_of_odds(data):
+#     return reduce(lambda a,b: a*b, [elem for elem in data if elem%2==1], 1)
+
+# words = 'the world is mine take a look what you have started'.split()
+# print(*map(lambda x: '\"' + x + '\"',words))
+
+# numbers = [18, 191, 9009, 5665, 78, 77, 45, 23, 19991, 908, 8976, 6565, 5665, 10, 1000, 908, 909, 232, 45654, 786]
+# print(*list(filter(lambda x: str(x) != str(x)[::-1], numbers)))
+
+# numbers = [(10, -2, 3, 4), (-13, 56), (1, 9, 2), (-1, -9, -45, 32), (-1, 5, 1), (17, 0, 1), (0, 1), (3,), (39, 12), (11, -23), (10, -100, 21, 32), (3, -8), (1, 1)]
+# sorted_numbers = sorted(numbers, key=lambda x: sum(x)/len(x), reverse=True)
+# print(sorted_numbers)
+
+# def call(func, *args):
+#     return func(*args)
+
+# def compose(f, g):
+#     return lambda x: f(g(x))
+
+# def arithmetic_operation(operation):
+#     if operation == '+':
+#         return lambda a,b: a + b
+#     if operation == '-':
+#         return lambda a,b: a - b
+#     if operation == '*':
+#         return lambda a,b: a * b
+#     if operation == '/':
+#         return lambda a,b: a / b
+
+# В одну строку
+# words = input().split()
+# sorted_words = sorted(words, key=lambda a: a.lower())
+# print(*sorted_words)
+
+# Гематрия слова
+# n = int(input())
+# words = []
+#
+# def calculate_gematry(word):
+#     summa = 0
+#     word = word.upper()
+#     for elem in word:
+#         summa += ord(elem) - ord('A')
+#     return summa
+#
+# for i in range(n):
+#     words.append(input())
+#
+# sorted_words = sorted(words)
+# sorted_words = sorted(sorted_words, key=calculate_gematry)
+#
+# for elem in sorted_words:
+#     print(elem)
+
+# Сортировка IP-адресов
+# n = int(input())
+# ip_addresses = []
+#
+#
+# def calculate_digit(ip):
+#     arr = [int(elem) for elem in ip.split('.')]
+#     return arr[0] * pow(256, 3) + arr[1] * pow(256, 2) + arr[2] * pow(256, 1) + arr[3] * pow(256, 0)
+#
+#
+# for i in range(n):
+#     ip_addresses.append(input())
+#
+# ip_addresses = sorted(ip_addresses, key=calculate_digit)
+# for elem in ip_addresses:
+#     print(elem)
+
+# 17.1 Файловый ввод и вывод
+
