@@ -5570,8 +5570,121 @@
 #     else:
 #         print("Invalid Input")
 
+# try:
+#     x = [1, 5, 3, 'asd', 34]
+#     x.sort()
+#     print(x)
+# except TypeError:
+#     print('Type error')
+# print('i can catch')
+
+
+# def f(x, y):
+#     try:
+#         return x / y
+#     except TypeError:
+#         print('Type error')
+#     except ZeroDivisionError:
+#         print('division by zero')
+#
+# print(f(2,0))
+
+
+# def f(x, y):
+#     try:
+#         return x / y
+#     except (TypeError, ZeroDivisionError) as e:
+#         print('Error')
+#         print(type(e))
+#         print(e)
+#         print(e.args)
+#
+# print(f(2,0))
 
 
 
+# # создаем новый класс ошибки NonPositiveError
+# class NonPositiveError(Exception):
+#     pass    # ставим pass т.к. этот класс просто обертка для нашей выдуманной ошибки
+#
+# # создаем новый класс листа, в который можем добавлять только положительные числа
+# # наследуем от существующего класса list
+# class PositiveList(list):
+#     def append(self, pos_number):   # переопределям метод append, когда вызываем PositiveList.append(x),
+#                                     # сработает именно он, а не list.append
+#         if pos_number > 0:          # делаем проверку полученного числа
+#             super().append(pos_number)  # если pos_number больше нуля, то вызываем обычный append листа с помощью super()
+#         else:                       # если мы не прошли проверку
+#             raise NonPositiveError(pos_number, "is less than 0!") # выбрасываем наше исключение с помощью raise
+
+# from datetime import date, timedelta
+# inp1 = list(map(int, input().split()))
+# inp2 = int(input())
+#
+# date = date(*inp1)
+# days = timedelta(days=inp2)
+# result = date + days
+#
+# print(result.year, result.month, result.day)
+
+#импорт модулей:
+import pygame as pg
+from random import randrange
+import pymunk.pygame_util
+pymunk.pygame_util.positive_y_is_up = False
+
+#параметры PyGame
+RES = WIDTH, HEIGHT = 1024, 768
+FPS = 100
+
+pg.init()
+surface = pg.display.set_mode(RES)
+clock = pg.time.Clock()
+draw_options = pymunk.pygame_util.DrawOptions(surface)
+
+#настройки Pymunk
+space = pymunk.Space()
+space.gravity = 0, 5000
+
+#платформа
+segment_shape = pymunk.Segment(space.static_body, (2, HEIGHT), (WIDTH, HEIGHT), 26)
+space.add(segment_shape)
+segment_shape.elasticity = 0.8
+segment_shape.friction = 1.0
 
 
+
+#квадратики
+body = pymunk.Body()
+def create_square(space, pos):
+    square_mass, square_size = 1, (50, 50)
+    square_moment = pymunk.moment_for_box(square_mass, square_size)
+    square_body = pymunk.Body(square_mass, square_moment)
+    square_body.position = pos
+    square_shape = pymunk.Poly.create_box(square_body, square_size)
+    square_shape.elasticity = 0.4
+    square_shape.friction = 1.0
+    square_shape.color = [randrange(256) for i in range(4)]
+    space.add(square_body, square_shape)
+
+
+#Отрисовка
+while True:
+    surface.fill(pg.Color('black'))
+
+    for i in pg.event.get():
+        if i.type == pg.QUIT:
+            exit()
+        # спавн кубиков
+        if i.type == pg.MOUSEBUTTONDOWN:
+            if i.button == 1:
+                create_square(space, i.pos)
+                print(i.pos)
+
+    space.step(1 / FPS)
+    space.debug_draw(draw_options)
+
+    pg.display.flip()
+    clock.tick(FPS)
+
+print('end')
