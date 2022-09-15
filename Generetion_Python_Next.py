@@ -219,6 +219,7 @@
 к которой применяется метод.
 '''
 
+
 # list1 = [10, 20, [300, 400, [5000, 6000], 500], 30, 40]
 # list1[2][2].append(7000)
 # # print(list1)  #-> [10, 20, [300, 400, [5000, 6000, 7000], 500], 30, 40]
@@ -4440,7 +4441,6 @@
 # print(summa_zakaza)
 
 
-
 # Файловый метод seek()
 # Файловый метод seek() задаёт позицию курсора в байтах от начала файла. Чтобы перевести курсор в самое
 # начало файла необходимо вызвать метод seek(), передав ему в качестве аргумента значение 0.
@@ -4545,7 +4545,6 @@
 #     print(sum(map(str.isalpha, txt)), 'letters')
 #     print(len(txt.split()), 'words')
 #     print(txt.count('\n') + 1, 'lines')
-
 
 
 # # Random name and surname
@@ -4777,6 +4776,801 @@
 # with open('output.txt', 'w') as file:
 #     file.writelines(result)
 #
+
+
+# if (n := int(input())) <= 10000:
+#     print(f'Сумма {n} не превышает лимит, проходите')
+# else:
+#     print(f'Ого! {n}! Куда вам столько? Мы заберем {n - 10000}')
+
+# if 'walrus' in (a := input()):
+#     print('Нашли моржа')
+# else:
+#     print('Никаких моржей тут нет')
+
+# match n := int(input()):
+#     case 1:
+#         print('Совсем еще зеленый студентик')
+#     case 2:
+#         print('Джун-студент')
+#     case 3:
+#         print('Мидл-студент')
+#     case 4:
+#         print('Сеньер-студент')
+#     case 5:
+#         print('Босс качалки')
+#     case _:
+#         print('Неизвестный курс')
+
+
+# match n:= int(input()):
+#     case 1|3|5|7|8|10|12:
+#         print('31')
+#     case 4|6|9|11:
+#         print('30')
+#     case 2:
+#         print('28')
+
+# match n:= input():
+#     case 'Овен'|'Лев'|'Стрелец':
+#         print('Огненный')
+#     case 'Телец'|'Дева'|'Козерог':
+#         print('Земной')
+#     case 'Близнецы'|'Весы'|'Водолей':
+#         print('Воздушный')
+#     case 'Рак'|'Скорпион'|'Рыбы':
+#         print('Водный')
+
+
+# value = [1, 2, 3]
+# match value:
+#     case int() | float():
+#         print("Имеем дело с числом")
+#     case str():
+#         print("Имеем дело со строкой")
+#     case list():
+#         print("Имеем дело со списком")
+#     case  _:
+#         print(f"Лучше с этим дел не иметь")
+
+# my_tuple = (
+# 32, 45, 32, 60, 43, 19, 39, 75, 50, 12, 53, 13, 28, 70, 68, 5, 64, 55, 30, 47, 23, 20, 17, 36, 45, 31, 46, 50, 33, 45,
+# 9, 41, 12, 57, 40, 43, 47, 51, 56, 54, 40, 30, 37, 23, 43, 66, 64, 27, 44, 75, 51, 2, 19, 72, 30, 8, 29, 43, 7, 73, 34,
+# 65, 54, 50, 43, 6, 50, 45, 49, 30, 39, 50, 41, 70, 38, 16, 31, 51, 72, 45, 58, 39, 50, 56, 24, 30, 9, 53, 27, 31, 68,
+# 56, 26, 39, 34, 50, 10, 12, 3, 27)
+#
+# slice_5_10 = my_tuple[5:11]
+# slice_from_20 = my_tuple[20::]
+# slice_to_35 = my_tuple[0:35]
+#
+# print(slice_5_10)
+# print(slice_from_20)
+# print(slice_to_35)
+
+# for i in [
+#     [109, 121, 95, 116, 117, 112, 108, 101, 91, 53, 58, 49, 49, 93],
+#     [109, 121, 95, 116, 117, 112, 108, 101, 91, 50, 48, 58, 93],
+#     [109, 121, 95, 116, 117, 112, 108, 101, 91, 58, 51, 54, 93]
+# ]:
+#     print(''.join(chr(j) for j in i))
+
+# words_tuple = ('quaint', 'leftovers', 'thesis', 'density', 'retired', 'weak', 'tolerate',
+#                'sensitivity', 'primary', 'definition', 'determine', 'bring', 'monstrous',
+#                'hurl', 'timetable', 'month', 'advocate', 'provoke', 'stress', 'omission')
+# for i in words_tuple:
+#     print(f'Длина слова {i} = {len(i)}')
+
+# my_tuple = (
+# -214, 181, -139, 448, -664, -66, 213, 832, 717, -462, -924, -706, -85, -244, -222, -340, -482, -518, -781, 759, -593,
+# 905, -354, -377, -141, -742, 383, -381, 109, -639, -480, -810, -686, 892, -612, 696, 993, 791, 631, -493, -218, -829,
+# -275, 619, -628, -241, -565, -835, -69, 747, 711, -252, -811, -407, -153, 904, 933, -254, 307, -493, -419, -109, -543,
+# 155, -127, 613, -452, -459, 856, 562, 333, -66, -77, -598, -779, -278, 867, 321, -20, -415, -357, 735, -906, -14, -370,
+# 453, -630, -736, -830, -917, 32, 422, -895, 198, 284, 472, -986, -964, -73, 29)
+# l = []
+# for i in my_tuple:
+#     if i %2!=0:
+#         l.append(i)
+# print(sum(l)/len(l))
+
+# currencies = {
+#     'Argentine Peso': 118362.205708,
+#     'Australian Dollar': 1586.232315,
+#     'Bahraini Dinar': 423.780164,
+#     'Botswana Pula': 13168.450636,
+#     'Brazilian Real': 5954.781483,
+#     'British Pound': 834.954104,
+#     'Bruneian Dollar': 1520.451015,
+#     'Bulgarian Lev': 1955.83,
+#     'Canadian Dollar': 1430.54405,
+#     'Chilean Peso': 898463.818465,
+#     'Chinese Yuan Renminbi': 7171.445692,
+#     'Colombian Peso': 4447741.922165,
+#     'Croatian Kuna': 7527.744707,
+#     'Czech Koruna': 24313.797041,
+#     'Danish Krone': 7440.613895,
+#     'Emirati Dirham': 4139.182587,
+#     'Hong Kong Dollar': 8786.255952,
+#     'Hungarian Forint': 355958.035747,
+#     'Icelandic Krona': 143603.932438,
+#     'Indian Rupee': 84241.767127,
+#     'Indonesian Rupiah': 16187150.010697,
+#     'Iranian Rial': 47534006.535121,
+#     'Israeli Shekel': 3569.191411,
+#     'Japanese Yen': 129149.364679,
+#     'Kazakhstani Tenge': 489292.515538,
+#     'Kuwaiti Dinar': 340.959682,
+#     'Libyan Dinar': 5196.539901,
+#     'Malaysian Ringgit': 4717.485104,
+#     'Mauritian Rupee': 49212.933037,
+#     'Mexican Peso': 23130.471272,
+#     'Nepalese Rupee': 134850.008728,
+#     'New Zealand Dollar': 1703.649473,
+#     'Norwegian Krone': 9953.078431,
+#     'Omani Rial': 433.360301,
+#     'Pakistani Rupee': 198900.635421,
+#     'Philippine Peso': 57574.278782,
+#     'Polish Zloty': 4579.273862,
+#     'Qatari Riyal': 4102.552652,
+#     'Romanian New Leu': 4946.638369,
+#     'Russian Ruble': 86197.012666,
+#     'Saudi Arabian Riyal': 4226.530892,
+#     'Singapore Dollar': 1520.451015,
+#     'South African Rand': 17159.831129,
+#     'South Korean Won': 1355490.097163,
+#     'Sri Lankan Rupee': 228245.645722,
+#     'Swedish Krona': 10439.125427,
+#     'Swiss Franc': 1037.792217,
+#     'Taiwan New Dollar': 31334.286611,
+#     'Thai Baht': 37436.518169,
+#     'Trinidadian Dollar': 7636.35428,
+#     'Turkish Lira': 15078.75981,
+#     'US Dollar': 1127.074905,
+#     'Venezuelan Bolivar': 511082584.868731
+# }
+# val = input()
+# # if val in currencies:
+# #     print(currencies[val])
+# # else:
+# #     print(f'Нет данных по {val}')
+#
+#
+# print(currencies[val] if val in currencies else f'Нет данных по {val}')
+
+# account = {
+#   "id": 3136,
+#   "uid": "1359acc6-f07a-4a2a-984e-3fb809982948",
+#   "account_number": "0847799459",
+#   "iban": "GB90XTND56373623909314",
+#   "bank_name": "ABN AMRO HOARE GOVETT CORPORATE FINANCE LTD.",
+#   "routing_number": "126602476",
+#   "swift_bic": "BCYPGB2LHGB"
+# }
+# # keys = []
+# # for i in account:
+# #     keys.append(i)
+# # print(keys)
+# print(keys := list(account))
+#
+# user = {
+#     "id": 4170,
+#     "uid": "5e941db5-9e0f-4f94-9fc5-734110c6be14",
+#     "password": "SyUpfo1ljm",
+#     "first_name": "Teresa",
+#     "last_name": "Wehner",
+#     "username": "teresa.wehner",
+#     "email": "teresa.wehner@email.com",
+#     "gender": "Non-binary",
+#     "phone_number": "+674 424.561.2776",
+#     "social_insurance_number": "637316241",
+#     "date_of_birth": "1993-08-17"
+# }
+# user.pop('password')
+# user.pop('last_name')
+# user.setdefault("secret", "SyUpfo1ljm")
+# user.setdefault("surname", "Wehner")
+# print(user)
+
+
+# s = input('Введите строку! Подсчитваем ее буквы: ')
+# d = {}
+# for i in s:
+#     if i in d:
+#         d[i] += 1
+#     else:
+#         d[i] = 1
+# print(d)
+# for letter, count in d.items():
+#     print(letter, count)
+
+# workers = {
+#     'employer1': {'name': 'Jhon', 'salary': 7500},
+#     'employer2': {'name': 'Emma', 'salary': 8000},
+#     'employer3': {'name': 'Brad', 'salary': 500}
+# }
+# workers['employer3']['salary']=8500
+# print(workers)
+
+# supermarket = {
+#     "milk": {"quantity": 20, "price": 1.19},
+#     "biscuits": {"quantity": 32, "price": 1.45},
+#     "butter": {"quantity": 20, "price": 2.29},
+#     "cheese": {"quantity": 15, "price": 1.90},
+#     "bread": {"quantity": 15, "price": 2.59},
+#     "cookies": {"quantity": 20, "price": 4.99},
+#     "yogurt": {"quantity": 18, "price": 3.65},
+#     "apples": {"quantity": 35, "price": 3.15},
+#     "oranges": {"quantity": 40, "price": 0.99},
+#     "bananas": {"quantity": 23, "price": 1.29}
+# }
+# coast = 0
+# for i in supermarket:
+#     coast += supermarket[i]["quantity"] * supermarket[i]["price"]
+# print(coast)
+#
+# s = 0
+# for v in supermarket.values():
+#     s += v.get('quantity') * v.get('price')
+# print(s)
+
+# my_list = [56, 59, 53, 75, 62, 61, 75, 65, 59, 62, 64, 53,
+#            54, 62, 69, 53, 55, 62, 54, 66, 55, 57, 58, 75,
+#            72, 55, 51, 56, 71, 66, 57, 56, 59, 73, 68, 57,
+#            50, 54, 62, 68, 59, 64, 59, 59, 71, 68, 57, 54, 53, 72]
+# my_set = set(my_list)
+# print(sum(my_set)/len(my_set))
+
+# name = set(input())
+# print('CHAT WITH HER!' if len(name) % 2 == 0 else 'IGNORE HIM!')
+
+# print(['NO', 'YES'][len(set(input().lower())) == 26])
+
+# y = int(input()) + 1
+# while len(set(str(y))) != 4:
+#     y += 1
+# print(y)
+#
+# user = {
+#     "id": 4170,
+#     "uid": "5e941db5-9e0f-4f94-9fc5-734110c6be14",
+#     "password": "SyUpfo1ljm",
+#     "first_name": "Teresa",
+#     "last_name": "Wehner",
+#     "username": "teresa.wehner",
+#     "email": "teresa.wehner@email.com",
+#     "gender": "Non-binary",
+#     "phone_number": "+674 424.561.2776",
+#     "social_insurance_number": "637316241",
+#     "date_of_birth": "1993-08-17",
+#     "employment": {
+#         "title": "Central Hospitality Liaison",
+#         "key_skill": "Organisation"
+#     },
+#     "subscription": {
+#         "plan": "Essential",
+#         "status": "Idle",
+#         "payment_method": "Debit card",
+#         "term": "Annual"
+#     }
+# }
+# print({key: user[key] for key in input().split()})
+
+#
+# set_a = {31, 37, 39, 41, 47, 58, 60, 62, 70, 75,
+#          76, 77, 78, 79, 80, 81, 85, 86, 88, 90, 93, 96, 98, 99}
+#
+# set_b = {0, 1, 8, 16, 17, 18, 22, 24, 29, 31,
+#          33, 34, 36, 42, 46, 47, 51, 53, 62, 64, 65, 66, 67}
+#
+# print(len(set_a ^ set_b))
+# print(len(set_b - set_a))
+
+# A = {'a', 'b', 'c', 'd'}
+# B = {'c', 'd', 'e'}
+# print(B - A)
+
+# words = ['mention', 'soup', 'pneumonia', 'tradition', 'concert', 'tease', 'generation',
+#          'winter', 'national', 'jacket', 'winter', 'wrestle', 'proposal', 'error',
+#          'pneumonia', 'concert', 'value', 'value', 'disclose', 'glasses', 'tank',
+#          'national', 'soup', 'feel', 'few', 'concert', 'wrestle', 'proposal', 'soup',
+#          'sail', 'brown', 'service', 'proposal', 'winter', 'jacket', 'mention', 'tradition',
+#          'value', 'feel', 'bear', 'few', 'value', 'winter', 'proposal', 'government',
+#          'control', 'value', 'few', 'generation', 'service', 'national',
+#          'tradition', 'government', 'mention', 'proposal']
+# print(len([i for i in set(words) if len(i) > 6]))
+
+# english_words = ('attack', 'bless', 'look', 'reckless', 'short', 'monster', 'trolley', 'sound',
+#                  'ambiguity', 'researcher', 'trunk', 'coat', 'quantity', 'question', 'tenant',
+#                  'miner', 'definite', 'kit', 'spectrum', 'satisfied', 'selection', 'carve',
+#                  'ask', 'go', 'suggest')
+#
+# for index, value in enumerate(english_words,1):
+#   print(f'Word № {index} = {value}')
+#
+# [print(f'Word № {key} = {value}') for key, value in enumerate(english_words, 1)]
+
+# lst = list(map(int, input()))
+# for i in range (len(lst)):
+#     if i % 2 == 0:
+#         if lst[i] * 2 > 9:
+#             lst[i] = lst[i] * 2 - 9
+#         else:
+#             lst[i] *= 2
+# if sum(lst) % 10 == 0:
+#     print(True)
+# else:
+#     print(False)
+
+
+# keys = ['Ten', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety', 'One hundred']
+# values = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+# result = dict(zip(keys, values))
+# print(result)
+
+# employees = [
+#     'Pankratiy', 'Innokentiy', 'Anfisa', 'Yaroslava', 'Veniamin',
+#     'Leonti', 'Daniil', 'Mishka', 'Lidochka',
+#     'Terenti', 'Vladik', 'Svetka', 'Maks', 'Yura', 'Sergei'
+# ]
+#
+# identifiers = [77, 48, 88, 85, 76, 81, 62, 43, 5, 56, 17, 20, 37, 32, 96]
+#
+# employees_data = dict(zip(sorted(identifiers), sorted(employees)))
+# print(employees_data)
+
+# def fake_bin(x):
+#     res = ''
+#     for i in x:
+#         if int(i) < 5:
+#             res += '0'
+#         else:
+#             res += '1'
+#     return res
+#
+#
+# x = input()
+# print(fake_bin(x))
+
+# def count_sheep(n):
+#     res = ''
+#     for i in range(1, n+1):
+#         res += f"{i} sheep..."
+#     return res
+#
+# print(count_sheep(int(input())))
+
+# def remove_char(s):
+#     return s[1:-1]
+#
+# print(remove_char('qwerty'))
+
+# def remove_exclamation_marks(s):
+#     return s.replace('!', '')
+
+# def abbrev_name(name):
+#     return ".".join([w[0].upper() for w in name.split()])
+
+# def area_or_perimeter(l, w):
+#     return l * w if l == w else 2 * (l + w)
+
+# def dna_to_rna(dna):
+#     return dna.replace('T','U')
+#
+# print( dna_to_rna("GACCGCCGCC"))
+
+
+# def rps(p1, p2):
+#     if p1 == p2:
+#         return "Draw!"
+#     elif p1 == "scissors" and p2 == "paper" or p1 == "paper" and p2 == "rock" or p1 == "rock" and p2 == "scissors":
+#         return "Player 1 won!"
+#     else:
+#         return "Player 2 won!"
+
+#
+# def basic_op(operator, value1, value2):
+#     if operator =='+': return int(value1) + int(value2)
+#     if operator =='-': return int(value1) - int(value2)
+#     if operator =='*': return int(value1) * int(value2)
+#     if operator =='/': return int(value1) / int(value2)
+#
+# print(basic_op("+", 2, 3))
+
+# def disemvowel(string):
+#     for i in "aeiouAEIOU":
+#         string = string.replace(i, "")
+#     return string
+#
+# def disemvowel(string):
+#     return "".join(c for c in string if c.lower() not in "aeiou")
+#
+# print(disemvowel('This website is for losers LOL'))
+#
+#
+# def high_and_low(numbers):
+#     a, b = max(numbers.split()), min(numbers.split())
+#     return ' '.join([(a), (b)])
+#
+# print(high_and_low("1 2 3 4 5"))  # return "5 1")
+# print(high_and_low("1 2 -3 4 5")) # return "5 -3")
+# print(high_and_low("1 9 3 4 -5")) # return "9 -5")
+
+# def longest(a1, a2):
+#     return ''.join(sorted(set(a1+a2)))
+#
+# a = "xyaabbbccccdefww"
+# b = "xxxxyyyyabklmopq"
+# print(longest(a, b)) #-> "abcdefklmopqwxy"
+
+
+# def get_middle(s):
+#     if len(s) % 2 == 0:
+#         return s[1:-1]
+#     else:
+#         return s[int(len(s)/2-0.5)]
+#
+#     return s[len(s) // 2] if len(s) % 2 != 0 else s[len(s) // 2 - 1:len(s) // 2 + 1]
+#
+# print(get_middle('id'))
+
+# def descending_order(num):
+#     return num[::-1].sort
+#
+# print(descending_order(145263))
+
+
+# def get_count(sentence):
+#     cnt = 0
+#     for i in sentence:
+#         if i in "aeiou":
+#             cnt += 1
+#     return cnt
+#
+# print(get_count('asdfe'))
+
+# def friend(x):
+#     a = []
+#     for i in x:
+#         if len(i) == 4:
+#             a.append(i)
+#     return a
+#
+# print(friend(["Ryan", "Kieran", "Mark",]))
+
+# def is_isogram(string):
+#     return len(string) == len(set(string.lower()))
+#
+# def generate_hashtag(s):
+#     return '#'+''.join(s.replace(' ', ''))
+#
+# print(generate_hashtag('Codewars Is Nice'))
+
+# def reverse_words(text):
+#   return ' '.join([word[::-1] if len(word)>=5 else word for word in text.split(' ') ])
+#
+# print(reverse_words("This is an example!"))
+
+# def spin_words(sentence):
+#   return ' '.join([word[::-1] if len(word)>=5 else word for word in sentence.split(' ') ])
+#
+# print(spin_words("This is an example"))
+
+# def is_divisible(n,x,y):
+#     return n%x == 0 and n%y == 0
+#
+# print(is_divisible(12,2,6))
+
+# def make_readable(seconds):
+#     h = seconds // 3600
+#     m = (seconds - h * 3600) // 60
+#     s = seconds - (h * 3600) - (m * 60)
+#     return f"{h:0>2d}:{m:0>2d}:{s:0>2d}"
+
+# print(sum([int(input()) for i in range(int(input()))]))
+
+# x = [1, 2, 3]
+# y = x
+# y.append(4)
+#
+# s = "123"
+# t = s
+# t = t + "4"
+#
+# print(str(x) + " " + s)
+
+# # objects = [1, 2, 1, 2, 3]
+# ans = 0
+# objA = []
+# for obj in objects:
+#     if id(obj) not in objA:
+#         ans += 1
+#         objA.append(id(obj))
+#
+# print(ans)
+
+# a = []
+# def foo(arg1, arg2):
+#   a.append("foo")
+# foo(a.append("arg1"), a.append("arg2"))
+# print(a)
+
+# class Stack:
+#     def __init__(self):
+#         self.values = []
+#         self.size = 0
+#         self.maxsize = 0
+#
+#     def push(self, element):
+#         self.values.append(element)
+#         self.size += 1
+#         if self.maxsize < self.size:
+#             self.maxsize = self.size
+#
+#         print(self.values, '| size =', self.size, '| maxsize =', self.maxsize)
+#
+#     def pop(self):
+#         assert self.size > 0, 'Нельзя удалять элементы из пустого стека'
+#         element = self.values.pop()
+#         self.size -= 1
+#         print(self.values, '| size =', self.size, '| maxsize =', self.maxsize)
+#         return element
+#
+# stack = Stack()
+# stack.push('module')
+#
+# def h():
+#     stack.push('h')
+#     stack.push('print')
+#     print(12)
+#     stack.pop()  # print
+#     stack.pop()  # h
+#
+# def f():
+#     stack.push('f')
+#     g(h)
+#     stack.pop()  # f
+#
+# def g(a):
+#     stack.push('g')
+#     a()
+#     stack.pop()  # g
+#
+# g(f)
+# print('\nМаксимальный размер стека (maxsize) =', stack.maxsize)
+
+
+# def closest_mod_5(x):
+#     if x % 5 == 0:
+#         return x
+#     return "I don't know :("
+
+# def C(n, k):
+#     if k == 0:
+#         return 1
+#     elif k > n:
+#         return 0
+#     else:
+#         return C(n - 1, k) + C(n - 1, k - 1)
+#
+#
+# n, k = map(int, input().split())
+# print(C(n, k))
+
+
+# class A:
+#     def __init__(self, val=0):
+#         self.val = val
+#
+#     def add(self, x):
+#         self.val += x
+#
+#     def print_val(self):
+#         print(self.val)
+#
+#
+# a = A()
+# b = A(2)
+# c = A(4)
+# a.add(2)
+# b.add(2)
+#
+# a.print_val()
+# b.print_val()
+# c.print_val()
+
+# class MoneyBox:
+#     def __init__(self, capacity):
+#         self.capacity = capacity
+#         self.count = 0
+#
+#     def can_add(self, v):
+#         return self.count + v <= self.capacity
+#
+#     def add(self, v):
+#         if self.can_add(v):
+#             self.count += v
+
+# class Buffer:
+#
+#     def __init__(self):
+#         self.current_part = []
+#
+#     def add(self, *a):
+#         self.current_part.extend(a)
+#         while len(self.current_part) - 5 >= 0:
+#             print(sum(self.current_part[0:5]))
+#             self.current_part = self.current_part[5:]
+#
+#     def get_current_part(self):
+#         return self.current_part
+#
+# buf = Buffer()
+# buf.add(1, 2, 3)
+# buf.get_current_part() # вернуть [1, 2, 3]
+# buf.add(4, 5, 6) # print(15) – вывод суммы первой пятерки элементов
+# buf.get_current_part() # вернуть [6]
+# buf.add(7, 8, 9, 10) # print(40) – вывод суммы второй пятерки элементов
+# buf.get_current_part() # вернуть []
+# buf.add(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) # print(5), print(5) – вывод сумм третьей и четвертой пятерки
+# buf.get_current_part() # вернуть [1]
+
+# class A:
+#     val = 1
+#
+#     def foo(self):
+#         A.val += 2
+#
+#     def bar(self):
+#         self.val += 1
+#
+#
+# a = A()
+# b = A()
+#
+# a.bar()
+# a.foo()
+#
+# c = A()
+#
+# print(a.val)
+# print(b.val)
+# print(c.val)
+
+# classes = {}
+#
+# def add_class(classes, class_name, parents):
+#     if class_name not in classes:
+#         classes[class_name] = []
+#     classes[class_name].extend(parents)
+#     for parent in parents:
+#         if parent not in classes:
+#             classes[parent] = []
+#
+# def found_path(classes, start, end, path=[]):
+#     path = path + [start]
+#     if start == end:
+#         return path
+#     if start not in classes:
+#         return None
+#     for node in classes[start]:
+#         if node not in path:
+#             newpath = found_path(classes, node, end, path)
+#             if newpath: return newpath
+#     return None
+#
+# def answer(classes, parent, child):
+#     if not(parent or child) in classes or not found_path(classes, child, parent):
+#         return 'No'
+#     return 'Yes'
+#
+# n = int(input())
+# for _ in range(n):
+#     class_description = input().split()
+#     class_name = class_description[0]
+#     class_parents = class_description[2:]
+#     add_class(classes, class_name, class_parents)
+#
+# q = int(input())
+# for _ in range(q):
+#     question = input().split()
+#     parent = question[0]
+#     child = question[1]
+#     print(answer(classes, parent, child))
+
+
+# class LoggableList(Loggable, list):
+#     def append(self, arg):
+#         super(LoggableList, self).append(arg)
+#         self.log(arg)
+
+# class Color:
+#     red = 0
+#     green = 0
+#     blue = 0
+#
+#     def __init__(self, r, g, b):
+#         red = r
+#         green = g
+#         blue = b
+#
+#     def toHex(self):
+#         return '#%02x%02x%02x' % (red, green, blue)
+#
+#
+# grey = Color(80, 80, 80)
+
+# class Point(object):
+#     def __init__(self, x, y, z):
+#         self.coord = (x, y, z)
+#
+# p = Point(13, 14, 15)
+# print(p.coord) # (13, 14, 15)
+
+
+# class Point:
+#     color = 'red'
+#     circle = 2
+#
+#     def set_coords(self, x, y):
+#         self.x = x
+#         self.y = y
+#
+# pt = Point()
+# pt.set_coords(10, 20)
+#
+# print(pt.__dict__)
+
+
+# class Calculator:
+#     def add(self, a, b):
+#         return a + b
+#
+#     def subtract(self, a, b):
+#         return a - b
+#
+#     def multiply(self, a, b):
+#         return a * b
+#
+#     def divide(self, a, b):
+#         return a / b
+
+
+# # create a calculator object
+# my_calc = Calculator()
+#
+# while True:
+#
+#     print("1: Add")
+#     print("2: Subtract")
+#     print("3: Multiply")
+#     print("4: Divide")
+#     print("5: Exit")
+#
+#     operation = int(input("Select operation: "))
+#
+#     # Make sure the user have entered the valid choice
+#     if operation in (1, 2, 3, 4, 5):
+#
+#         # first check whether user want to exit
+#         if (operation == 5):
+#             break
+#
+#         # If not then ask fo the input and call appropiate methods
+#         a = int(input("Enter first number: "))
+#         b = int(input("Enter second number: "))
+#
+#         if (operation == 1):
+#             print(a, "+", b, "=", my_calc.add(a, b))
+#         elif (operation == 2):
+#             print(a, "-", b, "=", my_calc.subtract(a, b))
+#         elif (operation == 3):
+#             print(a, "*", b, "=", my_calc.multiply(a, b))
+#         elif (operation == 4):
+#             print(a, "/", b, "=", my_calc.divide(a, b))
+#
+#     else:
+#         print("Invalid Input")
+
+
 
 
 
