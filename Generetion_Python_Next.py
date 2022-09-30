@@ -219,7 +219,6 @@
 к которой применяется метод.
 '''
 
-
 # list1 = [10, 20, [300, 400, [5000, 6000], 500], 30, 40]
 # list1[2][2].append(7000)
 # # print(list1)  #-> [10, 20, [300, 400, [5000, 6000, 7000], 500], 30, 40]
@@ -5602,7 +5601,6 @@
 # print(f(2,0))
 
 
-
 # # создаем новый класс ошибки NonPositiveError
 # class NonPositiveError(Exception):
 #     pass    # ставим pass т.к. этот класс просто обертка для нашей выдуманной ошибки
@@ -5627,64 +5625,724 @@
 #
 # print(result.year, result.month, result.day)
 
-#импорт модулей:
-import pygame as pg
-from random import randrange
-import pymunk.pygame_util
-pymunk.pygame_util.positive_y_is_up = False
 
-#параметры PyGame
-RES = WIDTH, HEIGHT = 1024, 768
-FPS = 100
+# #импорт модулей:
+# import pygame as pg
+# from random import randrange
+# import pymunk.pygame_util
+# pymunk.pygame_util.positive_y_is_up = False
+#
+# #параметры PyGame
+# RES = WIDTH, HEIGHT = 1024, 768
+# FPS = 100
+#
+# pg.init()
+# surface = pg.display.set_mode(RES)
+# clock = pg.time.Clock()
+# draw_options = pymunk.pygame_util.DrawOptions(surface)
+#
+# #настройки Pymunk
+# space = pymunk.Space()
+# space.gravity = 0, 5000
+#
+# #платформа
+# segment_shape = pymunk.Segment(space.static_body, (2, HEIGHT), (WIDTH, HEIGHT), 26)
+# space.add(segment_shape)
+# segment_shape.elasticity = 0.8
+# segment_shape.friction = 1.0
+#
+#
+#
+# #квадратики
+# body = pymunk.Body()
+# def create_square(space, pos):
+#     square_mass, square_size = 1, (50, 50)
+#     square_moment = pymunk.moment_for_box(square_mass, square_size)
+#     square_body = pymunk.Body(square_mass, square_moment)
+#     square_body.position = pos
+#     square_shape = pymunk.Poly.create_box(square_body, square_size)
+#     square_shape.elasticity = 0.4
+#     square_shape.friction = 1.0
+#     square_shape.color = [randrange(256) for i in range(4)]
+#     space.add(square_body, square_shape)
+#
+#
+# #Отрисовка
+# while True:
+#     surface.fill(pg.Color('black'))
+#
+#     for i in pg.event.get():
+#         if i.type == pg.QUIT:
+#             exit()
+#         # спавн кубиков
+#         if i.type == pg.MOUSEBUTTONDOWN:
+#             if i.button == 1:
+#                 create_square(space, i.pos)
+#                 print(i.pos)
+#
+#     space.step(1 / FPS)
+#     space.debug_draw(draw_options)
+#
+#     pg.display.flip()
+#     clock.tick(FPS)
+#
+# print('end')
 
-pg.init()
-surface = pg.display.set_mode(RES)
-clock = pg.time.Clock()
-draw_options = pymunk.pygame_util.DrawOptions(surface)
+# import simplecrypt
+# import urllib.request as urllib
+#
+# passwords = urllib.urlopen('https://stepik.org/media/attachments/lesson/24466/passwords.txt')
+#
+# with open('encrypted.bin', 'rb') as inp:
+#     encrypted = inp.read()
+#
+# for password in passwords:
+#     password = password[:-1]
+#     try:
+#         print(simplecrypt.decrypt(password, encrypted).decode('utf8'))
+#     except simplecrypt.DecryptionException:
+#         print(password, 'is wrong')
+#     else:
+#         print(password, 'is correct')
+#
+#
+# from random import random
+# class RandomIteratot:
+#     def __iter__(self):
+#         return self
+#     def __init__(self, k):
+#         self.k = k
+#         self.i = 0
+#     def __next__(self):
+#         if self.i < self.k:
+#             self.i +=1
+#             return random()
+#         else:
+#             raise StopIteration
+#
+#
+# # x = RandomIteratot(3)
+# # print(next(x))
+# # print(next(x))
+# # print(next(x))
+#
+# for x in RandomIteratot(10):
+#     print(x)
 
-#настройки Pymunk
-space = pymunk.Space()
-space.gravity = 0, 5000
 
-#платформа
-segment_shape = pymunk.Segment(space.static_body, (2, HEIGHT), (WIDTH, HEIGHT), 26)
-space.add(segment_shape)
-segment_shape.elasticity = 0.8
-segment_shape.friction = 1.0
-
-
-
-#квадратики
-body = pymunk.Body()
-def create_square(space, pos):
-    square_mass, square_size = 1, (50, 50)
-    square_moment = pymunk.moment_for_box(square_mass, square_size)
-    square_body = pymunk.Body(square_mass, square_moment)
-    square_body.position = pos
-    square_shape = pymunk.Poly.create_box(square_body, square_size)
-    square_shape.elasticity = 0.4
-    square_shape.friction = 1.0
-    square_shape.color = [randrange(256) for i in range(4)]
-    space.add(square_body, square_shape)
+# def is_prime(num):
+#     if num == 2: return True
+#     if num % 2 == 0: return False
+#     for _ in range(3, num // 2, 2):
+#         if num % _ == 0:
+#             return False
+#     return True
+#
+# def primes():
+#     num = 2
+#     while True:
+#         if is_prime(num):
+#             yield num
+#         num += 1
 
 
-#Отрисовка
-while True:
-    surface.fill(pg.Color('black'))
+# x = [-2, -1, 0, 1, 2]
+# y = [i*i for i in x if i > 0]
+# print(y)
 
-    for i in pg.event.get():
-        if i.type == pg.QUIT:
-            exit()
-        # спавн кубиков
-        if i.type == pg.MOUSEBUTTONDOWN:
-            if i.button == 1:
-                create_square(space, i.pos)
-                print(i.pos)
+# z = [(x, y) for x in range(5) for y in range(5) if x >= y]
+# print(z)
 
-    space.step(1 / FPS)
-    space.debug_draw(draw_options)
+# file = open('test_append.txt', 'a')
+# lines = ['line1', 'line2', 'line3']
+# content = '\n'.join(lines)
+# file.write(content)
+# file.close()
 
-    pg.display.flip()
-    clock.tick(FPS)
+# with open('test.txt') as file1, open('test_copy.txt', 'w') as file2:
+#     for line in file1:
+#         file2.write(line[])
 
-print('end')
+
+# with open('dataset_24465_4.txt') as f1:
+#     f1_lines = f1.read().splitlines()
+#
+# with open('result.txt', 'w') as f2:
+#     for line in f1_lines[::-1]:
+#         f2.write('%s\n' % line)
+#
+# with open("123.txt") as f, open("123_copy.txt", "w") as f2:
+#   for line in reversed(list(f)):
+#     f2.write(line)
+
+import os
+
+#
+# with open('result.txt', 'a') as f:
+#     for current_dir, dirs, files in os.walk('main'):
+#         if list(filter(lambda x: x.endswith('.py'), files)):
+#             f.write('{}\n'.format(current_dir))
+
+# import os
+#
+# for cur_dir, subdirs, files in os.walk("main"):
+#     for file in files:
+#         if file.endswith(".py"):
+#             print(cur_dir)
+#             break
+
+
+# import operator as op
+#
+# print(op.add(2,3))
+# print(op.mul(2,3))
+# print(op.contains([1,2,3],3))
+
+
+# from functools import partial
+# x = int('1101', base=2)
+# print(x)
+# int_2 = partial(int, base=2)
+# x = int_2('1101')
+# print(x)
+
+# import operator as op
+# from functools import partial
+#
+# x = [('1', 'qweqweqwe', 'qwe'),
+#      ('2', 'qwe', 'qasdasdwe'),
+#      ('3', 'qwqwe', 'qwaae')]
+# sort_by_last = partial(list.sort, key=op.itemgetter(-1))
+# print(x)
+# sort_by_last(x)
+# print(x)
+#
+# y = ['abc', 'cda', 'abb']
+# sort_by_last(y)
+# print(y)
+
+# def mod_checker(x, mod=0):
+#     return lambda y: y % x == mod
+
+# s, t = (input() for _ in range(2))
+# counter = 0
+# for i in range(len(s)):
+#     if s.find(t, i, i + len(t)) >= 0:
+#         counter += 1
+# print(counter)
+#
+#
+# s = input()
+# t = input()
+# print(sum(1 for i in range(len(s)) if s.startswith(t, i)))
+
+
+# import csv
+# from collections import Counter
+#
+# with open('Crimes.csv') as file:
+#     reader = csv.reader(file)
+#     data = list(reader)[1:]
+#     crimes = list(zip(*data))[5]
+#     crime_counts = Counter(crimes)
+#     print(crime_counts.most_common(1))
+#
+# import json
+#
+# initial = json.loads(input())
+#
+# with_children = {element['name']: [] for element in initial}
+#
+# for eli in initial:
+#     for elc in with_children:
+#         if elc in eli['parents']:
+#             with_children[elc].append(eli['name'])
+#
+# for element in with_children:
+#     with_children[element] = set(with_children[element])
+#
+# def dfs(graph, start, visited=None):
+#     if visited is None:
+#         visited = set()
+#     visited.add(start)
+#     for next in graph[start] - visited:
+#         dfs(graph, next, visited)
+#     return visited
+#
+# for element in sorted(with_children.keys()):
+#     print(element, ':', len(dfs(with_children, element)))
+
+
+# import requests
+# import json
+#
+# with open('dataset_24476_3.txt') as file:
+#     for number in file:
+#         number = number.strip()
+#         params = {'default': 'Boring number is boring', 'json': True}
+#         url = 'http://numbersapi.com/{}/math'.format(number)
+#         res = requests.get(url, params=params).text
+#         data = json.loads(res)
+#         if 'Boring' in data['text']:
+#             print('Boring')
+#         else:
+#             print('Interesting')
+
+
+# import requests
+# import json
+#
+# client_id = 'db311cfe37ec4bc74a61'
+# client_secret = 'ba1d22427d386b0b79ce4403c063b2ec'
+#
+# r = requests.post("https://api.artsy.net/api/tokens/xapp_token",
+#                   data={
+#                       "client_id": client_id,
+#                       "client_secret": client_secret
+#                   })
+# j = json.loads(r.text)
+# token = j["token"]
+#
+# artists = []
+#
+# with open('dataset_24476_4.txt') as file:
+#     for artist_id in file:
+#         artist_id = artist_id.strip()
+#         url = 'https://api.artsy.net/api/artists/{}'.format(artist_id)
+#         params = {'xapp_token': token}
+#         resp = requests.get(url, params=params).text
+#         data = json.loads(resp)
+#         artists.append({'name': data['sortable_name'], 'birthday': data['birthday']})
+#
+# for artist in sorted(artists, key=lambda x: (x['birthday'], x['name'])):
+#     print(artist['name'])
+
+
+# from xml.etree.ElementTree import XMLParser
+#
+# xml = input()
+#
+# class ColorWeights:                    # The target object of the parser
+#     depth = 0
+#     weights = {'red': 0, 'green': 0, 'blue': 0}
+#
+#     def start(self, tag, attrib): # Called for each opening tag.
+#         self.depth += 1
+#         self.add_weight(attrib)
+#
+#     def add_weight(self, attrib):
+#         self.weights[attrib['color']] += self.depth
+#
+#     def end(self, tag):           # Called for each closing tag.
+#         self.depth -= 1
+#
+#     def data(self, data):
+#         pass                      # We do not need to do anything with data.
+#
+#     def close(self):              # Called when all data has been parsed.
+#         weights_list = [self.weights['red'], self.weights['green'], self.weights['blue']]
+#         return ' '.join(list(map(str, weights_list)))
+#
+# target = ColorWeights()
+# parser = XMLParser(target=target)
+# parser.feed(xml)
+# print(parser.close())
+
+
+# n = 123  # int(input())
+# print(n // 100 + n // 10 % 10 + n % 10)
+
+# number = int(input())
+# number += 10
+# print(number)
+
+
+# print(input().replace("'", "\\'").replace('"', '\\"'))
+
+# n = input()
+# print(n[0:4], n[4::])
+
+# first, second = input().split()
+# first = float(first)
+# second = float(second)
+# [print(True if first % 10 == 0 and second % 10 != 0 or first % 10 != 0 and second % 10 == 0else False)]
+
+
+# x, y = map(int, input().split())
+# L = (x**2 + y**2)**0.5
+# print(True if L >= 10 else False)
+
+# x = input()
+# print(True if x == x[::-1] else False)
+
+
+# x, y = map(int, input().split())
+# print(True if (x // 100 + x // 10 % 10 + x % 10) == (y // 100 + y // 10 % 10 + y % 10) else False)
+
+# x = float(input())
+# if x > 0:
+#     print('1')
+# elif x < 0:
+#     print('-1')
+# else:
+#     print('0')
+
+# print(max(map(int, input().split())))
+
+
+# x = int(input())
+# sp = []
+# for i in range(0,101):
+#     if i%x == 0:
+#         sp.append(i)
+# print(sp)
+
+
+# numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
+# print(numbers[0::int(input())])
+
+# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# print(numbers[0:int(input())-1])
+
+
+# numbers = list(map(int, input().split()))
+# print(numbers)
+# numbers[0], numbers[-1] = numbers[-1], numbers[0]
+# print(numbers)
+
+# N = int(input())
+# fac = 1
+# for i in range(1, N + 1):
+#     fac *= i
+# print(fac)
+
+
+# n, k = input().split()
+# n = int(n)
+# k = float(k)
+# series_sum = 0.0
+# for i in range(1,n+1):
+#     series_sum += i**k
+# print(round(series_sum, 3))
+
+# def simple_number(number):
+#     for divider in range(2, number):
+#         if number % divider == 0: return False
+#     return True
+#
+# print(simple_number(int(input())))
+
+# result = []
+# for i in range(10, 100):
+#     if i == int(str(i)[0]) * int(str(i)[1]) * 3:
+#         result.append(i)
+# print(result)
+
+# i = 0
+# while i <= 4:
+#     print("Hello, while loops!")
+#     i += 1
+
+numbers = [22, 9, 37, 44, 46, 69, 24, 100, 97, 57, 1, 6, 27, 96, 16, 82, 10, 95, 99, 78, 62, 50, 77, 86, 56, 40, 49, 32,
+           53, 76, 63, 67, 52, 0, 93, 84, 28, 8, 41, 79, 25, 21, 71, 43, 81, 72, 20, 90, 39, 75, 85, 14, 15, 60, 64, 5,
+           66, 4, 36, 98, 80, 12, 47, 91, 73, 45, 31, 65, 87, 74, 11, 34, 33, 18, 58, 23, 68, 94, 92, 17, 26, 88, 35,
+           13, 7, 42, 38, 19, 48, 29, 3, 59, 55, 51, 89, 2, 70, 83, 61, 54, 30]
+
+
+# k = 0
+# for i in range(1, len(numbers) - 1):
+#     if numbers[i - 1] < numbers[i] > numbers[i + 1]:
+#         k += 1
+# print(k)
+
+# start, goal, days = map(int, input().split())
+# while days > 1:
+#     start *= 1.1
+#     days -= 1
+# print(start >= goal)
+
+# def f(start, goal, days):
+#     while start < goal:
+#         start *= 1.1
+#         days -= 1
+#         if days == 0 and start < goal:
+#             return 0
+#     return 1
+#
+#
+# start, goal, days = map(int, input().split())
+# print(True if f(start, goal, days) else False)
+
+# k = int(input())
+# count = 0
+# for c in range(2, k):
+#     for b in range(1, (c)):
+#         for a in range(1, (b)):
+#             if (a**2+b**2)==(c**2):
+#                 count += 1
+# print(count)
+
+# k = int(input())
+# vocabulary = {}
+#
+# for i in range(0, k):
+#     ru, sp = input().split()
+#     vocabulary[ru] = sp
+# key = input()
+# print(vocabulary[key])
+
+# n, k = map(int, input().split())
+# vocabulary = {}
+#
+# for i in range(n, k+1):
+#     vocabulary[i] = i**2
+# print(vocabulary)
+#
+# n, m = map(int, input().split())
+# print({x: x ** 2 for x in range(n, m + 1)})
+
+
+# words = list(input().lower().split())
+# max = words[0]
+# for i in range(1, len(words)):
+#     if words.count(max) < words.count(words[i]):
+#         max = words[i]
+# print(max)
+
+# number_contries = int(input())
+# cities={}
+# for i in range(number_contries):
+#     spisok = list(input().split())
+#     for j in range(1, len(spisok)):
+#         cities[spisok[j]] = spisok[0]
+# print(cities[input()])
+
+# k = int(input())
+# slovar = {}
+#
+# for i in range(0, k):
+#     spisok = input().split()
+#     tovar = spisok.pop(0)
+#     slovar[tovar] = spisok
+# # key = input()
+# print(spisok)
+
+# q = int(input())
+# t_dict = {}
+# for i in range (0, q):
+#     sp = input().split()
+#     tov = sp.pop(0)
+#     t_dict[tov] = sp
+# name = input()
+#
+# print(int(t_dict[name][0])*int(t_dict[name][1]))
+
+# numbers = map(int, input().split())
+#
+# sorted_numbers = sorted(set(numbers))
+# print(*sorted_numbers)
+
+# instagram = set(input().split())
+# tiktok = set(input().split())
+# print(len(instagram.intersection(tiktok)))
+
+# numbers = map(int, input().split())
+# used = set()
+# for i in numbers:
+#     n = int(i)
+#     if n in used:
+#         print('yes',end=" ")
+#     else:
+#         print('no',end=" ")
+#     used.add(n)
+
+# numbers = map(int, input().split())
+#
+# def product(numbers):
+#     pr = 1
+#     for i in numbers:
+#         pr = pr * int(i)
+#     return pr
+# result = product(numbers)
+# print(result)
+
+
+# number = int(input())
+# def product(number):
+#     return (number // 1000) * (number // 100 % 10) * (number // 10 % 10) * (number % 10)
+# result = product(number)
+# print(result)
+
+# number = int(input())
+# def product(number):
+#     c = 1
+#     while number != 0:
+#         c *= number % 10
+#         number = number // 10
+#     return c
+# result = product(number)
+# print(result)
+
+# n = input()
+# s = 1
+# for i in n:
+#     s *= int(i)
+# print(s)
+
+# number = int(input())
+# def product(number):
+#     s = 1
+#     for i in str(number):
+#         s *= int(i)
+#     return s
+# result = product(number)
+# print(result)
+
+# import math
+# def compute():
+#     answer = 1
+#     for i in range(1, 15):
+#         answer *= i // math.gcd(i, answer)
+#     return answer
+# if __name__ == "__main__":
+#     print(compute())
+
+# def add_lists(first, second):
+#     sum_list = []
+#     for i in range(len(first)):
+#         element = first[i] * second[i]
+#         sum_list.append(element)
+#     return sum_list
+#
+# a = list(map(int, input().split()))
+# b = list(map(int, input().split()))
+#
+# result = add_lists(a, b)
+# print(*result)
+
+# first = map(int, input().split())
+# second = map(int, input().split())
+# mult_list = lambda l1, l2: [x * y for x, y in zip(l1, l2)]
+# result = mult_list(first, second)
+# print(*result)
+
+# first_word, second_word = input().split()
+#
+# def is_anagram(first_word, second_word):
+#     return list(sorted(first_word)) == list(sorted(second_word))
+#
+# result = is_anagram(first_word, second_word)
+# print(result)
+
+# a, b, c = map(int, input().split())
+# def in_interval(a, b, c):
+#     return a <= c <= b
+# print(in_interval(a, b, c))
+
+
+# tpl = tuple(input().split() for _ in range(int(input()))) #заполняем словарь
+#
+# def get_youngest(tpl):
+#     return sorted(tpl, key=lambda x: int(x[1]))[0]
+#
+# print(*get_youngest(tpl))
+
+
+# k = int(input())
+# persons = []
+# ages = []
+# for _ in range(k):
+#     name, age = input().split()
+#     persons.append(name)
+#     ages.append(int(age))
+#
+# def get_youngest(persons, ages):
+#     min_age = min(ages)
+#     name = persons[ages.index(min_age)]
+#     print(name, min_age)
+#
+# get_youngest(persons, ages)
+
+
+# values = tuple(map(int, input().split()))
+#
+# def mean(val):
+#     return sum(values) / len(values)
+#
+# print(*values, mean(values))
+
+
+# class User:
+#     d = None
+#     name = None
+#     order = {}
+#
+#     def __init__(self, identifier, first_name):
+#         self.id = identifier
+#         self.name = first_name
+#
+#     def total_sum(self):
+#         purchase = 0
+#         for item, price in self.order.items():
+#             purchase += price
+#         return purchase
+#
+#     def add_purchase(self, item, price):
+#         self.order.update({item: price})
+#
+# maria = User(10, "Maria")
+# maria.order = {'apple': 20}
+#
+# print(maria.total_sum())
+
+
+# class User:
+#     d = None
+#     name = None
+#     order = {}
+#
+#     def __init__(self, identifier, first_name):
+#         self.id = identifier
+#         self.name = first_name
+#
+#     def total_sum(self):
+#         purchase = 0
+#         for item, price in self.order.items():
+#             purchase += price
+#         return purchase
+#
+#     def add_purchase(self, item, price):
+#         self.order.update({item: price})
+#
+#     def get_orders(self):
+#         return ', '.join(list(self.order))
+#
+#
+# maria = User(10, "Maria")
+#
+# maria.add_purchase("apple", 20)
+# maria.add_purchase("sandwich", 120)
+# maria.add_purchase("coffee", 100)
+#
+# print(maria.get_orders())
+
+# class Triangle:
+#     def __init__(self, angle1, angle2, angle3):
+#         self.angle_1 = angle1
+#         self.angle_2 = angle2
+#         self.angle_3 = angle3
+#
+#     def check(self):
+#         angle1 = angles[0]
+#         angle2 = angles[1]
+#         angle3 = angles[2]
+#         if angle1 + angle2 + angle3 == 180 and angle1 > 0 and angle2 > 0 and angle3 > 0:
+#             print('Triangle initialized')
+#         else:
+#             print('Initialization failed')
+#
+#
+# angles = list(map(int, input().split()))
+# triangle = Triangle(angles[0], angles[1], angles[2])
+# triangle.check()
+
